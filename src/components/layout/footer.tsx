@@ -1,51 +1,63 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, MapPin, Heart, MessageCircle } from "lucide-react";
+import { Phone, Mail, Heart, MessageCircle } from "lucide-react";
 import { BRAND, WHATSAPP_LINK } from "@/lib/constants";
 import { Logo } from "@/components/ui/logo";
 
 const footerServices = [
-  "Rudrabhisheka",
-  "Ganapati Pooja",
-  "Navagraha Pooja",
-  "Pitru Pooja",
-  "Satyanarayana Pooja",
-  "Maha Mrityunjaya Pooja",
-  "Griha Pravesh",
-  "Wedding Ceremonies",
+  "Gruhapravesha",
+  "Sathyanarayana Pooja",
+  "Vaastu Pooja",
+  "Sudarshana Aradhana",
+  "Navagraha Shanti",
+  "Nakshatra Shanti",
+  "Navagraha Japa",
+  "Mahamrityunjaya Japa",
+  "Mahaganapathi Homa",
+  "Rudra Homa",
+];
+
+const astrologyServices = [
+  "Vedic Astrology",
+  "KP System Astrology",
+  "Birth Chart Analysis",
+  "Horoscope Matching",
+  "Muhurat Consultation",
+  "Hebrew Pyramid Numerology",
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-maroon text-white" role="contentinfo">
+    <footer className="bg-primary text-text" role="contentinfo">
+      {/* Gold gradient top border */}
+      <div className="h-px bg-gradient-to-r from-gold/0 via-gold/40 to-gold/0" />
+
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-5">
               <div className="flex items-center gap-4">
                 <Logo size="xl" showText={false} linked={true} light={true} />
                 <div>
-                  <p className="font-serif font-bold text-xl md:text-2xl text-saffron leading-tight">
-                    Gokarna Sarva Poojas
+                  <p className="font-serif font-bold text-xl md:text-2xl text-gold leading-tight">
+                    R. Anand
                   </p>
-                  <p className="text-white/80 text-sm mt-1">
-                    Sacred Rituals, Divine Blessings
+                  <p className="text-text/70 text-sm mt-1">
+                    Purohit &amp; Vedic Astrologer
                   </p>
                 </div>
               </div>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Welcome to Gokarna Sarva Poojas — your trusted platform for authentic Pooja and 
-              experienced Pandit services in Gokarna. Book traditional Vedic rituals with ease, 
-              devotion, and complete peace of mind.
+            <p className="text-text/60 text-sm leading-relaxed mb-6">
+              {BRAND.description}
             </p>
             <div className="flex gap-3">
               <a
                 href={`tel:${BRAND.phone}`}
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-saffron hover:text-maroon transition-all duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-background transition-all duration-300"
                 aria-label="Call us"
               >
                 <Phone className="w-4 h-4" />
@@ -61,7 +73,7 @@ export function Footer() {
               </a>
               <a
                 href={`mailto:${BRAND.email}`}
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-saffron hover:text-maroon transition-all duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-background transition-all duration-300"
                 aria-label="Email us"
               >
                 <Mail className="w-4 h-4" />
@@ -71,15 +83,15 @@ export function Footer() {
 
           {/* Pooja Services */}
           <div>
-            <h4 className="font-serif font-semibold text-lg text-saffron mb-4">
-              Pooja Services
+            <h4 className="font-serif font-semibold text-lg text-gold mb-4">
+              Pooja &amp; Homa Services
             </h4>
             <ul className="space-y-2.5">
               {footerServices.map((service) => (
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-white/70 hover:text-saffron transition-colors text-sm"
+                    className="text-text/60 hover:text-gold transition-colors text-sm"
                   >
                     {service}
                   </Link>
@@ -88,39 +100,48 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Talk to Us */}
+          {/* Astrology Services */}
           <div>
-            <h4 className="font-serif font-semibold text-lg text-saffron mb-4">
-              Talk to Us
+            <h4 className="font-serif font-semibold text-lg text-gold mb-4">
+              Astrology Services
+            </h4>
+            <ul className="space-y-2.5">
+              {astrologyServices.map((service) => (
+                <li key={service}>
+                  <Link
+                    href="/astrology"
+                    className="text-text/60 hover:text-gold transition-colors text-sm"
+                  >
+                    {service}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-serif font-semibold text-lg text-gold mb-4">
+              Get in Touch
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+918277358648"
-                  className="text-white/70 hover:text-saffron transition-colors text-sm"
+                  href={`tel:${BRAND.phone}`}
+                  className="text-text/60 hover:text-gold transition-colors text-sm"
                 >
-                  8277358648
+                  {BRAND.phone}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:gokarnasarvapoojas@gmail.com"
-                  className="text-white/70 hover:text-saffron transition-colors text-sm"
+                  href={`mailto:${BRAND.email}`}
+                  className="text-text/60 hover:text-gold transition-colors text-sm"
                 >
-                  gokarnasarvapoojas@gmail.com
+                  {BRAND.email}
                 </a>
               </li>
             </ul>
-
-            <h4 className="font-serif font-semibold text-base text-saffron mt-6 mb-3">
-              Address
-            </h4>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Kotiteertha Road, Nagabeedi,<br />
-              Gokarna – 581326,<br />
-              Tq: Kumata, Dist: U.K.,<br />
-              Karnataka
-            </p>
 
             {/* WhatsApp CTA */}
             <a
@@ -137,16 +158,16 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-gold/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/50 text-sm text-center md:text-left">
+            <p className="text-text/50 text-sm text-center md:text-left">
               © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-white/50 text-sm">
-              <Link href="/privacy-policy" className="hover:text-saffron transition-colors">Privacy Policy</Link>
+            <div className="flex items-center gap-4 text-text/50 text-sm">
+              <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
               <span>•</span>
-              <Link href="/terms-and-conditions" className="hover:text-saffron transition-colors">Terms & Conditions</Link>
+              <Link href="/terms-and-conditions" className="hover:text-gold transition-colors">Terms &amp; Conditions</Link>
             </div>
           </div>
         </div>

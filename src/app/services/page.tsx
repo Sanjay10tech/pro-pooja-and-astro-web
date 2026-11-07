@@ -462,7 +462,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/contact">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Book a Pandit Now
                   <ArrowRight className="w-5 h-5" />
                 </Button>

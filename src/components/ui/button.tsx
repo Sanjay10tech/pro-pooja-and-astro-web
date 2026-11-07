@@ -6,20 +6,20 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron focus-visible:ring-offset-2 focus-visible:ring-offset-ivory disabled:pointer-events-none disabled:opacity-50 cursor-pointer select-none",
+  "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 cursor-pointer select-none",
   {
     variants: {
       variant: {
         primary:
-          "bg-maroon text-white hover:bg-maroon-light active:bg-maroon-dark shadow-md hover:shadow-lg",
+          "bg-primary text-text border border-gold/30 hover:border-gold/60 shadow-md hover:shadow-gold/20 hover:shadow-lg",
+        gold:
+          "bg-gold text-background hover:bg-gold-light active:bg-gold shadow-md hover:shadow-gold/30 hover:shadow-lg font-semibold",
         secondary:
-          "bg-transparent border-2 border-maroon text-maroon hover:bg-maroon hover:text-white active:bg-maroon-dark",
-        saffron:
-          "bg-saffron text-charcoal hover:bg-saffron-dark active:bg-saffron-dark shadow-md hover:shadow-lg font-semibold",
+          "bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-background active:bg-gold",
         ghost:
-          "bg-transparent text-maroon hover:bg-maroon/10 active:bg-maroon/15",
+          "bg-transparent text-gold hover:bg-gold/10 active:bg-gold/15",
         link:
-          "bg-transparent text-maroon underline-offset-4 hover:underline p-0 shadow-none",
+          "bg-transparent text-gold underline-offset-4 hover:underline p-0 shadow-none",
       },
       size: {
         sm: "h-9 px-4 text-sm",

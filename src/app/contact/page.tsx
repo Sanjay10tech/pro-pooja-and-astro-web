@@ -139,7 +139,7 @@ export default function ContactPage() {
             {/* Primary CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/talk-to-us">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Book a Pandit
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -164,10 +164,10 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Phone, label: "Call Us", value: BRAND.phone, href: `tel:${BRAND.phone}`, color: "bg-maroon/10" },
+              { icon: Phone, label: "Call Us", value: BRAND.phone, href: `tel:${BRAND.phone}`, color: "bg-primary/10" },
               { icon: MessageCircle, label: "WhatsApp", value: "Chat Now", href: WHATSAPP_LINK, color: "bg-[#25D366]/10" },
-              { icon: Mail, label: "Email", value: BRAND.email, href: `mailto:${BRAND.email}`, color: "bg-saffron/10" },
-              { icon: MapPin, label: "Location", value: BRAND.address, href: "#map", color: "bg-maroon/10" },
+              { icon: Mail, label: "Email", value: BRAND.email, href: `mailto:${BRAND.email}`, color: "bg-gold/10" },
+              { icon: Phone, label: "Consult", value: "Book Now", href: "/talk-to-us", color: "bg-gold/10" },
             ].map((item, index) => (
               <motion.a
                 key={item.label}
@@ -374,17 +374,10 @@ export default function ContactPage() {
                   <h3 className="font-serif text-base font-semibold mb-4">Quick Connect</h3>
                   <div className="space-y-3">
                     <a href={`tel:${BRAND.phone}`} className="flex items-center gap-3 bg-white/10 rounded-lg px-4 py-3 hover:bg-white/20 transition-colors">
-                      <Phone className="w-4 h-4 text-saffron" />
+                      <Phone className="w-4 h-4 text-gold" />
                       <div>
                         <p className="text-xs text-white/60">Call Now</p>
                         <p className="text-sm font-medium">{BRAND.phone}</p>
-                      </div>
-                    </a>
-                    <a href={`tel:${BRAND.phoneSecondary}`} className="flex items-center gap-3 bg-white/10 rounded-lg px-4 py-3 hover:bg-white/20 transition-colors">
-                      <Phone className="w-4 h-4 text-saffron" />
-                      <div>
-                        <p className="text-xs text-white/60">Call Now</p>
-                        <p className="text-sm font-medium">{BRAND.phoneSecondary}</p>
                       </div>
                     </a>
                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-[#25D366]/20 rounded-lg px-4 py-3 hover:bg-[#25D366]/30 transition-colors">

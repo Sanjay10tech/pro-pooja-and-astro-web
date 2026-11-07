@@ -8,9 +8,10 @@ interface CardProps {
   className?: string;
   hover?: boolean;
   as?: "div" | "article";
+  variant?: "default" | "glass";
 }
 
-export function Card({ children, className, hover = true, as = "div" }: CardProps) {
+export function Card({ children, className, hover = true, as = "div", variant = "default" }: CardProps) {
   const Component = as === "article" ? motion.article : motion.div;
 
   return (
@@ -18,9 +19,11 @@ export function Card({ children, className, hover = true, as = "div" }: CardProp
       whileHover={hover ? { y: -3 } : undefined}
       transition={{ duration: 0.2, ease: "easeOut" }}
       className={cn(
-        "bg-white rounded-xl border border-ivory-dark p-6 shadow-sm",
-        hover && "hover:shadow-md hover:border-maroon/10",
-        "transition-shadow duration-200",
+        "rounded-xl p-6",
+        variant === "glass"
+          ? "bg-white/5 backdrop-blur-md border border-gold/20 hover:border-gold/40"
+          : "bg-primary border border-secondary hover:border-gold/20",
+        hover && "transition-all duration-200",
         className
       )}
     >

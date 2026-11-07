@@ -44,7 +44,7 @@ export function Logo({
       <div className={cn("relative shrink-0 rounded-full overflow-hidden", containerClass)}>
         <Image
           src="/images/logo.png"
-          alt="Gokarna Sarva Poojas Logo"
+          alt="R. Anand Logo"
           fill
           sizes={isXl ? "112px" : "56px"}
           className="object-contain"
@@ -59,18 +59,18 @@ export function Logo({
             className={cn(
               "font-serif font-bold leading-tight",
               isNavbar ? "text-[15px] lg:text-[17px]" : isXl ? "text-xl md:text-2xl" : "text-lg md:text-xl",
-              light ? "text-saffron" : "text-maroon"
+              "text-gold"
             )}
           >
-            Gokarna Sarva Poojas
+            R. Anand
           </p>
           <p
             className={cn(
               "text-[10px] tracking-wider uppercase mt-0.5",
-              light ? "text-white/70" : "text-charcoal-light"
+              "text-muted"
             )}
           >
-            Sacred Rituals, Divine Blessings
+            Purohit &amp; Vedic Astrologer
           </p>
         </div>
       )}
@@ -79,7 +79,7 @@ export function Logo({
 
   if (linked) {
     return (
-      <Link href="/" className="group" aria-label="Gokarna Sarva Poojas - Home">
+      <Link href="/" className="group" aria-label="R. Anand - Home">
         {content}
       </Link>
     );

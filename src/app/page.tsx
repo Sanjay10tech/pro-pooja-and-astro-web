@@ -292,7 +292,7 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <Link href="/talk-to-us">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Book a Pandit
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -620,7 +620,7 @@ export default function HomePage() {
                 our experienced Pandits help you perform every pooja with care and tradition.
               </p>
               <Link href="/services">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Explore Pooja Services
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -859,7 +859,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/talk-to-us">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Book a Pandit
                   <ArrowRight className="w-5 h-5" />
                 </Button>

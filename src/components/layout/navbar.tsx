@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
@@ -11,6 +12,7 @@ import { Logo } from "@/components/ui/logo";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,8 +27,8 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-ivory-dark"
-          : "bg-ivory/80 backdrop-blur-sm"
+          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-gold/20"
+          : "bg-transparent backdrop-blur-sm"
       )}
       role="banner"
     >
@@ -37,22 +39,33 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm font-medium text-charcoal hover:text-maroon hover:bg-maroon/5 rounded-lg transition-colors duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200",
+                    isActive
+                      ? "text-gold"
+                      : "text-text/80 hover:text-gold hover:bg-gold/10"
+                  )}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-gold rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA + Mobile Menu */}
           <div className="flex items-center gap-3">
             <Link
               href="/talk-to-us"
-              className="hidden md:flex items-center gap-2 bg-maroon text-white px-4 py-2 rounded-lg hover:bg-maroon-light transition-all duration-300 text-sm font-medium shadow-md hover:shadow-lg"
+              className="hidden md:flex items-center gap-2 bg-gold text-background px-4 py-2 rounded-lg hover:bg-gold-light transition-all duration-300 text-sm font-medium shadow-md hover:shadow-lg"
             >
               <Phone className="w-4 h-4" />
               Book Now
@@ -61,7 +74,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-maroon hover:bg-maroon/10 rounded-lg transition-colors"
+              className="lg:hidden p-2 text-gold hover:bg-gold/10 rounded-lg transition-colors"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
@@ -80,33 +93,41 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-ivory-dark shadow-xl overflow-hidden"
+            className="lg:hidden bg-background/98 border-t border-gold/20 shadow-xl overflow-hidden"
             id="mobile-navigation"
             role="navigation"
             aria-label="Mobile navigation"
           >
             <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-              {NAV_LINKS.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-charcoal hover:text-maroon hover:bg-ivory rounded-lg transition-all duration-200 font-medium"
+              {NAV_LINKS.map((link, index) => {
+                const isActive = pathname === link.href;
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
-              <div className="pt-4 border-t border-ivory-dark">
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "block px-4 py-3 rounded-lg transition-all duration-200 font-medium",
+                        isActive
+                          ? "text-gold bg-gold/10"
+                          : "text-text hover:text-gold hover:bg-gold/10"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+              <div className="pt-4 border-t border-gold/20">
                 <Link
                   href="/talk-to-us"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 bg-maroon text-white px-4 py-3 rounded-lg hover:bg-maroon-light transition-all duration-300 font-medium"
+                  className="flex items-center justify-center gap-2 bg-gold text-background px-4 py-3 rounded-lg hover:bg-gold-light transition-all duration-300 font-medium"
                 >
                   <Phone className="w-4 h-4" />
                   Book a Consultation

@@ -20,7 +20,7 @@ export function Breadcrumb({ items, light = false }: BreadcrumbProps) {
       <ol
         className={cn(
           "flex items-center gap-2 text-sm flex-wrap",
-          light ? "text-white/60" : "text-charcoal-light"
+          light ? "text-white/60" : "text-muted"
         )}
       >
         <li>
@@ -28,7 +28,7 @@ export function Breadcrumb({ items, light = false }: BreadcrumbProps) {
             href="/"
             className={cn(
               "flex items-center gap-1 transition-colors",
-              light ? "hover:text-saffron" : "hover:text-maroon"
+              "hover:text-gold"
             )}
           >
             <Home className="w-4 h-4" />
@@ -40,7 +40,7 @@ export function Breadcrumb({ items, light = false }: BreadcrumbProps) {
             <ChevronRight
               className={cn(
                 "w-4 h-4",
-                light ? "text-white/30" : "text-charcoal-light/50"
+                "text-muted/50"
               )}
             />
             {item.href ? (
@@ -48,7 +48,7 @@ export function Breadcrumb({ items, light = false }: BreadcrumbProps) {
                 href={item.href}
                 className={cn(
                   "transition-colors",
-                  light ? "hover:text-saffron" : "hover:text-maroon"
+                  "hover:text-gold"
                 )}
               >
                 {item.label}
@@ -57,7 +57,7 @@ export function Breadcrumb({ items, light = false }: BreadcrumbProps) {
               <span
                 className={cn(
                   "font-medium",
-                  light ? "text-white" : "text-maroon"
+                  "text-gold"
                 )}
               >
                 {item.label}

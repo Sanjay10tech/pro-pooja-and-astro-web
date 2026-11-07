@@ -375,7 +375,7 @@ export default function TalkToUsPage() {
                   Continue <ArrowRight className="w-4 h-4" />
                 </Button>
               ) : step === 4 ? (
-                <Button variant="saffron" size="lg" onClick={submitBooking} className={isSubmitting ? "opacity-70" : ""}>
+                <Button variant="gold" size="lg" onClick={submitBooking} className={isSubmitting ? "opacity-70" : ""}>
                   {isSubmitting ? "Submitting..." : "Confirm Booking"} <CheckCircle2 className="w-5 h-5" />
                 </Button>
               ) : null}

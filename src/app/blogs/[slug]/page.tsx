@@ -432,7 +432,7 @@ export default function BlogDetailPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/services">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Explore Services
                   <ArrowRight className="w-5 h-5" />
                 </Button>

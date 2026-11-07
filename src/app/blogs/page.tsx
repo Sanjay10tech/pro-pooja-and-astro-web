@@ -392,7 +392,7 @@ export default function BlogsPage() {
               New articles on Vedic wisdom, rituals, and Gokarna&apos;s sacred heritage published every week.
             </p>
             <Link href="/talk-to-us">
-              <Button variant="saffron" size="lg">
+              <Button variant="gold" size="lg">
                 Book a Consultation
                 <ArrowRight className="w-5 h-5" />
               </Button>

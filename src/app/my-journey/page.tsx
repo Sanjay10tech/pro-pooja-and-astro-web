@@ -556,7 +556,7 @@ export default function MyJourneyPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/talk-to-us">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Book a Pandit
                   <ArrowRight className="w-5 h-5" />
                 </Button>

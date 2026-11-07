@@ -1,16 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-maroon: #7B1E3A;
-  --color-maroon-light: #9A2D4E;
-  --color-maroon-dark: #5C1629;
-  --color-saffron: #F2A93B;
-  --color-saffron-light: #F5BE65;
-  --color-saffron-dark: #D9922A;
-  --color-ivory: #FFF8F0;
-  --color-ivory-dark: #F5EDE3;
-  --color-charcoal: #2E2A26;
-  --color-charcoal-light: #4A4540;
+  --color-primary: #101C35;
+  --color-background: #080F20;
+  --color-secondary: #182744;
+  --color-gold: #B89552;
+  --color-gold-light: #E5CC91;
+  --color-cream: #F3EBDD;
+  --color-text: #F8F5ED;
+  --color-muted: #AAB3C4;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -24,8 +22,8 @@
 
   body {
     font-family: var(--font-sans);
-    color: var(--color-charcoal);
-    background-color: var(--color-ivory);
+    color: var(--color-text);
+    background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
@@ -41,7 +39,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
-    color: var(--color-maroon);
+    color: var(--color-gold);
     line-height: 1.15;
     letter-spacing: -0.02em;
   }
@@ -51,13 +49,13 @@
   }
 
   ::selection {
-    background-color: var(--color-saffron);
-    color: var(--color-charcoal);
+    background-color: var(--color-gold);
+    color: var(--color-background);
   }
 
   /* Improved focus visibility for keyboard navigation */
   :focus-visible {
-    outline: 2px solid var(--color-saffron);
+    outline: 2px solid var(--color-gold);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -77,21 +75,21 @@
 
 @layer components {
   .vedic-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237B1E3A' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B89552' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   .vedic-border {
     border-image: repeating-linear-gradient(
       90deg,
-      var(--color-saffron) 0px,
-      var(--color-saffron) 8px,
+      var(--color-gold) 0px,
+      var(--color-gold) 8px,
       transparent 8px,
       transparent 16px
     ) 4;
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-saffron) 100%);
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -101,22 +99,22 @@
   .form-input {
     width: 100%;
     padding: 0.75rem 1rem;
-    background-color: var(--color-ivory);
-    border: 1px solid var(--color-ivory-dark);
+    background-color: var(--color-secondary);
+    border: 1px solid rgba(24, 39, 68, 0.4);
     border-radius: 0.5rem;
-    color: var(--color-charcoal);
+    color: var(--color-text);
     font-size: 0.875rem;
     transition: all 0.2s;
   }
 
   .form-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--color-saffron);
+    box-shadow: 0 0 0 2px var(--color-gold);
     border-color: transparent;
   }
 
   .form-input::placeholder {
-    color: var(--color-charcoal-light);
+    color: var(--color-muted);
     opacity: 0.5;
   }
 
@@ -134,6 +132,23 @@
     box-shadow: 0 0 0 2px #dc2626;
   }
 
+  /* Glass panel utility */
+  .glass-panel {
+    background: rgba(16, 28, 53, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(184, 149, 82, 0.2);
+  }
+
+  /* Gold border utility */
+  .gold-border {
+    border: 1px solid rgba(184, 149, 82, 0.3);
+  }
+
+  /* Celestial glow utility */
+  .celestial-glow {
+    background: radial-gradient(ellipse at center, rgba(184, 149, 82, 0.12) 0%, transparent 60%);
+  }
+
   /* Loading spinner */
   .spinner {
     width: 1.25rem;
@@ -148,14 +163,24 @@
     to { transform: rotate(360deg); }
   }
 
+  /* Gold shimmer pulse */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(184, 149, 82, 0.3), 0 0 20px rgba(184, 149, 82, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 16px rgba(184, 149, 82, 0.5), 0 0 40px rgba(184, 149, 82, 0.2);
+    }
+  }
+
   /* Skip to main content link for accessibility */
   .skip-link {
     position: absolute;
     top: -100%;
     left: 0;
     padding: 0.5rem 1rem;
-    background: var(--color-maroon);
-    color: white;
+    background: var(--color-primary);
+    color: var(--color-gold);
     z-index: 100;
     font-size: 0.875rem;
   }
@@ -190,14 +215,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-ivory);
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-maroon);
+  background: var(--color-gold);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-maroon-light);
+  background: var(--color-gold-light);
 }

@@ -134,7 +134,7 @@ export default function PujaDetailPage() {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/talk-to-us">
-                  <Button variant="saffron" size="lg">
+                  <Button variant="gold" size="lg">
                     Book This Pooja
                     <ArrowRight className="w-5 h-5" />
                   </Button>
@@ -508,7 +508,7 @@ export default function PujaDetailPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/talk-to-us">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Book This Pooja
                   <ArrowRight className="w-5 h-5" />
                 </Button>

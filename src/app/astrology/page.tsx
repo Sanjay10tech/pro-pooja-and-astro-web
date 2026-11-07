@@ -236,7 +236,7 @@ export default function AstrologyPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#consultation-form">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Request Consultation
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -768,7 +768,7 @@ export default function AstrologyPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button variant="saffron" size="lg">
+                <Button variant="gold" size="lg">
                   Get Your Reading
                   <ArrowRight className="w-5 h-5" />
                 </Button>
