@@ -5,18 +5,17 @@ import {
   ArrowRight,
   Star,
   Users,
-  Calendar,
   Award,
-  Sparkles,
-  Phone,
   BookOpen,
-  MapPin,
-  Shield,
-  Heart,
-  ChevronRight,
   CheckCircle2,
   Quote,
   MessageCircle,
+  Sun,
+  Moon,
+  Shield,
+  User,
+  Compass,
+  Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -27,174 +26,274 @@ import { WHATSAPP_LINK } from "@/lib/constants";
 /* ───────────────────────── DATA ───────────────────────── */
 
 const trustStats = [
-  { icon: Users, value: "15+", label: "Years of Experience", sub: "in South Kashi's famous Gokarna & Bangalore" },
-  { icon: BookOpen, value: "11K+", label: "Pujas Performed", sub: "in different states of India" },
-  { icon: Calendar, value: "1K+", label: "Pujas & Havan Knowledge", sub: "like Rigveda yaga, Ganapathi homa etc." },
-  { icon: Heart, value: "9+", label: "Languages Known", sub: "Marathi, Kannada, Hindi, English, Telugu etc." },
-];
-
-const popularServices = [
   {
-    title: "Rudrabhisheka",
-    description: "Sacred bathing of Shivalinga with holy substances while chanting powerful Rudra mantras for divine blessings.",
-    price: "₹5,100",
-    image: "/images/rudrabhisheka.jpg",
-  },
-  {
-    title: "Ganapati Pooja",
-    description: "Invoke Lord Ganesha's grace to remove obstacles and ensure success in new beginnings and ventures.",
-    price: "₹3,100",
-    image: "/images/ganapati-pooja.jpg",
-  },
-  {
-    title: "Marriage Puja",
-    description: "Complete Vedic wedding rituals performed with authenticity, grace, and spiritual depth for a blessed and harmonious married life.",
-    price: "₹21,000",
-    image: "/images/marriage-pooja.jpg",
-  },
-  {
-    title: "Udaka Shanti",
-    description: "Sacred water purification ceremony invoking divine blessings for peace, prosperity, and protection of the home and family.",
-    price: "₹5,500",
-    image: "/images/udaka-shanti.jpg",
-  },
-  {
-    title: "Satyanarayana Pooja",
-    description: "Invoke Lord Vishnu's blessings for prosperity, health, and success in all your life endeavors.",
-    price: "₹4,100",
-    image: "/images/satyanarayana-pooja.jpg",
-  },
-  {
-    title: "Griha Pravesh Puja",
-    description: "Sacred housewarming ceremony to purify your new home, invite positive energies, and seek blessings for a happy family life.",
-    price: "₹7,500",
-    image: "/images/griha-pravesh.jpg",
-  },
-];
-
-const whyChooseUs = [
-  {
-    icon: Award,
-    title: "Experienced Purohits",
-    description: "Every pandit on our platform is traditionally trained with 10-25 years of experience in Vedic rituals.",
+    icon: Star,
+    value: "15+",
+    label: "Years Astrology Practice",
+    sub: "Vedic, KP, Vaastu & Numerology",
   },
   {
     icon: BookOpen,
-    title: "Authentic Vedic Rituals",
-    description: "Ceremonies performed exactly as prescribed in ancient scriptures — no shortcuts, no compromises.",
+    value: "10+",
+    label: "Years Pooja Experience",
+    sub: "Pooja, Homa & Havan rituals",
   },
   {
-    icon: Shield,
-    title: "Transparent Booking",
-    description: "Clear pricing, no hidden costs. Know exactly what's included before you book your pooja.",
+    icon: Award,
+    value: "MA",
+    label: "Astrology & Jyothir Vaastu",
+    sub: "B.Sc, MBA, PhD Pursuing",
   },
   {
-    icon: Heart,
-    title: "Personalised Seva",
-    description: "Every ceremony customized to your gotra, nakshatra, and specific spiritual needs.",
+    icon: Users,
+    value: "5",
+    label: "Languages",
+    sub: "Telugu, Tamil, Kannada, Hindi, English",
   },
 ];
 
-const howItWorks = [
-  { step: "01", title: "Choose Pooja", description: "Browse our comprehensive list of Vedic ceremonies and select the one you need." },
-  { step: "02", title: "Choose Pandit", description: "View profiles, experience, and ratings to select the right pandit for your ceremony." },
-  { step: "03", title: "Select Date", description: "Pick an auspicious date or let us suggest the best muhurat for your pooja." },
-  { step: "04", title: "Confirm Booking", description: "Confirm your booking, make the advance payment, and prepare for divine blessings." },
+const astrologyServices = [
+  {
+    icon: Sun,
+    title: "Vedic Astrology",
+    description:
+      "Ancient Jyotish Shastra analysis — birth chart, Dasha, Yoga identification and life guidance rooted in the Vedas.",
+  },
+  {
+    icon: Star,
+    title: "KP System",
+    description:
+      "Krishnamurti Paddhati — precise house-cusp analysis for accurate predictions on career, marriage and major life events.",
+  },
+  {
+    icon: Moon,
+    title: "Birth Chart Analysis",
+    description:
+      "Comprehensive Rashi and Navamsha chart preparation with planetary positions and detailed life-area predictions.",
+  },
+  {
+    icon: Users,
+    title: "Horoscope Matching",
+    description:
+      "Traditional Ashtakoot Gun Milan with Dosha assessment and relationship compatibility guidance.",
+  },
+  {
+    icon: Compass,
+    title: "Muhurat Consultation",
+    description:
+      "Selection of the most auspicious date and time for weddings, business launches, Griha Pravesh and travel.",
+  },
+  {
+    icon: Shield,
+    title: "Name Change Consultation",
+    description:
+      "Numerology and astrology-backed name analysis and correction for individuals and businesses.",
+  },
+];
+
+const poojaServices = [
+  {
+    title: "Gruhapravesha",
+    description:
+      "Sacred housewarming ceremony to purify your new home and invite divine blessings for a prosperous family life.",
+  },
+  {
+    title: "Sathyanarayana Pooja & Udyapan",
+    description:
+      "Invoke Lord Vishnu's blessings for prosperity, health and success in all life endeavors.",
+  },
+  {
+    title: "Vaastu Pooja",
+    description:
+      "Harmonize the five elements in your home or office to attract positive energy and prosperity.",
+  },
+  {
+    title: "Sudarshana Aradhana",
+    description:
+      "Powerful prayer to Lord Sudarshana for protection, destruction of negativity and spiritual well-being.",
+  },
+  {
+    title: "Navagraha Shanti",
+    description:
+      "Propitiate the nine planets to mitigate malefic influences and strengthen benefic planetary energies.",
+  },
+  {
+    title: "Mahamrityunjaya Japa",
+    description:
+      "Sacred recitation of the powerful Mahamrityunjaya mantra for health, longevity and liberation from fear.",
+  },
+];
+
+const serviceCategories = [
+  {
+    icon: Star,
+    label: "Astrology",
+    sub: "Vedic Jyotish Guidance",
+    href: "/astrology",
+  },
+  {
+    icon: BookOpen,
+    label: "Pooja Services",
+    sub: "Sacred Vedic Ceremonies",
+    href: "/services",
+  },
+  {
+    icon: Sparkles,
+    label: "Homa & Havan",
+    sub: "Sacred Fire Rituals",
+    href: "/services",
+  },
+  {
+    icon: Compass,
+    label: "Vaastu & Numerology",
+    sub: "Space & Number Harmony",
+    href: "/astrology",
+  },
 ];
 
 const testimonials = [
   {
-    name: "Rajesh & Meera Kulkarni",
+    name: "Suresh & Kavitha Rao",
     location: "Bangalore",
-    text: "The Rudrabhisheka performed by Pandit Raghunath was deeply moving. His chanting was powerful and authentic. Our family felt truly blessed. The entire process from booking to completion was seamless.",
+    text: "R. Anand's birth chart analysis was remarkably accurate. His guidance helped us navigate a difficult period with confidence. The consultation was thorough and his remedies genuinely helped.",
     rating: 5,
-    service: "Rudrabhisheka",
+    service: "Vedic Astrology",
   },
   {
-    name: "Suresh Hegde",
-    location: "Mumbai",
-    text: "We traveled from Mumbai to Gokarna for our Pitru Pooja. The arrangements were perfect, the pandit was very knowledgeable, and explained every step. Highly recommend their services.",
+    name: "Priya Venkataraman",
+    location: "Chennai",
+    text: "We consulted R. Anand for our Gruhapravesha and it was performed beautifully. His KP astrology insights for the muhurat were precise and the entire ceremony was deeply spiritual.",
     rating: 5,
-    service: "Pitru Pooja",
+    service: "Gruhapravesha",
   },
   {
-    name: "Priya & Arun Nair",
-    location: "Goa",
-    text: "Our Griha Pravesh was performed beautifully. Pandit Subrahmanya ji made sure our entire family understood the significance of each ritual. It was a divine experience.",
+    name: "Arun & Deepa Iyer",
+    location: "Hyderabad",
+    text: "The horoscope matching for our children's marriage was done with great care and knowledge. R. Anand explained every aspect clearly and we felt completely at ease with his guidance.",
     rating: 5,
-    service: "Griha Pravesh",
+    service: "Horoscope Matching",
   },
 ];
 
-const galleryPhotos = [
-  { id: 1, title: "Rudrabhisheka at Mahabaleshwar", image: "/images/gallery-1.webp" },
-  { id: 2, title: "Ganapati Pooja Setup", image: "/images/gallery-2.webp" },
-  { id: 3, title: "Sacred Havan Ceremony", image: "/images/gallery-3.webp" },
-  { id: 4, title: "Navagraha Pooja Mandal", image: "/images/gallery-4.webp" },
-  { id: 5, title: "Wedding Ceremony", image: "/images/gallery-5.webp" },
-  { id: 6, title: "Gokarna Beach Temple", image: "/images/gallery-6.webp" },
-];
+/* ───────────────────────── STAR FIELD COMPONENT ───────────────────────── */
 
-const latestBlogs = [
-  {
-    title: "The Spiritual Significance of Rudrabhisheka in Gokarna",
-    excerpt: "Discover why performing Rudrabhisheka in the sacred land of Gokarna carries special spiritual potency...",
-    date: "August 12, 2026",
-    readTime: "6 min",
-    slug: "#",
-  },
-  {
-    title: "How to Choose the Right Pandit for Your Ceremony",
-    excerpt: "Finding an experienced and authentic pandit is crucial for any Vedic ceremony. Here's what to look for...",
-    date: "August 5, 2026",
-    readTime: "4 min",
-    slug: "#",
-  },
-  {
-    title: "Understanding Navagraha Dosha and Its Remedies",
-    excerpt: "Learn about the nine planetary influences in your horoscope and the specific poojas that can bring balance...",
-    date: "July 28, 2026",
-    readTime: "8 min",
-    slug: "#",
-  },
-];
+// Deterministic star positions — identical array to astrology/page.tsx to avoid hydration mismatch
+function StarField() {
+  const stars = [
+    { w: 1.2, t: 8, l: 15, d: 4.2, dl: 0.3 }, { w: 2.1, t: 22, l: 45, d: 5.1, dl: 1.2 },
+    { w: 1.5, t: 35, l: 72, d: 3.8, dl: 0.8 }, { w: 1.8, t: 48, l: 28, d: 6.2, dl: 2.1 },
+    { w: 1.1, t: 62, l: 85, d: 4.5, dl: 0.5 }, { w: 2.3, t: 75, l: 12, d: 5.8, dl: 1.8 },
+    { w: 1.4, t: 88, l: 58, d: 3.5, dl: 2.5 }, { w: 1.9, t: 15, l: 92, d: 4.8, dl: 0.2 },
+    { w: 1.3, t: 42, l: 5, d: 5.5, dl: 1.5 }, { w: 2.0, t: 55, l: 38, d: 3.2, dl: 2.8 },
+    { w: 1.6, t: 68, l: 65, d: 6.5, dl: 0.7 }, { w: 1.1, t: 82, l: 22, d: 4.1, dl: 1.1 },
+    { w: 2.2, t: 5, l: 78, d: 5.3, dl: 2.3 }, { w: 1.7, t: 30, l: 55, d: 3.9, dl: 0.9 },
+    { w: 1.4, t: 95, l: 42, d: 4.7, dl: 1.7 }, { w: 1.8, t: 18, l: 33, d: 5.6, dl: 2.6 },
+    { w: 1.2, t: 72, l: 8, d: 3.4, dl: 0.4 }, { w: 2.1, t: 38, l: 88, d: 6.1, dl: 1.4 },
+    { w: 1.5, t: 58, l: 48, d: 4.4, dl: 2.0 }, { w: 1.9, t: 85, l: 75, d: 5.0, dl: 0.6 },
+    { w: 1.3, t: 12, l: 62, d: 3.7, dl: 1.6 }, { w: 2.0, t: 45, l: 18, d: 6.3, dl: 2.4 },
+    { w: 1.6, t: 78, l: 95, d: 4.3, dl: 0.1 }, { w: 1.1, t: 25, l: 82, d: 5.4, dl: 1.3 },
+    { w: 2.3, t: 92, l: 32, d: 3.6, dl: 2.7 }, { w: 1.4, t: 52, l: 52, d: 4.9, dl: 0.8 },
+    { w: 1.8, t: 3, l: 25, d: 5.7, dl: 1.9 }, { w: 1.2, t: 65, l: 42, d: 3.3, dl: 2.2 },
+    { w: 2.1, t: 28, l: 68, d: 6.0, dl: 0.5 }, { w: 1.5, t: 80, l: 55, d: 4.6, dl: 1.0 },
+    { w: 1.9, t: 40, l: 2, d: 5.2, dl: 2.9 }, { w: 1.3, t: 98, l: 88, d: 3.1, dl: 0.3 },
+    { w: 2.0, t: 10, l: 48, d: 6.4, dl: 1.5 }, { w: 1.6, t: 50, l: 75, d: 4.0, dl: 2.1 },
+    { w: 1.1, t: 33, l: 15, d: 5.9, dl: 0.7 }, { w: 2.2, t: 70, l: 35, d: 3.5, dl: 1.8 },
+    { w: 1.4, t: 88, l: 62, d: 4.8, dl: 2.5 }, { w: 1.7, t: 20, l: 95, d: 5.1, dl: 0.2 },
+    { w: 1.2, t: 55, l: 8, d: 6.2, dl: 1.2 }, { w: 2.3, t: 42, l: 72, d: 3.8, dl: 2.8 },
+  ];
 
-/* ───────────────────────── VIDEO COMPONENT ───────────────────────── */
-
-function VideoSection() {
   return (
-    <section className="py-12 md:py-16 bg-charcoal">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Experience the Sacred Tradition"
-          subtitle="See how our traditional Vedic rituals are performed with devotion and authenticity."
-          light
-        />
-
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {stars.map((star, i) => (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="relative max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-2xl"
-        >
-          {/* Video Container - 16:9, always playing, muted, looping */}
-          <div className="relative aspect-video bg-charcoal">
-            <video
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source src="/videos/gokarna-pooja.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          key={i}
+          className="absolute rounded-full bg-white"
+          style={{
+            width: `${star.w}px`,
+            height: `${star.w}px`,
+            top: `${star.t}%`,
+            left: `${star.l}%`,
+          }}
+          animate={{ opacity: [0.1, 0.8, 0.1], scale: [1, 1.3, 1] }}
+          transition={{
+            duration: star.d,
+            repeat: Infinity,
+            delay: star.dl,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/* ───────────────────────── ZODIAC WHEEL ───────────────────────── */
+
+const RASHI_SYMBOLS = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+
+function ZodiacWheel() {
+  return (
+    <motion.div
+      animate={{ rotate: 360 }}
+      transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+      className="absolute w-[420px] h-[420px] md:w-[600px] md:h-[600px] pointer-events-none"
+      aria-hidden="true"
+    >
+      {RASHI_SYMBOLS.map((symbol, i) => {
+        const angle = (i * 30 - 90) * (Math.PI / 180);
+        const radius = 46; // percent
+        return (
+          <div
+            key={symbol}
+            className="absolute text-gold/40 text-base md:text-xl font-serif"
+            style={{
+              top: `${50 + radius * Math.sin(angle)}%`,
+              left: `${50 + radius * Math.cos(angle)}%`,
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            {symbol}
           </div>
-        </motion.div>
-      </div>
-    </section>
+        );
+      })}
+      {/* Outer ring border */}
+      <div className="absolute inset-0 rounded-full border border-gold/15" />
+    </motion.div>
+  );
+}
+
+/* ───────────────────────── ORBITAL RINGS ───────────────────────── */
+
+function OrbitalRings() {
+  return (
+    <div
+      className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden"
+      aria-hidden="true"
+    >
+      {/* Outer ring */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+        className="absolute w-[480px] h-[480px] md:w-[680px] md:h-[680px] border border-gold/15 rounded-full"
+      />
+      {/* Middle ring */}
+      <motion.div
+        animate={{ rotate: -360 }}
+        transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+        className="absolute w-[340px] h-[340px] md:w-[480px] md:h-[480px] border border-gold/10 rounded-full"
+      >
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-gold/60 rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 bg-gold/30 rounded-full" />
+      </motion.div>
+      {/* Inner ring */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] border border-gold/8 rounded-full"
+      >
+        <div className="absolute top-0 right-1/4 -translate-y-1/2 w-1.5 h-1.5 bg-white/20 rounded-full" />
+      </motion.div>
+    </div>
   );
 }
 
@@ -203,97 +302,92 @@ function VideoSection() {
 export default function HomePage() {
   return (
     <PageTransition>
-      {/* ═══════════════════════ 1. HERO SECTION ═══════════════════════ */}
-      <section className="relative min-h-[600px] sm:min-h-[650px] md:min-h-[750px] flex items-center justify-center overflow-hidden">
-        {/* Background Image — provided hero image */}
-        <motion.div
-          initial={{ scale: 1.05 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 8, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <img
-            src="/images/hero-bg.jpg"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover object-center md:object-center"
-            style={{ objectPosition: "center 30%" }}
-          />
-        </motion.div>
-
-        {/* Dark cinematic overlay — maroon-charcoal tint for readability */}
+      {/* ═══════════════════════ 1. HERO ═══════════════════════ */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+        {/* Deep space gradient */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(46,42,38,0.55) 0%, rgba(92,22,41,0.35) 50%, rgba(46,42,38,0.65) 100%)",
+            background:
+              "radial-gradient(ellipse at 50% 40%, rgba(184,149,82,0.12) 0%, transparent 60%), linear-gradient(to bottom, #080F20 0%, #101C35 60%, #080F20 100%)",
           }}
         />
-        
-        {/* Subtle Vedic Pattern */}
-        <div className="absolute inset-0 vedic-pattern opacity-[0.06]" />
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12 sm:pt-16 pb-16 sm:pb-20 md:pb-24">
+        {/* Star field */}
+        <StarField />
+
+        {/* Zodiac wheel — centred behind the text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <ZodiacWheel />
+        </div>
+
+        {/* Orbital rings */}
+        <OrbitalRings />
+
+        {/* Subtle vedic pattern overlay */}
+        <div className="absolute inset-0 vedic-pattern opacity-[0.04]" />
+
+        {/* Hero content */}
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            transition={{ duration: 1 }}
           >
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="inline-flex items-center gap-2 bg-charcoal/40 backdrop-blur-sm border border-saffron/30 px-3 sm:px-5 py-2 rounded-full mb-6 sm:mb-8"
+              className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm border border-gold/20 px-4 py-2 rounded-full mb-8"
             >
-              <Sparkles className="w-4 h-4 text-saffron" />
-              <span className="text-sm font-medium text-white/90">
-                Trusted by 10,000+ Devotees
+              <Sparkles className="w-4 h-4 text-gold" />
+              <span className="text-sm font-medium text-gold/90">
+                R. Anand — Purohit &amp; Vedic Astrologer
               </span>
             </motion.div>
 
-            {/* Logo Text */}
+            {/* Main heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.7 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 drop-shadow-md"
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-text leading-tight mb-6"
             >
-              Gokarna Sarva Poojas
+              Discover Your Path
+              <br />
+              <span className="text-gold">Through Vedic Wisdom</span>
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.7 }}
-              className="text-lg md:text-xl lg:text-2xl text-saffron font-medium mb-4 drop-shadow-sm"
+              transition={{ delay: 0.55, duration: 0.7 }}
+              className="text-base sm:text-lg md:text-xl text-gold font-medium mb-4"
             >
-              Authentic Vedic Pooja & Experienced Pandit Seva
+              Authentic Vedic Astrology, KP Astrology, Vaastu &amp; Numerology Guidance.
             </motion.p>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.7 }}
-              className="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed drop-shadow-sm"
+              transition={{ delay: 0.65, duration: 0.7 }}
+              className="text-sm sm:text-base text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-              Find and book experienced Pandits for your sacred ceremonies in Gokarna. 
-              Traditional rituals performed with devotion, precision, and spiritual depth.
+              Sacred Pooja, Homa &amp; Havan services performed with devotion in the tradition of Krishna Yajurveda.
             </motion.p>
 
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.7 }}
+              transition={{ delay: 0.75, duration: 0.7 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Link href="/talk-to-us">
+              <Link href="/astrology">
                 <Button variant="gold" size="lg">
-                  Book a Pandit
+                  Book Astrology Consultation
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
@@ -301,7 +395,7 @@ export default function HomePage() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-white/50 text-white hover:bg-white hover:text-maroon backdrop-blur-sm"
+                  className="border-gold/30 text-text hover:bg-gold/10 backdrop-blur-sm"
                 >
                   Explore Pooja Services
                 </Button>
@@ -309,12 +403,24 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          aria-hidden="true"
+        >
+          <div className="w-5 h-8 border border-gold/20 rounded-full flex justify-center pt-1.5">
+            <div className="w-1 h-2 bg-gold/60 rounded-full" />
+          </div>
+        </motion.div>
       </section>
 
-      {/* ═══════════════════════ 3. TRUST STATS ═══════════════════════ */}
-      <section className="py-10 sm:py-12 md:py-14 bg-maroon">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-6">
+      {/* ═══════════════════════ 2. TRUST STATS ═══════════════════════ */}
+      <section className="py-10 sm:py-12 md:py-14 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {trustStats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -324,30 +430,32 @@ export default function HomePage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-12 h-12 bg-saffron/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <stat.icon className="w-6 h-6 text-saffron" />
+                <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <stat.icon className="w-6 h-6 text-gold" />
                 </div>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-1">
                   {stat.value}
                 </div>
-                <div className="text-white font-medium text-sm mb-1">{stat.label}</div>
-                <div className="text-white/50 text-xs leading-relaxed">{stat.sub}</div>
+                <div className="text-text/80 font-medium text-sm mb-1">{stat.label}</div>
+                <div className="text-muted text-xs leading-relaxed">{stat.sub}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════ 4. POPULAR POOJA SERVICES ═══════════════════════ */}
-      <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ═══════════════════════ 3. ASTROLOGY SERVICES ═══════════════════════ */}
+      <section className="py-14 md:py-20 bg-background relative overflow-hidden">
+        {/* Celestial glow */}
+        <div className="celestial-glow absolute inset-0 pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="Popular Pooja Services"
-            subtitle="Most sought-after Vedic ceremonies performed by our experienced pandits"
+            title="Vedic Astrology Services"
+            subtitle="Ancient wisdom for modern life — personalized guidance for every life question"
+            light
           />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {popularServices.map((service, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {astrologyServices.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -355,41 +463,70 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: (index % 3) * 0.1 }}
               >
-                <div className="bg-white rounded-xl border border-ivory-dark overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                  {/* Image */}
-                  <div className="relative h-48 bg-gradient-to-br from-maroon/10 via-ivory-dark to-saffron/10 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-maroon/10 rounded-full flex items-center justify-center">
-                        <BookOpen className="w-7 h-7 text-maroon/40" />
-                      </div>
-                    </div>
+                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col hover:border-gold/40 hover:shadow-lg transition-all duration-300 group">
+                  <div className="w-11 h-11 bg-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors duration-300">
+                    <service.icon className="w-5 h-5 text-gold" />
                   </div>
+                  <h3 className="font-serif text-lg font-semibold text-gold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed flex-grow">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/astrology">
+              <Button variant="gold" size="lg">
+                View All Astrology Services
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                  {/* Content */}
+      {/* ═══════════════════════ 4. POOJA SERVICES ═══════════════════════ */}
+      <section className="py-14 md:py-20 bg-secondary/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Sacred Pooja Services"
+            subtitle="Traditional rituals performed with devotion in the Krishna Yajurveda tradition"
+            light
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {poojaServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index % 3) * 0.1 }}
+              >
+                <div className="bg-primary border border-secondary hover:border-gold/20 rounded-2xl overflow-hidden group h-full flex flex-col transition-all duration-300 hover:shadow-lg">
+                  {/* Gradient image placeholder */}
+                  <div className="h-36 bg-gradient-to-br from-primary via-secondary to-gold/10 flex items-center justify-center relative overflow-hidden">
+                    <BookOpen className="w-10 h-10 text-gold/30 group-hover:text-gold/50 transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+                  </div>
                   <div className="p-5 flex flex-col flex-grow">
-                    <h3 className="font-serif text-xl font-semibold text-maroon mb-2 group-hover:text-maroon-light transition-colors">
+                    <h3 className="font-serif text-base font-semibold text-gold mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-charcoal-light text-sm leading-relaxed flex-grow mb-4">
+                    <p className="text-muted text-sm leading-relaxed flex-grow mb-4">
                       {service.description}
                     </p>
-                    <div className="flex items-center gap-3 pt-4 border-t border-ivory-dark">
-                      <Link
-                        href="/services"
-                        className="text-sm font-medium text-charcoal-light hover:text-maroon transition-colors flex items-center gap-1"
-                      >
-                        View Details <ChevronRight className="w-3 h-3" />
+                    <div className="flex items-center gap-3 pt-3 border-t border-secondary">
+                      <Link href="/services">
+                        <Button variant="secondary" size="sm" className="border-gold/30 text-text/80 hover:border-gold/60 hover:text-gold">
+                          View Details
+                        </Button>
                       </Link>
-                      <Link href="/talk-to-us" className="ml-auto">
-                        <Button variant="primary" size="sm">
-                          Book Pandit
+                      <Link href="/contact" className="ml-auto">
+                        <Button variant="gold" size="sm">
+                          Book
                         </Button>
                       </Link>
                     </div>
@@ -398,10 +535,9 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-
-          <div className="text-center mt-8">
+          <div className="text-center mt-10">
             <Link href="/services">
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" size="lg" className="border-gold/30 text-text hover:border-gold/60 hover:bg-gold/10">
                 View All Pooja Services
                 <ArrowRight className="w-5 h-5" />
               </Button>
@@ -410,218 +546,70 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 5. SERVICE CATEGORIES ═══════════════════════ */}
-      <section className="py-14 md:py-20 bg-ivory-dark">
+      {/* ═══════════════════════ 5. ABOUT R. ANAND TEASER ═══════════════════════ */}
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="We provide a range of services"
-            subtitle="Seamless and Reverent Puja Services Delivered to Your Doorstep"
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
-            {/* Puja */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+            {/* Profile image placeholder */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0 }}
-              className="group"
-            >
-              <Link href="/services">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
-                  <img
-                    src="/images/puja-service.jpg"
-                    alt="Puja Services"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <motion.div
-                      whileHover={{ y: -4 }}
-                      className="text-center"
-                    >
-                      <div className="w-14 h-14 bg-saffron/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-saffron/40 transition-colors duration-300">
-                        <BookOpen className="w-7 h-7 text-saffron" />
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white font-serif">Puja</h3>
-                      <p className="text-white/70 text-sm mt-1">Sacred Vedic Ceremonies</p>
-                    </motion.div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* Havan */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="group"
-            >
-              <Link href="/services">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
-                  <img
-                    src="/images/havan-service.jpg"
-                    alt="Havan Services"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <motion.div
-                      whileHover={{ y: -4 }}
-                      className="text-center"
-                    >
-                      <div className="w-14 h-14 bg-saffron/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-saffron/40 transition-colors duration-300">
-                        <Sparkles className="w-7 h-7 text-saffron" />
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white font-serif">Havan</h3>
-                      <p className="text-white/70 text-sm mt-1">Sacred Fire Rituals</p>
-                    </motion.div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* Astrology */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="group"
-            >
-              <Link href="/astrology">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
-                  <img
-                    src="/images/astrology-service.jpg"
-                    alt="Astrology Services"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <motion.div
-                      whileHover={{ y: -4 }}
-                      className="text-center"
-                    >
-                      <div className="w-14 h-14 bg-saffron/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-saffron/40 transition-colors duration-300">
-                        <Star className="w-7 h-7 text-saffron" />
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white font-serif">Astrology</h3>
-                      <p className="text-white/70 text-sm mt-1">Vedic Jyotish Guidance</p>
-                    </motion.div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* E-Puja */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="group"
-            >
-              <Link href="/services">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
-                  <img
-                    src="/images/epuja-service.jpg"
-                    alt="E-Puja Services"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <motion.div
-                      whileHover={{ y: -4 }}
-                      className="text-center"
-                    >
-                      <div className="w-14 h-14 bg-saffron/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-saffron/40 transition-colors duration-300">
-                        <Phone className="w-7 h-7 text-saffron" />
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white font-serif">E-Puja</h3>
-                      <p className="text-white/70 text-sm mt-1">Online Pooja Services</p>
-                    </motion.div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════ 6. VIDEO SECTION ═══════════════════════ */}
-      <VideoSection />
-
-      {/* ═══════════════════════ 7. WHY CHOOSE US ═══════════════════════ */}
-      <section className="py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Why Choose Us"
-            subtitle="What sets Gokarna Sarva Poojas apart from other services"
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyChooseUs.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.12 }}
-                className="text-center group"
-              >
-                <div className="w-14 h-14 bg-maroon/10 group-hover:bg-maroon rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
-                  <feature.icon className="w-6 h-6 text-maroon group-hover:text-white transition-colors duration-300" />
-                </div>
-                <h3 className="font-serif text-lg font-semibold text-maroon mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-charcoal-light text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════ 8. GOKARNA SECTION ═══════════════════════ */}
-      <section className="py-14 md:py-20 relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-[url('/images/gokarna-bg.webp')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/50" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
+              className="flex justify-center"
             >
-              <span className="inline-flex items-center gap-2 bg-saffron/20 px-4 py-1.5 rounded-full mb-6">
-                <MapPin className="w-4 h-4 text-saffron" />
-                <span className="text-sm font-medium text-saffron">Sacred Pooja Seva</span>
+              <div className="w-72 h-80 md:w-80 md:h-96 rounded-2xl bg-secondary border border-gold/30 flex items-center justify-center relative overflow-hidden">
+                <img
+                  src="/images/astrology-vedic.jpg"
+                  alt="R. Anand — Purohit & Vedic Astrologer"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => { e.currentTarget.style.display = "none"; }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-center">
+                  <p className="text-gold font-serif font-semibold text-lg">R. Anand</p>
+                  <p className="text-muted text-xs">Purohit &amp; Vedic Astrologer</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Bio */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+                About the Astrologer
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Authentic Pooja Services in Gokarna
-              </h2>
-              <p className="text-white/80 text-base md:text-lg leading-relaxed mb-4">
-                Experience traditional Vedic poojas performed with devotion, proper rituals, 
-                and authentic spiritual practices.
+              <h2 className="font-serif text-3xl md:text-4xl text-gold mb-2">R. Anand</h2>
+              <p className="text-muted text-lg mb-6">Purohit &amp; Vedic Astrologer</p>
+
+              <p className="text-text/80 text-sm leading-relaxed mb-6">
+                With 15 years of dedicated practice in Vedic Astrology, KP System, Vaastu and Hebrew Pyramid Numerology, 
+                and over 10 years performing sacred Pooja, Homa and Havan rituals, R. Anand brings authentic 
+                traditional wisdom to every consultation and ceremony.
               </p>
-              <p className="text-white/70 text-base leading-relaxed mb-8">
-                From Rudrabhisheka and Ganapati Pooja to special ceremonies and sacred rituals, 
-                our experienced Pandits help you perform every pooja with care and tradition.
-              </p>
-              <Link href="/services">
+
+              <ul className="space-y-3 mb-6">
+                {[
+                  "B.Sc. | MBA (Marketing) | MA (Astrology)",
+                  "PG Diploma in Jyothir Vaastu",
+                  "PhD in Astrology (Pursuing)",
+                  "Tradition: Krishna Yajurveda",
+                  "Languages: Telugu, Tamil, Kannada, Hindi, English",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                    <span className="text-text/80 text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link href="/my-journey">
                 <Button variant="gold" size="lg">
-                  Explore Pooja Services
+                  Read My Journey
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
@@ -630,155 +618,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 9. HOW IT WORKS ═══════════════════════ */}
-      <section className="py-14 md:py-20 bg-ivory-dark relative overflow-hidden">
-        <div className="absolute inset-0 vedic-pattern opacity-20" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ═══════════════════════ 6. SERVICE CATEGORIES ═══════════════════════ */}
+      <section className="py-14 md:py-20 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="How Gokarna Sarva Poojas Works"
-            subtitle="A simple and seamless process to book your sacred ceremony"
+            title="Our Service Areas"
+            subtitle="Comprehensive Vedic guidance for every aspect of your life"
+            light
           />
-
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
-            {/* Connecting line between cards (desktop only) */}
-            <div className="hidden lg:block absolute top-[72px] left-[14%] right-[14%] h-[2px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {serviceCategories.map((cat, index) => (
               <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
+                key={cat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                className="h-full bg-gradient-to-r from-saffron/60 via-maroon/30 to-saffron/60 origin-left"
-              />
-            </div>
-
-            {/* Step 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              whileHover={{ y: -6 }}
-              className="relative bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-ivory-dark group"
-            >
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 bg-saffron rounded-full flex items-center justify-center text-charcoal text-xs font-bold shadow-md ring-4 ring-ivory-dark">
-                1
-              </div>
-              <motion.div
-                whileHover={{ rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.5 }}
-                className="w-16 h-16 bg-maroon/10 group-hover:bg-maroon/15 rounded-full flex items-center justify-center mx-auto mt-4 mb-4 transition-colors duration-300"
+                transition={{ delay: index * 0.1 }}
+                className="group"
               >
-                <Sparkles className="w-7 h-7 text-maroon" />
+                <Link href={cat.href}>
+                  <div className="glass-panel rounded-2xl p-6 text-center hover:border-gold/40 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-lg">
+                    <div className="w-14 h-14 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gold/30 transition-colors duration-300">
+                      <cat.icon className="w-7 h-7 text-gold" />
+                    </div>
+                    <h3 className="font-serif text-lg font-semibold text-gold mb-1">
+                      {cat.label}
+                    </h3>
+                    <p className="text-muted text-sm">{cat.sub}</p>
+                  </div>
+                </Link>
               </motion.div>
-              <h3 className="font-serif text-base font-semibold text-maroon mb-2">
-                Choose Your Pooja <span className="text-xs opacity-60">🪔</span>
-              </h3>
-              <p className="text-charcoal-light text-sm leading-relaxed">
-                Pick a puja according to your preference
-              </p>
-            </motion.div>
-
-            {/* Step 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25, duration: 0.5 }}
-              whileHover={{ y: -6 }}
-              className="relative bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-ivory-dark group"
-            >
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 bg-saffron rounded-full flex items-center justify-center text-charcoal text-xs font-bold shadow-md ring-4 ring-ivory-dark">
-                2
-              </div>
-              <motion.div
-                whileHover={{ rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.5 }}
-                className="w-16 h-16 bg-maroon/10 group-hover:bg-maroon/15 rounded-full flex items-center justify-center mx-auto mt-4 mb-4 transition-colors duration-300"
-              >
-                <MessageCircle className="w-7 h-7 text-maroon" />
-              </motion.div>
-              <h3 className="font-serif text-base font-semibold text-maroon mb-2">
-                Connect With Your Pandit <span className="text-xs opacity-60">🙏</span>
-              </h3>
-              <p className="text-charcoal-light text-sm leading-relaxed">
-                Talk to us on WhatsApp for further details
-              </p>
-            </motion.div>
-
-            {/* Step 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              whileHover={{ y: -6 }}
-              className="relative bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-ivory-dark group"
-            >
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 bg-saffron rounded-full flex items-center justify-center text-charcoal text-xs font-bold shadow-md ring-4 ring-ivory-dark">
-                3
-              </div>
-              <motion.div
-                whileHover={{ rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.5 }}
-                className="w-16 h-16 bg-maroon/10 group-hover:bg-maroon/15 rounded-full flex items-center justify-center mx-auto mt-4 mb-4 transition-colors duration-300"
-              >
-                <CheckCircle2 className="w-7 h-7 text-maroon" />
-              </motion.div>
-              <h3 className="font-serif text-base font-semibold text-maroon mb-2">
-                Confirm Your Booking <span className="text-xs opacity-60">✨</span>
-              </h3>
-              <p className="text-charcoal-light text-sm leading-relaxed">
-                Get your confirmation for booking
-              </p>
-            </motion.div>
-
-            {/* Step 4 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.55, duration: 0.5 }}
-              whileHover={{ y: -6 }}
-              className="relative bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-ivory-dark group"
-            >
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 bg-saffron rounded-full flex items-center justify-center text-charcoal text-xs font-bold shadow-md ring-4 ring-ivory-dark">
-                4
-              </div>
-              <motion.div
-                whileHover={{ rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.5 }}
-                className="w-16 h-16 bg-maroon/10 group-hover:bg-maroon/15 rounded-full flex items-center justify-center mx-auto mt-4 mb-4 transition-colors duration-300"
-              >
-                <Phone className="w-7 h-7 text-maroon" />
-              </motion.div>
-              <h3 className="font-serif text-base font-semibold text-maroon mb-2">
-                Prepare for Your Pooja <span className="text-xs opacity-60">🌸</span>
-              </h3>
-              <p className="text-charcoal-light text-sm leading-relaxed">
-                Receive all the information via email, SMS, and WhatsApp
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/talk-to-us">
-              <Button variant="primary" size="lg">
-                Book Your Puja Now
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════ 10. TESTIMONIALS ═══════════════════════ */}
-      <section className="py-14 md:py-20">
+      {/* ═══════════════════════ 7. TESTIMONIALS ═══════════════════════ */}
+      <section className="py-14 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="What Devotees Say"
-            subtitle="Real experiences from families who trusted us with their sacred ceremonies"
+            title="What Clients Say"
+            subtitle="Experiences shared by those who have received guidance from R. Anand"
+            light
           />
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -788,35 +670,26 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
               >
-                <div className="bg-white rounded-xl border border-ivory-dark p-6 md:p-8 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300">
-                  {/* Quote Icon */}
-                  <Quote className="w-8 h-8 text-saffron/40 mb-4" />
-
-                  {/* Rating */}
+                <div className="glass-panel rounded-2xl p-6 md:p-8 h-full flex flex-col">
+                  <Quote className="w-8 h-8 text-gold/40 mb-4" />
                   <div className="flex gap-1 mb-4">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-saffron fill-saffron" />
+                      <Star key={i} className="w-4 h-4 text-gold fill-gold" />
                     ))}
                   </div>
-
-                  {/* Text */}
-                  <p className="text-charcoal-light text-sm leading-relaxed flex-grow mb-6 italic">
+                  <p className="text-muted text-sm leading-relaxed flex-grow mb-6 italic">
                     &ldquo;{testimonial.text}&rdquo;
                   </p>
-
-                  {/* Author */}
-                  <div className="flex items-center gap-3 pt-4 border-t border-ivory-dark">
-                    <div className="w-10 h-10 bg-maroon/10 rounded-full flex items-center justify-center">
-                      <span className="text-maroon font-serif font-bold text-sm">
+                  <div className="flex items-center gap-3 pt-4 border-t border-gold/10">
+                    <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">
+                      <span className="text-gold font-serif font-bold text-sm">
                         {testimonial.name[0]}
                       </span>
                     </div>
                     <div>
-                      <p className="font-medium text-charcoal text-sm">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-xs text-charcoal-light">
-                        {testimonial.location} • {testimonial.service}
+                      <p className="font-medium text-text text-sm">{testimonial.name}</p>
+                      <p className="text-xs text-muted">
+                        {testimonial.location} &bull; {testimonial.service}
                       </p>
                     </div>
                   </div>
@@ -827,40 +700,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 13. FINAL CTA ═══════════════════════ */}
-      <section className="py-14 md:py-20 bg-maroon relative overflow-hidden">
-        <div className="absolute inset-0 vedic-pattern opacity-10" />
-        {/* Decorative circles */}
-        <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -top-20 -right-20 w-64 h-64 bg-saffron/5 rounded-full"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.15, 1] }}
-          transition={{ duration: 6, repeat: Infinity, delay: 1 }}
-          className="absolute -bottom-32 -left-32 w-80 h-80 bg-saffron/5 rounded-full"
-        />
+      {/* ═══════════════════════ 8. FINAL CTA ═══════════════════════ */}
+      <section className="py-14 md:py-20 bg-background relative overflow-hidden">
+        {/* Celestial glow */}
+        <div className="celestial-glow absolute inset-0 pointer-events-none" />
+        <StarField />
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <Sparkles className="w-10 h-10 text-saffron mx-auto mb-6" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Begin Your Sacred Journey
+            <Sparkles className="w-10 h-10 text-gold mx-auto mb-6" />
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-text mb-6">
+              Begin Your Vedic Journey
             </h2>
-            <p className="text-white/80 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
-              Connect with experienced pandits in Gokarna and bring divine blessings into your life. 
-              Your spiritual journey is just one click away.
+            <p className="text-muted text-base sm:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+              Seek authentic Vedic guidance from an experienced astrologer and purohit. 
+              Clarity, direction, and divine blessings await.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/talk-to-us">
+              <Link href="/contact">
                 <Button variant="gold" size="lg">
-                  Book a Pandit
+                  Book a Consultation
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
@@ -868,10 +732,10 @@ export default function HomePage() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-white/60 text-white hover:bg-[#25D366] hover:border-[#25D366]"
+                  className="border-gold/30 text-text hover:bg-[#25D366] hover:border-[#25D366] hover:text-white"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  Talk to Us on WhatsApp
+                  Talk on WhatsApp
                 </Button>
               </a>
             </div>

@@ -11,11 +11,17 @@ import {
   Clock,
   Phone,
   User,
+  Users,
   Calendar,
   Shield,
   Eye,
   Heart,
   Compass,
+  Home,
+  Building2,
+  Hash,
+  Baby,
+  Edit3,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -26,51 +32,135 @@ import { PageTransition } from "@/components/layout/page-transition";
 const astrologyServices = [
   {
     icon: Sun,
-    title: "Janam Kundli Analysis",
+    title: "Vedic Astrology",
     description:
-      "Comprehensive birth chart preparation and detailed analysis of planetary positions, Dashas, Yogas, and life predictions.",
-    price: "₹2,100",
-    duration: "60 min consultation",
-  },
-  {
-    icon: Heart,
-    title: "Kundli Milan (Matchmaking)",
-    description:
-      "Traditional Ashtakoot Gun Milan with deep compatibility analysis, Dosha assessment, and relationship guidance.",
-    price: "₹1,500",
-    duration: "45 min consultation",
-  },
-  {
-    icon: Compass,
-    title: "Career & Finance Guidance",
-    description:
-      "Astrological insights on career direction, business timing, financial growth periods, and professional success.",
-    price: "₹2,500",
-    duration: "60 min consultation",
-  },
-  {
-    icon: Calendar,
-    title: "Muhurat Selection",
-    description:
-      "Selection of the most auspicious date and time for weddings, business launches, travel, and important events.",
-    price: "₹1,000",
-    duration: "30 min consultation",
-  },
-  {
-    icon: Shield,
-    title: "Dosha Nivaran Guidance",
-    description:
-      "Identification and remedies for Mangal Dosha, Kaal Sarp Dosha, Pitru Dosha, Shani Dosha, and other afflictions.",
-    price: "₹3,000",
-    duration: "75 min consultation",
+      "Ancient Jyotish Shastra analysis rooted in the Vedas. Comprehensive birth chart, Dasha, Yoga identification and life predictions.",
   },
   {
     icon: Star,
-    title: "Varshphal (Annual Predictions)",
+    title: "KP System of Astrology",
     description:
-      "Year-ahead predictions covering all life areas with monthly breakdown, key dates, and personalized guidance.",
-    price: "₹1,800",
-    duration: "45 min consultation",
+      "Krishnamurti Paddhati — precise house-cusp sub-lord analysis for highly accurate predictions on career, marriage and key life events.",
+  },
+  {
+    icon: Moon,
+    title: "Birth Chart Analysis",
+    description:
+      "Complete Rashi and Navamsha chart preparation with all nine planetary positions, Dasha periods and detailed area-wise life predictions.",
+  },
+  {
+    icon: Eye,
+    title: "Horary Chart Analysis",
+    description:
+      "Prashna Kundali — chart cast for the precise moment a question is asked to provide accurate answers without a birth time.",
+  },
+  {
+    icon: Compass,
+    title: "Rotational Chart Analysis",
+    description:
+      "Annual Varshphal analysis using Solar Return chart to provide year-ahead predictions and monthly breakdown of key themes.",
+  },
+  {
+    icon: Clock,
+    title: "Birth Time Rectification (BTR)",
+    description:
+      "Determine your exact birth time through past life events when an accurate birth record is unavailable — essential for precise readings.",
+  },
+  {
+    icon: Heart,
+    title: "Horoscope Matching",
+    description:
+      "Traditional Ashtakoot Gun Milan with full compatibility analysis, Dosha assessment and relationship guidance.",
+  },
+  {
+    icon: Users,
+    title: "Marriage Compatibility",
+    description:
+      "In-depth compatibility assessment covering emotional, financial, and spiritual alignment for a harmonious married life.",
+  },
+  {
+    icon: Calendar,
+    title: "Auspicious Muhurat",
+    description:
+      "Selection of the most auspicious date and time for weddings, Griha Pravesh, business launches, naming ceremonies and travel.",
+  },
+  {
+    icon: Baby,
+    title: "Child Naming Consultation",
+    description:
+      "Astrologically and numerologically aligned name selection for your newborn for a life of health, success and happiness.",
+  },
+  {
+    icon: Edit3,
+    title: "Name Change Consultation",
+    description:
+      "Numerology and astrology-backed name analysis and correction for individuals and businesses seeking alignment and positive energy.",
+  },
+];
+
+const vaastuServices = [
+  {
+    icon: Home,
+    title: "Jyothir Vaastu Consultation",
+    description:
+      "Specialized Vaastu analysis combining Vedic astrology with traditional Vaastu Shastra principles for holistic space harmony.",
+  },
+  {
+    icon: Home,
+    title: "Residential Vaastu Guidance",
+    description:
+      "Comprehensive analysis of your home's directions, zones and five-element balance to promote health, prosperity and peace.",
+  },
+  {
+    icon: Building2,
+    title: "Commercial Vaastu Guidance",
+    description:
+      "Optimize your office or business premises for growth, employee productivity and financial success through Vaastu principles.",
+  },
+  {
+    icon: Shield,
+    title: "House Construction Guidance",
+    description:
+      "Vaastu-aligned guidance for plot selection, house orientation, room placement and construction timing.",
+  },
+  {
+    icon: Calendar,
+    title: "Gruhapravesha Muhurat",
+    description:
+      "Determine the most auspicious date and time for your housewarming ceremony for a blessed and prosperous new beginning.",
+  },
+];
+
+const numerologyServices = [
+  {
+    icon: Hash,
+    title: "Hebrew Pyramid Numerology",
+    description:
+      "Advanced numerology system using the Hebrew Pyramid method for deep personality analysis, life path and destiny mapping.",
+  },
+  {
+    icon: Baby,
+    title: "Baby Naming",
+    description:
+      "Choose a numerologically powerful and astrologically harmonious name for your newborn aligned with their birth chart.",
+  },
+  {
+    icon: Edit3,
+    title: "Name Correction",
+    description:
+      "Analyze and correct existing names to align with your life path number, destiny number and overall numerological profile.",
+  },
+  {
+    icon: User,
+    title: "Name Change Consultation",
+    description:
+      "Comprehensive numerological guidance for individuals and businesses considering a legal name change for positive transformation.",
+  },
+  {
+    icon: Heart,
+    title: "Marriage Date Numerology",
+    description:
+      "Select a wedding date vibrating harmoniously with both partners' numerological profiles for a successful and joyful marriage.",
   },
 ];
 
@@ -78,29 +168,33 @@ const whyChoose = [
   {
     icon: Eye,
     title: "Authentic Jyotish Shastra",
-    description: "Rooted in ancient Vedic astrology texts — not modern pop astrology or generalized horoscopes.",
+    description:
+      "Rooted in ancient Vedic astrology texts — not modern pop astrology or generalized sun-sign horoscopes.",
   },
   {
     icon: User,
-    title: "Experienced Astrologers",
-    description: "Our Jyotishis have 20+ years of study and practice in traditional Vedic astrological systems.",
+    title: "15+ Years Experience",
+    description:
+      "R. Anand brings over 15 years of dedicated practice in Vedic, KP, Vaastu and Hebrew Pyramid Numerology.",
   },
   {
     icon: Shield,
     title: "Actionable Remedies",
-    description: "Every consultation provides specific, practical remedies — mantras, gemstones, poojas, and lifestyle guidance.",
+    description:
+      "Every consultation provides specific, practical remedies — mantras, gemstones, poojas and lifestyle guidance.",
   },
   {
     icon: Heart,
     title: "Compassionate Guidance",
-    description: "We approach every chart with care and sensitivity. No fear-based predictions — only empowering insights.",
+    description:
+      "Every chart is approached with care and sensitivity. No fear-based predictions — only empowering insights.",
   },
 ];
 
 /* ───────────────────────── STAR FIELD COMPONENT ───────────────────────── */
 
+// Deterministic star positions to avoid hydration mismatch
 function StarField() {
-  // Use deterministic positions to avoid hydration mismatch
   const stars = [
     { w: 1.2, t: 8, l: 15, d: 4.2, dl: 0.3 }, { w: 2.1, t: 22, l: 45, d: 5.1, dl: 1.2 },
     { w: 1.5, t: 35, l: 72, d: 3.8, dl: 0.8 }, { w: 1.8, t: 48, l: 28, d: 6.2, dl: 2.1 },
@@ -136,10 +230,7 @@ function StarField() {
             top: `${star.t}%`,
             left: `${star.l}%`,
           }}
-          animate={{
-            opacity: [0.1, 0.8, 0.1],
-            scale: [1, 1.3, 1],
-          }}
+          animate={{ opacity: [0.1, 0.8, 0.1], scale: [1, 1.3, 1] }}
           transition={{
             duration: star.d,
             repeat: Infinity,
@@ -152,33 +243,35 @@ function StarField() {
   );
 }
 
-/* ───────────────────────── CELESTIAL RING COMPONENT ───────────────────────── */
+/* ───────────────────────── CELESTIAL RINGS ───────────────────────── */
 
 function CelestialRings() {
   return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+    <div
+      className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden"
+      aria-hidden="true"
+    >
       {/* Outer ring */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-        className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] border border-saffron/10 rounded-full"
+        className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] border border-gold/15 rounded-full"
       />
       {/* Middle ring */}
       <motion.div
         animate={{ rotate: -360 }}
         transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-        className="absolute w-[350px] h-[350px] md:w-[500px] md:h-[500px] border border-white/5 rounded-full"
+        className="absolute w-[350px] h-[350px] md:w-[500px] md:h-[500px] border border-gold/5 rounded-full"
       >
-        {/* Planet markers */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-saffron/60 rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-gold/60 rounded-full" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 bg-white/40 rounded-full" />
-        <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-saffron/40 rounded-full" />
+        <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-gold/40 rounded-full" />
       </motion.div>
       {/* Inner ring */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] border border-saffron/8 rounded-full"
+        className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] border border-gold/8 rounded-full"
       >
         <div className="absolute top-0 right-1/4 -translate-y-1/2 w-1.5 h-1.5 bg-white/30 rounded-full" />
       </motion.div>
@@ -192,9 +285,15 @@ export default function AstrologyPage() {
   return (
     <PageTransition>
       {/* ═══════════════════════ 1. HERO ═══════════════════════ */}
-      <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0D0A1A]">
+      <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-background">
         {/* Deep space gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0A1A] via-[#1A0F2E] to-maroon-dark" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, #080F20 0%, #101C35 50%, #080F20 100%)",
+          }}
+        />
 
         {/* Star field */}
         <StarField />
@@ -217,35 +316,34 @@ export default function AstrologyPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
-              className="inline-flex items-center gap-2 bg-saffron/10 backdrop-blur-sm border border-saffron/20 px-4 py-2 rounded-full mb-8"
+              className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm border border-gold/20 px-4 py-2 rounded-full mb-8"
             >
-              <Sparkles className="w-4 h-4 text-saffron" />
-              <span className="text-sm font-medium text-saffron/90">Vedic Jyotish Shastra</span>
+              <Sparkles className="w-4 h-4 text-gold" />
+              <span className="text-sm font-medium text-gold/90">Vedic Jyotish Shastra</span>
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-text leading-tight mb-6">
               Guidance Written{" "}
-              <span className="text-saffron">in the Stars</span>
+              <span className="text-gold">in the Stars</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed mb-10">
-              Discover what the celestial bodies have charted for your life. 
-              Our Vedic astrologers use ancient Jyotish wisdom to illuminate your 
-              past, present, and the path ahead.
+            <p className="text-base sm:text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed mb-10">
+              Authentic Vedic Astrology, KP System, Vaastu and Numerology consultations by R. Anand — 
+              15 years of dedicated practice illuminating paths and transforming lives.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#consultation-form">
+              <Link href="/contact">
                 <Button variant="gold" size="lg">
                   Request Consultation
                   <ArrowRight className="w-5 h-5" />
                 </Button>
-              </a>
+              </Link>
               <a href="#services">
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white/10"
+                  className="border-gold/30 text-text hover:bg-gold/10"
                 >
                   View Services
                 </Button>
@@ -258,52 +356,53 @@ export default function AstrologyPage() {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2.5, repeat: Infinity }}
             className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            aria-hidden="true"
           >
-            <div className="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">
-              <div className="w-1 h-2 bg-saffron/60 rounded-full" />
+            <div className="w-5 h-8 border border-gold/20 rounded-full flex justify-center pt-1.5">
+              <div className="w-1 h-2 bg-gold/60 rounded-full" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ═══════════════════════ ZODIAC TICKER ═══════════════════════ */}
-      <section className="bg-charcoal py-4 overflow-hidden">
+      <section className="bg-primary py-4 overflow-hidden">
         <div className="zodiac-ticker-track flex whitespace-nowrap">
           {/* First copy */}
           <div className="flex items-center shrink-0">
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♈</span> Mesha (मेष)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♉</span> Vrishabha (वृषभ)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♊</span> Mithuna (मिथुन)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♋</span> Karka (कर्क)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♌</span> Simha (सिंह)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♍</span> Kanya (कन्या)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♎</span> Tula (तुला)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♏</span> Vrushchik (वृश्चिक)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♐</span> Dhanu (धनु)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♑</span> Makara (मकर)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♒</span> Kumbha (कुंभ)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♓</span> Meena (मीन)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♈</span> Mesha (मेष)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♉</span> Vrishabha (वृषभ)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♊</span> Mithuna (मिथुन)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♋</span> Karka (कर्क)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♌</span> Simha (सिंह)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♍</span> Kanya (कन्या)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♎</span> Tula (तुला)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♏</span> Vrushchik (वृश्चिक)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♐</span> Dhanu (धनु)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♑</span> Makara (मकर)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♒</span> Kumbha (कुंभ)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♓</span> Meena (मीन)</span>
           </div>
-          {/* Duplicate copy for seamless loop */}
+          {/* Duplicate for seamless loop */}
           <div className="flex items-center shrink-0" aria-hidden="true">
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♈</span> Mesha (मेष)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♉</span> Vrishabha (वृषभ)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♊</span> Mithuna (मिथुन)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♋</span> Karka (कर्क)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♌</span> Simha (सिंह)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♍</span> Kanya (कन्या)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♎</span> Tula (तुला)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♏</span> Vrushchik (वृश्चिक)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♐</span> Dhanu (धनु)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♑</span> Makara (मकर)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♒</span> Kumbha (कुंभ)</span>
-            <span className="flex items-center gap-2 px-6 md:px-8 text-white text-sm md:text-base"><span className="text-lg text-saffron">♓</span> Meena (मीन)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♈</span> Mesha (मेष)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♉</span> Vrishabha (वृषभ)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♊</span> Mithuna (मिथुन)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♋</span> Karka (कर्क)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♌</span> Simha (सिंह)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♍</span> Kanya (कन्या)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♎</span> Tula (तुला)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♏</span> Vrushchik (वृश्चिक)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♐</span> Dhanu (धनु)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♑</span> Makara (मकर)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♒</span> Kumbha (कुंभ)</span>
+            <span className="flex items-center gap-2 px-6 md:px-8 text-text/80 text-sm md:text-base"><span className="text-lg text-gold">♓</span> Meena (मीन)</span>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════ 2. ASTROLOGY INTRODUCTION ═══════════════════════ */}
-      <section className="py-14 sm:py-20 md:py-28">
+      {/* ═══════════════════════ 2. INTRO ═══════════════════════ */}
+      <section className="py-14 sm:py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
             {/* Visual */}
@@ -314,7 +413,7 @@ export default function AstrologyPage() {
               transition={{ duration: 0.7 }}
               className="relative"
             >
-              <div className="max-w-sm mx-auto relative rounded-2xl overflow-hidden shadow-md">
+              <div className="max-w-sm mx-auto relative rounded-2xl overflow-hidden border border-gold/20 shadow-lg">
                 <img
                   src="/images/astrology-vedic.jpg"
                   alt="Vedic Astrology"
@@ -330,13 +429,13 @@ export default function AstrologyPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <span className="text-saffron-dark font-medium text-sm uppercase tracking-widest mb-3 block">
+              <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
                 Ancient Wisdom, Timeless Guidance
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-maroon mb-6 leading-tight">
+              <h2 className="font-serif text-3xl md:text-4xl text-gold mb-6 leading-tight">
                 The Science of Vedic Astrology
               </h2>
-              <div className="space-y-4 text-charcoal-light leading-relaxed">
+              <div className="space-y-4 text-muted leading-relaxed">
                 <p>
                   Jyotish Shastra — the &ldquo;Science of Light&rdquo; — is one of the oldest 
                   and most sophisticated astrological systems in the world. Rooted in the Vedas, 
@@ -349,8 +448,8 @@ export default function AstrologyPage() {
                   nine Grahas to provide deeply personalized and accurate guidance.
                 </p>
                 <p>
-                  Our astrologers carry forward this tradition with decades of study, providing 
-                  not just predictions, but actionable remedies rooted in scripture.
+                  R. Anand carries forward this tradition with 15 years of dedicated study, 
+                  providing not just predictions, but actionable remedies rooted in scripture.
                 </p>
               </div>
             </motion.div>
@@ -358,9 +457,9 @@ export default function AstrologyPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 3. BIRTH CHART CONSULTATION ═══════════════════════ */}
-      <section className="py-20 md:py-28 bg-ivory-dark relative overflow-hidden">
-        <div className="absolute inset-0 vedic-pattern opacity-20" />
+      {/* ═══════════════════════ 3. BIRTH CHART SECTION ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-secondary/30 relative overflow-hidden">
+        <div className="absolute inset-0 vedic-pattern opacity-10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text */}
@@ -369,13 +468,13 @@ export default function AstrologyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-saffron-dark font-medium text-sm uppercase tracking-widest mb-3 block">
+              <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
                 Foundation of All Predictions
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-maroon mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl text-gold mb-6">
                 Janam Kundli — Your Cosmic Blueprint
               </h2>
-              <p className="text-charcoal-light leading-relaxed mb-6">
+              <p className="text-muted leading-relaxed mb-6">
                 Your birth chart (Janam Kundli) is the foundation of all Vedic astrological 
                 analysis. It captures the exact positions of all nine planets at the moment you 
                 were born, creating a unique celestial map that governs your life journey.
@@ -397,17 +496,17 @@ export default function AstrologyPage() {
                     transition={{ delay: index * 0.05 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-saffron-dark shrink-0 mt-0.5" />
-                    <span className="text-charcoal text-sm">{item}</span>
+                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                    <span className="text-text/80 text-sm">{item}</span>
                   </motion.li>
                 ))}
               </ul>
-              <a href="#consultation-form">
-                <Button variant="primary" size="lg">
+              <Link href="/contact">
+                <Button variant="gold" size="lg">
                   Get Your Kundli Prepared
                   <ArrowRight className="w-5 h-5" />
                 </Button>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Kundli Visual */}
@@ -419,17 +518,14 @@ export default function AstrologyPage() {
               className="flex justify-center"
             >
               <div className="w-72 h-72 md:w-80 md:h-80 relative">
-                {/* North Indian style Kundli shape */}
-                <div className="absolute inset-0 border-2 border-maroon/30 rotate-45 bg-white shadow-lg" />
-                <div className="absolute inset-8 border border-maroon/20 rotate-45" />
-                {/* Center */}
+                <div className="absolute inset-0 border-2 border-gold/30 rotate-45 bg-primary shadow-lg" />
+                <div className="absolute inset-8 border border-gold/20 rotate-45" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-ivory-dark rounded-lg px-4 py-2 shadow-sm rotate-0 z-10">
-                    <p className="text-maroon font-serif font-bold text-lg">जन्म कुण्डली</p>
-                    <p className="text-charcoal-light text-xs text-center">Birth Chart</p>
+                  <div className="bg-secondary/80 rounded-lg px-4 py-2 shadow-sm rotate-0 z-10 backdrop-blur-sm">
+                    <p className="text-gold font-serif font-bold text-lg">जन्म कुण्डली</p>
+                    <p className="text-muted text-xs text-center">Birth Chart</p>
                   </div>
                 </div>
-                {/* House numbers */}
                 {["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"].map(
                   (num, i) => {
                     const angle = (i * 30 - 90) * (Math.PI / 180);
@@ -437,7 +533,7 @@ export default function AstrologyPage() {
                     return (
                       <div
                         key={num}
-                        className="absolute text-xs font-medium text-maroon/50"
+                        className="absolute text-xs font-medium text-gold/50"
                         style={{
                           top: `${50 + radius * Math.sin(angle)}%`,
                           left: `${50 + radius * Math.cos(angle)}%`,
@@ -456,24 +552,23 @@ export default function AstrologyPage() {
       </section>
 
       {/* ═══════════════════════ 4. HOROSCOPE GUIDANCE ═══════════════════════ */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Moon className="w-10 h-10 text-saffron mx-auto mb-4" />
-            <span className="text-saffron-dark font-medium text-sm uppercase tracking-widest mb-3 block">
+            <Moon className="w-10 h-10 text-gold mx-auto mb-4" />
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
               Ongoing Guidance
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-maroon mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-6">
               Personalized Horoscope Guidance
             </h2>
-            <p className="text-charcoal-light text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-              Life is not static, and neither are the stars. As planets transit and Dasha 
-              periods change, new opportunities and challenges arise. Our ongoing horoscope 
-              guidance helps you navigate every phase with confidence and clarity.
+            <p className="text-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12">
+              As planets transit and Dasha periods change, new opportunities and challenges arise. 
+              Ongoing horoscope guidance helps you navigate every phase with confidence and clarity.
             </p>
           </motion.div>
 
@@ -481,17 +576,20 @@ export default function AstrologyPage() {
             {[
               {
                 title: "Monthly Predictions",
-                description: "Detailed monthly guidance based on your personal chart and current planetary transits.",
+                description:
+                  "Detailed monthly guidance based on your personal chart and current planetary transits.",
                 icon: Calendar,
               },
               {
                 title: "Transit Analysis",
-                description: "How major planetary movements (Saturn, Jupiter, Rahu) affect your specific chart.",
+                description:
+                  "How major planetary movements (Saturn, Jupiter, Rahu) affect your specific chart.",
                 icon: Compass,
               },
               {
                 title: "Dasha Guidance",
-                description: "Navigate Mahadasha and Antardasha periods with targeted advice and remedies.",
+                description:
+                  "Navigate Mahadasha and Antardasha periods with targeted advice and remedies.",
                 icon: Clock,
               },
             ].map((item, index) => (
@@ -501,25 +599,24 @@ export default function AstrologyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-ivory-dark p-6 text-center hover:shadow-md transition-shadow duration-300"
               >
-                <div className="w-12 h-12 bg-maroon/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-maroon" />
+                <div className="glass-panel rounded-xl p-6 text-center hover:border-gold/40 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-gold" />
+                  </div>
+                  <h3 className="font-serif text-base font-semibold text-gold mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed">{item.description}</p>
                 </div>
-                <h3 className="font-serif text-base font-semibold text-maroon mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-charcoal-light text-sm leading-relaxed">
-                  {item.description}
-                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════ 5. MUHURAT CONSULTATION ═══════════════════════ */}
-      <section className="py-20 md:py-28 bg-maroon relative overflow-hidden">
+      {/* ═══════════════════════ 5. MUHURAT ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 vedic-pattern opacity-5" />
         <StarField />
 
@@ -530,20 +627,20 @@ export default function AstrologyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-saffron font-medium text-sm uppercase tracking-widest mb-3 block">
+              <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
                 Auspicious Timing
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl text-text mb-6">
                 Muhurat — The Power of Right Timing
               </h2>
-              <p className="text-white/70 leading-relaxed mb-6">
+              <p className="text-muted leading-relaxed mb-6">
                 In Vedic tradition, the timing of an event determines its outcome. A Muhurat 
                 is the selection of the most auspicious moment — when planetary alignments 
-                support success, harmony, and divine blessings for your endeavor.
+                support success, harmony and divine blessings for your endeavor.
               </p>
-              <p className="text-white/60 leading-relaxed mb-8">
-                Whether it&apos;s a wedding, business launch, property purchase, or travel — 
-                the right Muhurat can mean the difference between struggle and effortless success.
+              <p className="text-muted/80 leading-relaxed mb-8">
+                Whether it&apos;s a wedding, business launch, property purchase or travel — 
+                the right Muhurat can make the difference between struggle and effortless success.
               </p>
 
               <div className="grid grid-cols-2 gap-3">
@@ -561,10 +658,10 @@ export default function AstrologyPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 py-2 rounded-lg"
+                    className="flex items-center gap-2 bg-gold/5 border border-gold/10 px-3 py-2 rounded-lg"
                   >
-                    <Star className="w-3 h-3 text-saffron shrink-0" />
-                    <span className="text-white/80 text-sm">{item}</span>
+                    <Star className="w-3 h-3 text-gold shrink-0" />
+                    <span className="text-text/80 text-sm">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -579,29 +676,27 @@ export default function AstrologyPage() {
               className="flex justify-center"
             >
               <div className="relative w-64 h-64 md:w-80 md:h-80">
-                {/* Panchang representation */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full border border-saffron/20"
+                  className="absolute inset-0 rounded-full border border-gold/20"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-6 rounded-full border border-white/10"
+                  className="absolute inset-6 rounded-full border border-gold/10"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <Calendar className="w-10 h-10 text-saffron/60 mx-auto mb-2" />
-                    <p className="text-white/80 font-serif font-semibold text-sm">शुभ मुहूर्त</p>
-                    <p className="text-white/40 text-xs mt-1">Auspicious Moment</p>
+                    <Calendar className="w-10 h-10 text-gold/60 mx-auto mb-2" />
+                    <p className="text-text/80 font-serif font-semibold text-sm">शुभ मुहूर्त</p>
+                    <p className="text-muted text-xs mt-1">Auspicious Moment</p>
                   </div>
                 </div>
-                {/* Time markers */}
                 {Array.from({ length: 12 }).map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-1 h-3 bg-saffron/30 rounded-full"
+                    className="absolute w-1 h-3 bg-gold/30 rounded-full"
                     style={{
                       top: `${50 - 48 * Math.cos((i * 30 * Math.PI) / 180)}%`,
                       left: `${50 + 48 * Math.sin((i * 30 * Math.PI) / 180)}%`,
@@ -615,98 +710,168 @@ export default function AstrologyPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 7. SERVICES CARDS ═══════════════════════ */}
-      <section id="services" className="py-16 md:py-24 bg-ivory relative overflow-hidden">
-        {/* Vedic astrology decorative background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[900px] border border-maroon/[0.04] rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[650px] md:h-[650px] border border-saffron/[0.05] rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[400px] md:h-[400px] border border-maroon/[0.03] rounded-full" />
-          <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 bg-saffron/20 rounded-full" />
-          <div className="absolute top-[70%] right-[20%] w-1 h-1 bg-maroon/15 rounded-full" />
-          <div className="absolute bottom-[25%] left-[25%] w-1 h-1 bg-saffron/15 rounded-full" />
-          <div className="absolute top-[35%] right-[10%] w-1.5 h-1.5 bg-maroon/10 rounded-full" />
-        </div>
+      {/* ═══════════════════════ 6. ALL 11 ASTROLOGY SERVICES ═══════════════════════ */}
+      <section id="services" className="py-16 md:py-24 bg-background relative overflow-hidden">
+        <div className="celestial-glow absolute inset-0 pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+              Our Offerings
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-3">
+              Astrology Consultation Services
+            </h2>
+            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto mb-4">
+              Comprehensive Vedic astrology services for every aspect of life
+            </p>
+            <div className="w-16 h-0.5 bg-gold mx-auto" />
+          </motion.div>
 
-        <div className="relative">
-          {/* Heading */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <span className="text-saffron-dark font-medium text-sm uppercase tracking-widest mb-3 block">
-                Our Offerings
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-maroon mb-3">
-                Astrology Consultation Services
-              </h2>
-              <p className="text-charcoal-light text-base md:text-lg max-w-2xl mx-auto mb-4">
-                Comprehensive Vedic astrology services for every aspect of life
-              </p>
-              <div className="w-16 h-0.5 bg-saffron mx-auto" />
-            </motion.div>
-          </div>
-
-          {/* Auto-scrolling carousel */}
-          <div className="overflow-hidden">
-            <div className="zodiac-ticker-track flex gap-5 py-2" style={{ animationDuration: "22s" }}>
-              {/* First set */}
-              {astrologyServices.map((service) => (
-                <div
-                  key={service.title}
-                  className="bg-white rounded-2xl border border-saffron/10 p-5 w-[270px] sm:w-[300px] md:w-[340px] shrink-0 flex flex-col hover:shadow-lg hover:border-saffron/30 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden"
-                >
-                  <div className="absolute -top-6 -right-6 w-24 h-24 border border-saffron/[0.06] rounded-full pointer-events-none" />
-                  <div className="absolute -top-3 -right-3 w-16 h-16 border border-maroon/[0.04] rounded-full pointer-events-none" />
-                  <div className="relative w-11 h-11 bg-maroon/10 group-hover:bg-maroon rounded-xl flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-105">
-                    <service.icon className="w-5 h-5 text-maroon group-hover:text-white transition-colors duration-300" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {astrologyServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index % 3) * 0.1 }}
+              >
+                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col hover:border-gold/40 hover:shadow-lg transition-all duration-300 group">
+                  <div className="w-11 h-11 bg-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors duration-300">
+                    <service.icon className="w-5 h-5 text-gold" />
                   </div>
-                  <h3 className="font-serif text-base font-semibold text-maroon mb-1.5">{service.title}</h3>
-                  <p className="text-charcoal-light text-xs leading-relaxed flex-grow mb-3">{service.description}</p>
-                  <div className="flex items-center justify-between pt-3 border-t border-ivory-dark">
-                    <span className="text-[10px] text-charcoal-light bg-ivory-dark px-2 py-0.5 rounded-full flex items-center gap-1">
-                      <Clock className="w-2.5 h-2.5" />{service.duration}
-                    </span>
-                    <Link href="/contact" className="text-xs font-medium text-maroon hover:text-saffron-dark transition-colors">
-                      Consult Now →
-                    </Link>
-                  </div>
+                  <h3 className="font-serif text-base font-semibold text-gold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed flex-grow mb-4">
+                    {service.description}
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="text-xs font-medium text-gold/70 hover:text-gold transition-colors"
+                  >
+                    Consult Now →
+                  </Link>
                 </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {astrologyServices.map((service) => (
-                <div
-                  key={`dup-${service.title}`}
-                  aria-hidden="true"
-                  className="bg-white rounded-2xl border border-saffron/10 p-5 w-[270px] sm:w-[300px] md:w-[340px] shrink-0 flex flex-col hover:shadow-lg hover:border-saffron/30 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden"
-                >
-                  <div className="absolute -top-6 -right-6 w-24 h-24 border border-saffron/[0.06] rounded-full pointer-events-none" />
-                  <div className="absolute -top-3 -right-3 w-16 h-16 border border-maroon/[0.04] rounded-full pointer-events-none" />
-                  <div className="relative w-11 h-11 bg-maroon/10 group-hover:bg-maroon rounded-xl flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-105">
-                    <service.icon className="w-5 h-5 text-maroon group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <h3 className="font-serif text-base font-semibold text-maroon mb-1.5">{service.title}</h3>
-                  <p className="text-charcoal-light text-xs leading-relaxed flex-grow mb-3">{service.description}</p>
-                  <div className="flex items-center justify-between pt-3 border-t border-ivory-dark">
-                    <span className="text-[10px] text-charcoal-light bg-ivory-dark px-2 py-0.5 rounded-full flex items-center gap-1">
-                      <Clock className="w-2.5 h-2.5" />{service.duration}
-                    </span>
-                    <Link href="/contact" className="text-xs font-medium text-maroon hover:text-saffron-dark transition-colors">
-                      Consult Now →
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════ 8. WHY CHOOSE US ═══════════════════════ */}
-      <section className="py-20 md:py-28">
+      {/* ═══════════════════════ 7. VAASTU SECTION ═══════════════════════ */}
+      <section className="py-16 md:py-24 bg-secondary/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+              Space Harmony
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-3">
+              Vaastu Shastra Services
+            </h2>
+            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto mb-4">
+              Harmonize your living and working spaces with the five elements of nature
+            </p>
+            <div className="w-16 h-0.5 bg-gold mx-auto" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {vaastuServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index % 3) * 0.1 }}
+              >
+                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col hover:border-gold/40 hover:shadow-lg transition-all duration-300 group">
+                  <div className="w-11 h-11 bg-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors duration-300">
+                    <service.icon className="w-5 h-5 text-gold" />
+                  </div>
+                  <h3 className="font-serif text-base font-semibold text-gold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed flex-grow mb-4">
+                    {service.description}
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="text-xs font-medium text-gold/70 hover:text-gold transition-colors"
+                  >
+                    Consult Now →
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ 8. NUMEROLOGY SECTION ═══════════════════════ */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+              Number Wisdom
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-3">
+              Numerology Services
+            </h2>
+            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto mb-4">
+              Unlock the power of numbers with Hebrew Pyramid Numerology and Vedic-aligned guidance
+            </p>
+            <div className="w-16 h-0.5 bg-gold mx-auto" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {numerologyServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index % 3) * 0.1 }}
+              >
+                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col hover:border-gold/40 hover:shadow-lg transition-all duration-300 group">
+                  <div className="w-11 h-11 bg-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors duration-300">
+                    <service.icon className="w-5 h-5 text-gold" />
+                  </div>
+                  <h3 className="font-serif text-base font-semibold text-gold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed flex-grow mb-4">
+                    {service.description}
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="text-xs font-medium text-gold/70 hover:text-gold transition-colors"
+                  >
+                    Consult Now →
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ 9. WHY CHOOSE US ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -714,11 +879,11 @@ export default function AstrologyPage() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="text-saffron-dark font-medium text-sm uppercase tracking-widest mb-3 block">
-              Trust & Expertise
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+              Trust &amp; Expertise
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-maroon mb-4">
-              Why Choose Our Guidance
+            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-4">
+              Why Choose R. Anand&apos;s Guidance
             </h2>
           </motion.div>
 
@@ -732,15 +897,13 @@ export default function AstrologyPage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-saffron/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-7 h-7 text-saffron-dark" />
+                <div className="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-7 h-7 text-gold" />
                 </div>
-                <h3 className="font-serif text-base font-semibold text-maroon mb-2">
+                <h3 className="font-serif text-base font-semibold text-gold mb-2">
                   {item.title}
                 </h3>
-                <p className="text-charcoal-light text-sm leading-relaxed">
-                  {item.description}
-                </p>
+                <p className="text-muted text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -748,21 +911,21 @@ export default function AstrologyPage() {
       </section>
 
       {/* ═══════════════════════ FINAL CTA ═══════════════════════ */}
-      <section className="py-14 md:py-18 bg-[#0D0A1A] relative overflow-hidden">
+      <section className="py-14 md:py-20 bg-background relative overflow-hidden">
         <StarField />
-        <div className="absolute inset-0 bg-gradient-to-t from-maroon-dark/50 to-transparent" />
+        <div className="absolute inset-0 celestial-glow pointer-events-none" />
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Sparkles className="w-8 h-8 text-saffron mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <Sparkles className="w-8 h-8 text-gold mx-auto mb-4" />
+            <h2 className="font-serif text-3xl md:text-4xl text-text mb-4">
               The Stars Have a Message for You
             </h2>
-            <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
               Don&apos;t let uncertainty guide your decisions. Let ancient Vedic wisdom 
               illuminate the path meant for you.
             </p>
@@ -777,10 +940,10 @@ export default function AstrologyPage() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white/10"
+                  className="border-gold/30 text-text hover:bg-gold/10"
                 >
                   <Phone className="w-5 h-5" />
-                  Speak to an Astrologer
+                  Speak to R. Anand
                 </Button>
               </Link>
             </div>
