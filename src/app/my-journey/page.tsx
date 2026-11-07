@@ -21,40 +21,40 @@ import { PageTransition } from "@/components/layout/page-transition";
 
 const timeline = [
   {
-    title: "Pashupatinath Devasthan, Nepal",
+    title: "Early Learning from Grandfather",
     description:
-      "I have conducted various types of yagas and havans at the Pashupatinath Devasthan in Nepal. These included rituals such as Rugveda Yaga, Laghu Rudra Havan, Shata Chandi Havan, Ganapathi Homa, Sudharshana Yagam, and Chandi Havana.",
-    highlight: "International Vedic rituals",
+      "My journey into Vedic wisdom began at home, under the guidance of my grandfather — a dedicated practitioner of the Krishna Yajurveda tradition. This early exposure instilled in me a deep reverence for authentic Vedic rituals and the spiritual sciences of Jyotisha.",
+    highlight: "Roots in Vedic tradition",
   },
   {
-    title: "Kashi Varanasi Temple",
+    title: "Academic Excellence — MA in Astrology",
     description:
-      "I have had the privilege of visiting and performing Pooja and abhisheka, such as Rudrabhishek to Lord Shiva and Ganga Pooja, at the renowned and illustrious Kashi Varanasi Temple.",
-    highlight: "Rudrabhishek & Ganga Pooja",
+      "After completing my B.Sc. and MBA (Marketing), I pursued a formal MA in Astrology and a PG Diploma in Jyothir Vaastu. These qualifications gave me a rigorous scientific and classical framework for understanding the ancient sciences of Jyotisha and Vaastu.",
+    highlight: "MA Astrology · PG Jyothir Vaastu",
   },
   {
-    title: "Karnataka — Prominent Personalities",
+    title: "Hebrew Pyramid Numerology Practice",
     description:
-      "At the residence of MLA Gopalaiah in Kamakshipalya, a Navagraha Pooja and Havan were conducted. In Huliyurdurga, Tumkur, a Shata Chandi Yaga was organized at the Vidya Chowdeshwari Temple.",
-    highlight: "Trusted by leaders",
+      "Over 15 years of dedicated practice in Hebrew Pyramid Numerology has enabled me to provide powerful name corrections, baby naming consultations, and marriage date numerology guidance — complementing my astrological work with another dimension of Vedic numerological science.",
+    highlight: "15 years numerology practice",
   },
   {
-    title: "Bhudihala, Tumkur & Karnataka Media",
+    title: "Jyothir Vaastu Specialisation",
     description:
-      "At Bhudihala, Tumkur, I participated in sacred Ayuta Chandi Yaga and other rituals with nearly 3,000 Pandits, dedicated to Mahakali, Mahalaxmi, and Chandika Durga Parameswari. I have also conducted Homa, Yaga, Pooja, Land Pooja, and Griha Pravesh ceremonies for prominent personalities in Karnataka, with coverage by Kannada media.",
-    highlight: "3,000+ Pandits gathering",
+      "My PG Diploma in Jyothir Vaastu deepened my ability to integrate Vedic astrology with spatial science. I now offer comprehensive Vaastu consultations for homes, offices, and commercial properties — blending the planetary science of Jyotisha with directional harmonics.",
+    highlight: "Residential & commercial Vaastu",
   },
   {
-    title: "Dakshin Kashi Gokarna & Mysore",
+    title: "PhD Research in Astrology (Ongoing)",
     description:
-      "In revered locations like Dakshin Kashi Gokarna and Mysore Talakaveri Kshetra Shrirangapattana, I conduct Moksh Narayan Bali, Tripindi Shradha, Sarva Prayaschitta, and Tila Homa, each performed with utmost devotion and precision.",
-    highlight: "Sacred Kshetra rituals",
+      "Pursuing a PhD in Astrology reflects my commitment to advancing this sacred science beyond mere practice. My research explores the intersections of classical Jyotisha texts with contemporary applications — contributing to the scholarly understanding of Vedic wisdom.",
+    highlight: "PhD in Astrology — Ongoing",
   },
   {
-    title: "Film Director Shrikant Sharma, Bengaluru",
+    title: "Serving Families Across South India",
     description:
-      "I had the privilege of conducting sacred Yagas and Poojas for renowned film director Shrikant Sharma in Kanakapura, Bengaluru. These included Ganapati Pratishthapana and consecration ceremonies for Lord Shiva, Subramanya, and Durga, along with special Homas and rituals during various occasions.",
-    highlight: "Celebrity ceremonies",
+      "Over 10 years of performing Pooja and Homa rituals for thousands of families across Karnataka and South India has been a deeply fulfilling spiritual journey. Each ceremony is an opportunity to connect individuals with the divine grace of our ancient Vedic tradition.",
+    highlight: "Thousands of families blessed",
   },
 ];
 
@@ -63,7 +63,7 @@ const values = [
     icon: BookOpen,
     title: "Tradition",
     description:
-      "Every ritual follows the exact procedures laid down in ancient Vedic scriptures. We never take shortcuts or compromise on authenticity.",
+      "Every ritual follows the exact procedures of the Krishna Yajurveda tradition. Authenticity is never compromised.",
     sanskrit: "परम्परा",
   },
   {
@@ -77,25 +77,25 @@ const values = [
     icon: Flame,
     title: "Devotion",
     description:
-      "Bhakti drives everything we do. Each ceremony is performed not as a service, but as an offering to the divine.",
+      "Bhakti drives everything. Each ceremony is performed not as a service, but as an offering to the divine.",
     sanskrit: "भक्ति",
   },
   {
     icon: Heart,
     title: "Authenticity",
     description:
-      "No modern dilutions. No theatrical performances. Just pure, authentic Vedic rituals as they were meant to be experienced.",
+      "No modern dilutions. Pure, authentic Vedic rituals and astrological guidance as the ancients intended.",
     sanskrit: "प्रामाणिकता",
   },
 ];
 
 const experienceStats = [
-  { value: "28+", label: "Years of Vedic Learning", icon: BookOpen },
-  { value: "10,000+", label: "Ceremonies Performed", icon: Calendar },
-  { value: "50+", label: "Experienced Pandits", icon: Users },
-  { value: "15+", label: "Types of Rituals", icon: Star },
-  { value: "5,000+", label: "Families Served", icon: Heart },
-  { value: "4.9/5", label: "Devotee Rating", icon: Award },
+  { value: "15+", label: "Years Astrology Practice", icon: Star },
+  { value: "10+", label: "Years Pooja Experience", icon: Calendar },
+  { value: "3", label: "Academic Degrees", icon: Award },
+  { value: "5", label: "Languages", icon: Users },
+  { value: "KY", label: "Krishna Yajurveda", icon: BookOpen },
+  { value: "PhD", label: "Research in Astrology", icon: Heart },
 ];
 
 const photoStory: { title: string; aspect: string; image: string }[] = [
@@ -112,8 +112,11 @@ export default function MyJourneyPage() {
       {/* ═══════════════════════ 1. HERO ═══════════════════════ */}
       <section className="relative min-h-[520px] md:min-h-[560px] flex items-center overflow-hidden">
         {/* Dark Background Base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0f14] via-charcoal to-[#1a0f14]" />
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary to-background" />
+
+        {/* Celestial glow */}
+        <div className="absolute inset-0 celestial-glow" />
+
         {/* Subtle Vedic Pattern */}
         <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
 
@@ -121,18 +124,18 @@ export default function MyJourneyPage() {
         <div className="absolute top-0 right-0 bottom-0 w-[45%] lg:w-[40%] hidden md:block">
           <img
             src="/images/pandit-manoj.jpg"
-            alt="Dattatreya Bhat Bhadti"
+            alt="R. Anand — Purohit and Vedic Astrologer"
             className="w-full h-full object-cover object-top"
             style={{ objectPosition: "center 20%" }}
           />
-          {/* Left fade — blends image into dark background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a0f14] via-[#1a0f14]/70 to-transparent" />
+          {/* Left fade */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
           {/* Bottom fade */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a0f14] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           {/* Top fade */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f14]/40 via-transparent to-transparent" />
-          {/* Warm maroon atmospheric tint */}
-          <div className="absolute inset-0 bg-maroon/10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-transparent" />
+          {/* Gold atmospheric tint */}
+          <div className="absolute inset-0 bg-gold/5" />
         </div>
 
         {/* Mobile: Pandit as subtle background */}
@@ -141,9 +144,9 @@ export default function MyJourneyPage() {
             src="/images/pandit-manoj.jpg"
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-cover object-top opacity-30"
+            className="w-full h-full object-cover object-top opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a0f14] via-[#1a0f14]/80 to-[#1a0f14]/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60" />
         </div>
 
         {/* Hero Content — Left Side */}
@@ -159,34 +162,34 @@ export default function MyJourneyPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="inline-flex items-center gap-2 bg-saffron/15 backdrop-blur-sm border border-saffron/25 px-5 py-2 rounded-full mb-6"
+              className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm border border-gold/25 px-5 py-2 rounded-full mb-6"
             >
-              <Sparkles className="w-4 h-4 text-saffron" />
-              <span className="text-sm font-semibold text-white">Dattatreya Bhat Bhadti</span>
+              <Sparkles className="w-4 h-4 text-gold" />
+              <span className="text-sm font-semibold text-gold">R. Anand</span>
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-text leading-[1.1] mb-5">
               My Journey
             </h1>
-            <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-md">
-              A journey rooted in devotion, tradition and Vedic knowledge — 
-              spanning decades of spiritual service to thousands of families.
+            <p className="text-base md:text-lg text-text/75 leading-relaxed max-w-md">
+              A journey rooted in devotion, Vedic wisdom, and 15 years of astrological and
+              purohit service to thousands of families across South India.
             </p>
 
             {/* Languages */}
-            <p className="text-sm text-saffron/80 mt-4">
-              <span className="text-white/60 font-medium">Languages Known:</span>{" "}
-              Kannada, Marathi, Hindi, English, Goa-Konkani, Tamil, Telugu, Tulu, Karwar Konkani
+            <p className="text-sm text-gold/80 mt-4">
+              <span className="text-text/60 font-medium">Languages:</span>{" "}
+              Telugu, Tamil, Kannada, Hindi, English
             </p>
 
             {/* Scroll indicator */}
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="mt-10 flex items-center gap-2 text-white/40"
+              className="mt-10 flex items-center gap-2 text-text/30"
             >
-              <div className="w-5 h-8 border border-white/30 rounded-full flex justify-center pt-1.5">
-                <div className="w-1 h-2 bg-white/50 rounded-full" />
+              <div className="w-5 h-8 border border-text/20 rounded-full flex justify-center pt-1.5">
+                <div className="w-1 h-2 bg-text/40 rounded-full" />
               </div>
               <span className="text-xs">Scroll to explore</span>
             </motion.div>
@@ -195,7 +198,7 @@ export default function MyJourneyPage() {
       </section>
 
       {/* ═══════════════════════ 2. PERSONAL STORY ═══════════════════════ */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
             {/* Portrait — 2 columns */}
@@ -206,19 +209,19 @@ export default function MyJourneyPage() {
               transition={{ duration: 0.7 }}
               className="relative lg:col-span-2"
             >
-              <div className="relative aspect-[3/4] max-h-[500px] rounded-2xl overflow-hidden">
+              <div className="relative aspect-[3/4] max-h-[500px] rounded-2xl overflow-hidden border border-gold/20">
                 <img
                   src="/images/pandit-story.jpg"
-                  alt="Dattatreya Bhat Bhadti performing pooja"
+                  alt="R. Anand performing Vedic ceremony"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
               {/* Decorative frame */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-saffron/30 rounded-2xl -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold/20 rounded-2xl -z-10" />
               {/* Experience badge */}
-              <div className="absolute -bottom-6 -left-4 md:-left-6 bg-maroon text-white px-5 py-3 rounded-xl shadow-xl">
-                <p className="text-2xl font-bold">10+</p>
-                <p className="text-xs text-white/70">Years of Devotion</p>
+              <div className="absolute -bottom-6 -left-4 md:-left-6 bg-gold text-background px-5 py-3 rounded-xl shadow-xl">
+                <p className="text-2xl font-bold">15+</p>
+                <p className="text-xs text-background/70">Years of Practice</p>
               </div>
             </motion.div>
 
@@ -230,39 +233,41 @@ export default function MyJourneyPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="lg:col-span-3"
             >
-              <span className="text-saffron-dark font-medium text-sm uppercase tracking-widest mb-3 block">
+              <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
                 The Story Behind the Mission
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-maroon mb-5 leading-tight">
-                From 10+ Years of Devotion to a Trusted Purohit
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gold mb-5 leading-tight">
+                From Vedic Roots to Trusted Astrologer &amp; Purohit
               </h2>
-              <div className="space-y-4 text-charcoal leading-[1.75] text-[15px]">
+              <div className="space-y-4 text-text/80 leading-[1.75] text-[15px]">
                 <p>
-                  I have over 10 years of experience in performing Pooja, Homa, and Havan, 
-                  with a deep connection to the sacred traditions of Gokarna. I have been 
-                  performing these rituals daily at the renowned Gokarna Mahabaleshwaram Temple, 
-                  known as South Kashi, following authentic Vedic practices with devotion and sincerity.
+                  My journey into Vedic wisdom began under the guidance of my grandfather, 
+                  a dedicated practitioner of the sacred Krishna Yajurveda tradition. Those 
+                  early years instilled in me an unshakeable reverence for authentic Vedic 
+                  science — both the ritualistic and the astrological dimensions.
                 </p>
                 <p>
-                  My journey as a Purohit has been shaped by Vedic knowledge, spiritual discipline, 
-                  and years of dedicated practice. With every ceremony, I strive to preserve the 
-                  sanctity of our ancient traditions while making the experience meaningful and 
-                  accessible for every devotee.
+                  Over 15 years of practice in Vedic Astrology, KP System Astrology, 
+                  Jyothir Vaastu, and Hebrew Pyramid Numerology, alongside 10+ years of 
+                  performing sacred Pooja and Homa rituals for thousands of families, have 
+                  shaped my deep understanding of how Vedic wisdom transforms lives.
                 </p>
                 <p>
-                  Over the years, my journey has taken me beyond Gokarna, giving me the opportunity 
-                  to perform sacred rituals and ceremonies across different parts of India. These 
-                  experiences have enriched my knowledge of diverse Vedic traditions and strengthened 
-                  my commitment to serving devotees with sincerity.
+                  My academic qualifications — B.Sc., MBA (Marketing), MA (Astrology), 
+                  PG Diploma in Jyothir Vaastu, and ongoing PhD research in Astrology — 
+                  reflect my belief that authentic Vedic science deserves both devoted 
+                  practice and scholarly rigour. I serve families across Karnataka and 
+                  South India with the same devotion I learned from my grandfather.
                 </p>
               </div>
 
               {/* Highlighted Quote */}
-              <div className="mt-7 bg-ivory border-l-[3px] border-saffron rounded-r-lg px-5 py-4">
-                <p className="text-maroon font-serif italic text-base md:text-[17px] leading-relaxed">
-                  <span className="text-saffron text-xl not-italic mr-1">✦</span>
-                  &ldquo;My purpose is simple — to preserve our sacred traditions and help every 
-                  devotee experience them with faith, authenticity, and devotion.&rdquo;
+              <div className="mt-7 bg-gold/5 border-l-[3px] border-gold rounded-r-lg px-5 py-4">
+                <p className="text-gold font-serif italic text-base md:text-[17px] leading-relaxed">
+                  <span className="text-gold text-xl not-italic mr-1">✦</span>
+                  &ldquo;Vedic wisdom is not a relic of the past — it is a living science that 
+                  continues to guide, heal, and illuminate the lives of those who seek it 
+                  with sincerity and faith.&rdquo;
                 </p>
               </div>
             </motion.div>
@@ -270,10 +275,45 @@ export default function MyJourneyPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 3. JOURNEY TIMELINE ═══════════════════════ */}
-      <section className="py-20 md:py-32 bg-ivory-dark relative overflow-hidden">
+      {/* ═══════════════════════ 3. EXPERIENCE STATS ═══════════════════════ */}
+      <section className="py-14 md:py-20 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-2">
+              Experience &amp; Qualifications
+            </h2>
+            <p className="text-muted text-sm">A legacy of learning, practice, and devotion</p>
+          </motion.div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {experienceStats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="glass-panel gold-border rounded-xl p-4 text-center"
+              >
+                <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <stat.icon className="w-5 h-5 text-gold" />
+                </div>
+                <p className="text-xl font-bold text-text">{stat.value}</p>
+                <p className="text-xs text-muted mt-0.5 leading-tight">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ 4. JOURNEY TIMELINE ═══════════════════════ */}
+      <section className="py-20 md:py-32 bg-secondary/20 relative overflow-hidden">
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 vedic-pattern opacity-30" />
+        <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
@@ -283,10 +323,10 @@ export default function MyJourneyPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-saffron-dark font-medium text-sm uppercase tracking-widest mb-3 block">
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
               The Path of Devotion
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-maroon">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gold">
               My Journey Through the Years
             </h2>
           </motion.div>
@@ -294,7 +334,7 @@ export default function MyJourneyPage() {
           {/* Timeline */}
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-maroon/40 via-saffron/40 to-maroon/40" />
+            <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-gold/0 via-gold/30 to-gold/0" />
 
             {timeline.map((item, index) => (
               <motion.div
@@ -311,7 +351,7 @@ export default function MyJourneyPage() {
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10">
-                  <div className="w-4 h-4 bg-saffron rounded-full border-4 border-ivory-dark shadow-md" />
+                  <div className="w-4 h-4 bg-gold rounded-full border-4 border-secondary shadow-md" />
                 </div>
 
                 {/* Content Card */}
@@ -320,14 +360,14 @@ export default function MyJourneyPage() {
                     index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"
                   }`}
                 >
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-ivory-dark hover:shadow-md transition-shadow duration-300">
-                    <h3 className="font-serif text-xl font-semibold text-maroon mb-2">
+                  <div className="glass-panel border border-gold/20 hover:border-gold/40 rounded-xl p-6 transition-colors duration-300">
+                    <h3 className="font-serif text-xl font-semibold text-gold mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-charcoal-light text-sm leading-relaxed mb-3">
+                    <p className="text-muted text-sm leading-relaxed mb-3">
                       {item.description}
                     </p>
-                    <p className="text-saffron-dark text-xs font-semibold flex items-center gap-1.5 md:justify-end">
+                    <p className="text-gold text-xs font-semibold flex items-center gap-1.5 md:justify-end">
                       <Star className="w-3 h-3" />
                       {item.highlight}
                     </p>
@@ -342,14 +382,15 @@ export default function MyJourneyPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 4. VALUES ═══════════════════════ */}
-      <section className="py-20 md:py-32 bg-maroon relative overflow-hidden">
-        <div className="absolute inset-0 vedic-pattern opacity-5" />
+      {/* ═══════════════════════ 5. VALUES ═══════════════════════ */}
+      <section className="py-20 md:py-32 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 celestial-glow" />
+        <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
         {/* Decorative */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-40 -right-40 w-80 h-80 border border-saffron/10 rounded-full"
+          className="absolute -top-40 -right-40 w-80 h-80 border border-gold/10 rounded-full"
         />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -360,14 +401,14 @@ export default function MyJourneyPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-saffron font-medium text-sm uppercase tracking-widest mb-3 block">
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
               Our Foundation
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-text mb-4">
               Values We Live By
             </h2>
-            <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
-              These four pillars guide every ceremony, every interaction, and every moment of our service.
+            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto">
+              These four pillars guide every ceremony, every consultation, and every interaction.
             </p>
           </motion.div>
 
@@ -381,21 +422,21 @@ export default function MyJourneyPage() {
                 transition={{ delay: index * 0.12 }}
                 className="group"
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center h-full hover:bg-white/10 transition-all duration-300">
+                <div className="bg-gold/5 backdrop-blur-sm border border-gold/15 rounded-2xl p-6 text-center h-full hover:bg-gold/10 hover:border-gold/30 transition-all duration-300">
                   {/* Sanskrit */}
-                  <p className="text-saffron/60 text-2xl font-bold mb-3">
+                  <p className="text-gold/60 text-2xl font-bold mb-3">
                     {value.sanskrit}
                   </p>
 
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-saffron/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-saffron/30 transition-colors duration-300">
-                    <value.icon className="w-6 h-6 text-saffron" />
+                  <div className="w-14 h-14 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gold/30 transition-colors duration-300">
+                    <value.icon className="w-6 h-6 text-gold" />
                   </div>
 
-                  <h3 className="font-serif text-lg font-semibold text-white mb-2">
+                  <h3 className="font-serif text-lg font-semibold text-text mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -406,7 +447,7 @@ export default function MyJourneyPage() {
       </section>
 
       {/* ═══════════════════════ 6. PHOTO STORY ═══════════════════════ */}
-      <section className="py-16 md:py-20 bg-charcoal">
+      <section className="py-16 md:py-20 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
           <motion.div
@@ -415,20 +456,17 @@ export default function MyJourneyPage() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <span className="text-saffron font-medium text-sm uppercase tracking-widest mb-3 block">
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
               Visual Story
             </span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-text mb-3">
               Moments of Devotion
             </h2>
-            <p className="text-white/60 text-sm md:text-base max-w-xl mx-auto">
+            <p className="text-muted text-sm md:text-base max-w-xl mx-auto">
               A glimpse into the daily life of spiritual service and sacred ceremonies.
             </p>
           </motion.div>
 
-          {/* Masonry Gallery — manual column distribution for true masonry */}
-          {/* Desktop: 4 cols | Laptop: 3 cols | Tablet: 2 cols | Mobile: 1 col */}
-          
           {/* Mobile: single column */}
           <div className="flex flex-col gap-3 sm:hidden">
             {photoStory.map((photo, index) => (
@@ -440,11 +478,11 @@ export default function MyJourneyPage() {
                 transition={{ delay: index * 0.05, duration: 0.4 }}
                 className="group"
               >
-                <div className="relative rounded-lg overflow-hidden cursor-pointer">
+                <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
                   <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-xs font-medium">{photo.title}</p>
+                    <p className="text-text text-xs font-medium">{photo.title}</p>
                   </div>
                 </div>
               </motion.div>
@@ -456,10 +494,10 @@ export default function MyJourneyPage() {
             <div className="flex flex-col gap-3">
               {photoStory.filter((_, i) => i % 2 === 0).map((photo, index) => (
                 <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer">
+                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
                     <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-white text-xs font-medium">{photo.title}</p></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
                   </div>
                 </motion.div>
               ))}
@@ -467,10 +505,10 @@ export default function MyJourneyPage() {
             <div className="flex flex-col gap-3">
               {photoStory.filter((_, i) => i % 2 === 1).map((photo, index) => (
                 <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 + 0.05, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer">
+                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
                     <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-white text-xs font-medium">{photo.title}</p></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
                   </div>
                 </motion.div>
               ))}
@@ -482,10 +520,10 @@ export default function MyJourneyPage() {
             <div className="flex flex-col gap-4">
               {photoStory.filter((_, i) => i % 4 === 0).map((photo, index) => (
                 <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer">
+                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
                     <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-white text-xs font-medium">{photo.title}</p></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
                   </div>
                 </motion.div>
               ))}
@@ -493,10 +531,10 @@ export default function MyJourneyPage() {
             <div className="flex flex-col gap-4">
               {photoStory.filter((_, i) => i % 4 === 1).map((photo, index) => (
                 <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 + 0.05, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer">
+                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
                     <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-white text-xs font-medium">{photo.title}</p></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
                   </div>
                 </motion.div>
               ))}
@@ -504,10 +542,10 @@ export default function MyJourneyPage() {
             <div className="flex flex-col gap-4">
               {photoStory.filter((_, i) => i % 4 === 2).map((photo, index) => (
                 <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 + 0.1, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer">
+                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
                     <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-white text-xs font-medium">{photo.title}</p></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
                   </div>
                 </motion.div>
               ))}
@@ -515,10 +553,10 @@ export default function MyJourneyPage() {
             <div className="flex flex-col gap-4 hidden xl:flex">
               {photoStory.filter((_, i) => i % 4 === 3).map((photo, index) => (
                 <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 + 0.15, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer">
+                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
                     <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-white text-xs font-medium">{photo.title}</p></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
                   </div>
                 </motion.div>
               ))}
@@ -528,11 +566,9 @@ export default function MyJourneyPage() {
       </section>
 
       {/* ═══════════════════════ 7. FINAL CTA ═══════════════════════ */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-[url('/images/cta-bg.webp')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-maroon/90" />
-        <div className="absolute inset-0 vedic-pattern opacity-10" />
+      <section className="py-24 md:py-32 relative overflow-hidden bg-primary">
+        <div className="absolute inset-0 celestial-glow" />
+        <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -542,22 +578,22 @@ export default function MyJourneyPage() {
             transition={{ duration: 0.7 }}
           >
             {/* Decorative Om */}
-            <div className="w-16 h-16 bg-saffron/20 rounded-full flex items-center justify-center mx-auto mb-8">
-              <span className="text-saffron text-3xl font-serif">ॐ</span>
+            <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-8">
+              <span className="text-gold text-3xl font-serif">ॐ</span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-              Looking for an Experienced Pandit?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-text mb-4 leading-tight">
+              Connect with R. Anand
             </h2>
-            <p className="text-white/70 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-              Let us bring the same devotion, authenticity, and Vedic knowledge 
-              to your sacred ceremony. Book a consultation today.
+            <p className="text-muted text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+              Whether you seek astrological guidance, Vedic ceremony services, or Vaastu 
+              consultation — R. Anand brings 15 years of authentic practice to your service.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/talk-to-us">
                 <Button variant="gold" size="lg">
-                  Book a Pandit
+                  Book a Consultation
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
@@ -565,9 +601,8 @@ export default function MyJourneyPage() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-white/50 text-white hover:bg-white hover:text-maroon"
                 >
-                  Explore Our Services
+                  Explore Pooja Services
                 </Button>
               </Link>
             </div>

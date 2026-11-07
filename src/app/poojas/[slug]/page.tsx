@@ -24,24 +24,26 @@ import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { PageTransition } from "@/components/layout/page-transition";
 import { getPujaBySlug, PUJA_SERVICES } from "@/lib/puja-data";
-import { WHATSAPP_LINK } from "@/lib/constants";
+import { WHATSAPP_LINK, BRAND } from "@/lib/constants";
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-ivory-dark rounded-xl overflow-hidden bg-white">
+    <div className="border border-gold/20 rounded-xl overflow-hidden bg-secondary">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-5 text-left hover:bg-ivory/50 transition-colors"
+        className={`w-full flex items-center justify-between p-5 text-left transition-colors ${
+          isOpen ? "bg-primary/80" : "hover:bg-gold/5"
+        }`}
       >
-        <h3 className="font-serif font-semibold text-maroon text-base pr-4">
+        <h3 className="font-serif font-semibold text-gold text-base pr-4">
           {question}
         </h3>
         {isOpen ? (
-          <ChevronUp className="w-5 h-5 text-maroon shrink-0" />
+          <ChevronUp className="w-5 h-5 text-gold shrink-0" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-charcoal-light shrink-0" />
+          <ChevronDown className="w-5 h-5 text-muted shrink-0" />
         )}
       </button>
       {isOpen && (
@@ -51,7 +53,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           transition={{ duration: 0.3 }}
           className="px-5 pb-5"
         >
-          <p className="text-charcoal-light text-sm leading-relaxed">{answer}</p>
+          <p className="text-muted text-sm leading-relaxed">{answer}</p>
         </motion.div>
       )}
     </div>
@@ -66,14 +68,14 @@ export default function PujaDetailPage() {
   if (!puja) {
     return (
       <PageTransition>
-        <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="min-h-[60vh] flex items-center justify-center bg-background">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-maroon mb-4">Pooja Not Found</h1>
-            <p className="text-charcoal-light mb-6">
+            <h1 className="text-3xl font-bold text-gold mb-4">Pooja Not Found</h1>
+            <p className="text-muted mb-6">
               The pooja you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
             <Link href="/services">
-              <Button variant="primary">
+              <Button variant="gold">
                 <ArrowLeft className="w-4 h-4" />
                 Back to All Services
               </Button>
@@ -89,13 +91,14 @@ export default function PujaDetailPage() {
       {/* ═══════════════════════ HERO ═══════════════════════ */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-maroon via-maroon-dark to-charcoal" />
-        <div className="absolute inset-0 vedic-pattern opacity-5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary to-background" />
+        <div className="absolute inset-0 celestial-glow" />
+        <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb
             items={[
-              { label: "All Puja Services", href: "/services" },
+              { label: "All Pooja Services", href: "/services" },
               { label: puja.title },
             ]}
             light
@@ -108,26 +111,26 @@ export default function PujaDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-1.5 bg-saffron/20 text-saffron text-sm font-medium px-3 py-1 rounded-full mb-4">
+              <span className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold text-sm font-medium px-3 py-1 rounded-full mb-4">
                 <BookOpen className="w-3.5 h-3.5" />
                 {puja.category}
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-text mb-4 leading-tight">
                 {puja.title}
               </h1>
-              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-text/70 text-base md:text-lg leading-relaxed mb-6">
                 {puja.shortDescription}
               </p>
 
               {/* Quick Info */}
               <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
-                  <Clock className="w-4 h-4 text-saffron" />
-                  <span className="text-white text-sm">{puja.duration}</span>
+                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-gold/20 px-3 py-2 rounded-lg">
+                  <Clock className="w-4 h-4 text-gold" />
+                  <span className="text-text text-sm">{puja.duration}</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
-                  <MapPin className="w-4 h-4 text-saffron" />
-                  <span className="text-white text-sm">Gokarna / Home</span>
+                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-gold/20 px-3 py-2 rounded-lg">
+                  <MapPin className="w-4 h-4 text-gold" />
+                  <span className="text-text text-sm">Karnataka &amp; South India</span>
                 </div>
               </div>
 
@@ -143,7 +146,7 @@ export default function PujaDetailPage() {
                   <Button
                     variant="secondary"
                     size="lg"
-                    className="border-white/40 text-white hover:bg-white hover:text-maroon"
+                    className="border-white/30 text-text hover:bg-[#25D366] hover:border-[#25D366]"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Ask on WhatsApp
@@ -152,17 +155,17 @@ export default function PujaDetailPage() {
               </div>
             </motion.div>
 
-            {/* Right: Image */}
+            {/* Right: Image placeholder */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-maroon/30 via-charcoal/20 to-saffron/10 border border-white/10">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10 border border-gold/20">
                 <div className="w-full h-full flex items-center justify-center">
-                  <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center">
-                    <BookOpen className="w-12 h-12 text-white/20" />
+                  <div className="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center">
+                    <BookOpen className="w-12 h-12 text-gold/30" />
                   </div>
                 </div>
               </div>
@@ -172,7 +175,7 @@ export default function PujaDetailPage() {
       </section>
 
       {/* ═══════════════════════ OVERVIEW ═══════════════════════ */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Main Content */}
@@ -182,20 +185,20 @@ export default function PujaDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-4">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-4">
                   About This Ceremony
                 </h2>
-                <p className="text-charcoal-light text-base leading-relaxed mb-8">
+                <p className="text-muted text-base leading-relaxed mb-8">
                   {puja.fullDescription}
                 </p>
 
                 {/* Suitable For */}
-                <div className="bg-saffron/10 border border-saffron/20 rounded-xl p-5 mb-8">
-                  <h3 className="font-serif font-semibold text-maroon text-base mb-2 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-saffron" />
+                <div className="bg-gold/5 border border-gold/20 rounded-xl p-5 mb-8">
+                  <h3 className="font-serif font-semibold text-gold text-base mb-2 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-gold" />
                     Suitable For
                   </h3>
-                  <p className="text-charcoal-light text-sm">{puja.suitableFor}</p>
+                  <p className="text-muted text-sm">{puja.suitableFor}</p>
                 </div>
               </motion.div>
 
@@ -206,7 +209,7 @@ export default function PujaDetailPage() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-6">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-6">
                   Benefits
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -217,10 +220,10 @@ export default function PujaDetailPage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 }}
-                      className="flex items-start gap-3 bg-ivory-dark rounded-lg p-3"
+                      className="flex items-start gap-3 bg-secondary rounded-lg p-3 border border-gold/10"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-saffron-dark shrink-0 mt-0.5" />
-                      <span className="text-charcoal text-sm">{benefit}</span>
+                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <span className="text-muted text-sm">{benefit}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -233,17 +236,17 @@ export default function PujaDetailPage() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-6">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-6">
                   What&apos;s Included
                 </h2>
-                <div className="bg-white rounded-xl border border-ivory-dark p-6">
+                <div className="glass-panel gold-border rounded-xl p-6">
                   <ul className="space-y-3">
                     {puja.includes.map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-maroon/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-maroon" />
+                        <div className="w-6 h-6 bg-gold/20 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
                         </div>
-                        <span className="text-charcoal text-sm">{item}</span>
+                        <span className="text-muted text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -257,11 +260,11 @@ export default function PujaDetailPage() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-6">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-6">
                   Ceremony Procedure
                 </h2>
                 <div className="relative">
-                  <div className="absolute left-4 top-3 bottom-3 w-px bg-saffron/30" />
+                  <div className="absolute left-4 top-3 bottom-3 w-px bg-gold/20" />
                   <div className="space-y-4">
                     {puja.procedure.map((step, index) => (
                       <motion.div
@@ -272,10 +275,10 @@ export default function PujaDetailPage() {
                         transition={{ delay: index * 0.05 }}
                         className="flex items-center gap-4 pl-0"
                       >
-                        <div className="w-8 h-8 bg-maroon text-white rounded-full flex items-center justify-center shrink-0 text-xs font-bold relative z-10">
+                        <div className="w-8 h-8 bg-gold text-background rounded-full flex items-center justify-center shrink-0 text-xs font-bold relative z-10">
                           {index + 1}
                         </div>
-                        <span className="text-charcoal text-sm">{step}</span>
+                        <span className="text-muted text-sm">{step}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -289,19 +292,19 @@ export default function PujaDetailPage() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-4">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-4">
                   Required Samagri
                 </h2>
-                <p className="text-charcoal-light text-sm mb-4">
+                <p className="text-muted text-sm mb-4">
                   All materials listed below are provided by us. You don&apos;t need to arrange anything separately.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {puja.samagri.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-2 bg-ivory-dark px-3 py-2 rounded-lg text-xs text-charcoal"
+                      className="flex items-center gap-2 bg-secondary/80 border border-gold/10 px-3 py-2 rounded-lg text-xs text-muted"
                     >
-                      <div className="w-1.5 h-1.5 bg-saffron rounded-full shrink-0" />
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
                       {item}
                     </div>
                   ))}
@@ -317,48 +320,48 @@ export default function PujaDetailPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl border border-ivory-dark p-6 shadow-sm"
+                  className="bg-secondary/60 backdrop-blur-sm rounded-2xl border border-gold/20 p-6"
                 >
-                  <h3 className="font-serif text-lg font-semibold text-maroon mb-4">
+                  <h3 className="font-serif text-lg font-semibold text-gold mb-4">
                     Book This Pooja
                   </h3>
 
-                  <p className="text-sm text-charcoal-light mb-5">
-                    All inclusive • No hidden charges
+                  <p className="text-sm text-muted mb-5">
+                    All inclusive · No hidden charges
                   </p>
 
                   {/* Details */}
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-charcoal-light flex items-center gap-2">
+                      <span className="text-muted flex items-center gap-2">
                         <Clock className="w-4 h-4" /> Duration
                       </span>
-                      <span className="text-charcoal font-medium">{puja.duration}</span>
+                      <span className="text-text font-medium">{puja.duration}</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-charcoal-light flex items-center gap-2">
+                      <span className="text-muted flex items-center gap-2">
                         <MapPin className="w-4 h-4" /> Location
                       </span>
-                      <span className="text-charcoal font-medium">Gokarna / Home</span>
+                      <span className="text-text font-medium">Karnataka &amp; South India</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-charcoal-light flex items-center gap-2">
+                      <span className="text-muted flex items-center gap-2">
                         <Users className="w-4 h-4" /> Participants
                       </span>
-                      <span className="text-charcoal font-medium">Family</span>
+                      <span className="text-text font-medium">Family</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-charcoal-light flex items-center gap-2">
+                      <span className="text-muted flex items-center gap-2">
                         <BookOpen className="w-4 h-4" /> Samagri
                       </span>
-                      <span className="text-charcoal font-medium">Included</span>
+                      <span className="text-text font-medium">Included</span>
                     </div>
                   </div>
 
                   {/* CTA Buttons */}
                   <div className="space-y-3">
                     <Link href="/talk-to-us" className="block">
-                      <Button variant="primary" size="lg" className="w-full">
+                      <Button variant="gold" size="lg" className="w-full">
                         Book Now
                         <ArrowRight className="w-4 h-4" />
                       </Button>
@@ -373,8 +376,8 @@ export default function PujaDetailPage() {
                       Enquire on WhatsApp
                     </a>
                     <a
-                      href="tel:+917899148582"
-                      className="flex items-center justify-center gap-2 border border-ivory-dark text-charcoal px-4 py-3 rounded-lg text-sm font-medium hover:border-maroon hover:text-maroon transition-all w-full"
+                      href={`tel:${BRAND.phone}`}
+                      className="flex items-center justify-center gap-2 border border-gold/30 text-muted px-4 py-3 rounded-lg text-sm font-medium hover:border-gold hover:text-gold transition-all w-full"
                     >
                       <Phone className="w-4 h-4" />
                       Call to Discuss
@@ -388,32 +391,32 @@ export default function PujaDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
-                  className="bg-white rounded-2xl border border-ivory-dark p-6 shadow-sm"
+                  className="bg-secondary/60 backdrop-blur-sm rounded-2xl border border-gold/20 p-6"
                 >
-                  <h3 className="font-serif text-base font-semibold text-maroon mb-4">
+                  <h3 className="font-serif text-base font-semibold text-gold mb-4">
                     Your Pandit
                   </h3>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 bg-maroon/10 rounded-full flex items-center justify-center">
-                      <Users className="w-6 h-6 text-maroon/40" />
+                    <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center border border-gold/20">
+                      <Users className="w-6 h-6 text-gold/40" />
                     </div>
                     <div>
-                      <p className="font-medium text-charcoal text-sm">Experienced Vedic Pandit</p>
-                      <p className="text-xs text-charcoal-light">15-25 years experience</p>
+                      <p className="font-medium text-text text-sm">R. Anand</p>
+                      <p className="text-xs text-muted">10+ years Pooja · 15 years Astrology</p>
                     </div>
                   </div>
-                  <div className="space-y-2 text-xs text-charcoal-light">
+                  <div className="space-y-2 text-xs text-muted">
                     <div className="flex items-center gap-2">
-                      <Star className="w-3.5 h-3.5 text-saffron fill-saffron" />
-                      <span>4.9/5 rating from devotees</span>
+                      <Star className="w-3.5 h-3.5 text-gold fill-gold" />
+                      <span>Highly rated by devotees</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-saffron-dark" />
-                      <span>Verified & traditionally trained</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                      <span>Traditionally trained — Krishna Yajurveda</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <BookOpen className="w-3.5 h-3.5 text-saffron-dark" />
-                      <span>Specializes in {puja.category}</span>
+                      <BookOpen className="w-3.5 h-3.5 text-gold" />
+                      <span>MA Astrology · PG Jyothir Vaastu</span>
                     </div>
                   </div>
                 </motion.div>
@@ -424,7 +427,7 @@ export default function PujaDetailPage() {
       </section>
 
       {/* ═══════════════════════ GALLERY ═══════════════════════ */}
-      <section className="py-16 md:py-20 bg-ivory-dark">
+      <section className="py-16 md:py-20 bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -432,11 +435,11 @@ export default function PujaDetailPage() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-2">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-2">
               Ceremony Gallery
             </h2>
-            <p className="text-charcoal-light">
-              Glimpses of {puja.title} performed by our pandits
+            <p className="text-muted">
+              Glimpses of {puja.title} performed by R. Anand
             </p>
           </motion.div>
 
@@ -448,9 +451,9 @@ export default function PujaDetailPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-maroon/10 via-ivory to-saffron/10 flex items-center justify-center group cursor-pointer"
+                className="aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10 border border-gold/10 flex items-center justify-center group cursor-pointer hover:border-gold/30 transition-colors"
               >
-                <Camera className="w-8 h-8 text-maroon/20 group-hover:scale-110 transition-transform" />
+                <Camera className="w-8 h-8 text-gold/20 group-hover:scale-110 transition-transform" />
               </motion.div>
             ))}
           </div>
@@ -458,7 +461,7 @@ export default function PujaDetailPage() {
       </section>
 
       {/* ═══════════════════════ FAQ ═══════════════════════ */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -466,10 +469,10 @@ export default function PujaDetailPage() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-2">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-2">
               Frequently Asked Questions
             </h2>
-            <p className="text-charcoal-light">
+            <p className="text-muted">
               Common questions about {puja.title}
             </p>
           </motion.div>
@@ -491,19 +494,20 @@ export default function PujaDetailPage() {
       </section>
 
       {/* ═══════════════════════ BOOKING CTA ═══════════════════════ */}
-      <section className="py-20 md:py-24 bg-maroon relative overflow-hidden">
-        <div className="absolute inset-0 vedic-pattern opacity-10" />
+      <section className="py-20 md:py-24 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 celestial-glow" />
+        <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-text mb-4">
               Ready to Book {puja.title}?
             </h2>
-            <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-              Our experienced pandit will perform this sacred ceremony with complete 
+            <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
+              R. Anand will perform this sacred ceremony with complete
               Vedic authenticity. Book now and experience divine blessings.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -517,7 +521,7 @@ export default function PujaDetailPage() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-white/50 text-white hover:bg-[#25D366] hover:border-[#25D366]"
+                  className="border-white/30 text-text hover:bg-[#25D366] hover:border-[#25D366]"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Talk to Us
@@ -529,7 +533,7 @@ export default function PujaDetailPage() {
       </section>
 
       {/* ═══════════════════════ OTHER SERVICES ═══════════════════════ */}
-      <section className="py-16 md:py-20 bg-ivory-dark">
+      <section className="py-16 md:py-20 bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -537,10 +541,10 @@ export default function PujaDetailPage() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-2">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-2">
               Other Popular Services
             </h2>
-            <p className="text-charcoal-light">
+            <p className="text-muted">
               Explore more sacred ceremonies
             </p>
           </motion.div>
@@ -557,19 +561,19 @@ export default function PujaDetailPage() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link href={`/poojas/${service.slug}`}>
-                    <div className="bg-white rounded-xl border border-ivory-dark p-5 hover:shadow-md transition-all duration-300 group">
+                    <div className="glass-panel rounded-xl border border-gold/20 p-5 hover:border-gold/40 transition-all duration-300 group">
                       <div className="flex items-start justify-between mb-2">
-                        <span className="text-xs font-medium text-saffron-dark bg-saffron/10 px-2 py-0.5 rounded-full">
+                        <span className="text-xs font-medium text-gold bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-full">
                           {service.category}
                         </span>
                       </div>
-                      <h3 className="font-serif text-base font-semibold text-maroon mb-1 group-hover:text-maroon-light transition-colors">
+                      <h3 className="font-serif text-base font-semibold text-gold mb-1 group-hover:text-gold-light transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-charcoal-light text-xs leading-relaxed line-clamp-2">
+                      <p className="text-muted text-xs leading-relaxed line-clamp-2">
                         {service.shortDescription}
                       </p>
-                      <div className="flex items-center gap-1 mt-3 text-xs font-medium text-saffron-dark group-hover:text-maroon transition-colors">
+                      <div className="flex items-center gap-1 mt-3 text-xs font-medium text-gold group-hover:text-gold-light transition-colors">
                         View Details <ArrowRight className="w-3 h-3" />
                       </div>
                     </div>
