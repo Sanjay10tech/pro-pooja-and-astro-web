@@ -444,13 +444,14 @@ export default function AstrologyPage() {
               transition={{ duration: 0.7 }}
               className="relative"
             >
-              <div className="max-w-sm mx-auto relative rounded-2xl overflow-hidden border border-gold/20 shadow-lg">
+              <div className="w-full max-w-xs mx-auto relative rounded-2xl overflow-hidden border border-gold/20 shadow-lg">
                 <Image
-                  src="/images/astrology-vedic.jpg"
-                  alt="Golden Vedic zodiac wheel surrounded by celestial constellations"
-                  width={740}
-                  height={1110}
-                  className="w-full h-auto block max-h-[380px] object-contain"
+                  src="/images/r-anand-astrology.jpg"
+                  alt="Celestial planetary artwork illustrating Vedic astrology"
+                  width={736}
+                  height={1308}
+                  sizes="(min-width: 640px) 320px, calc(100vw - 2rem)"
+                  className="w-full h-auto block object-contain object-center"
                 />
               </div>
             </motion.div>

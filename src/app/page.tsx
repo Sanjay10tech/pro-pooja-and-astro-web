@@ -17,6 +17,7 @@ import {
   Compass,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -568,11 +569,14 @@ export default function HomePage() {
               transition={{ duration: 0.7 }}
               className="flex justify-center"
             >
-              <div className="w-72 h-80 md:w-80 md:h-96 rounded-2xl bg-secondary border border-gold/30 flex items-center justify-center relative overflow-hidden">
-                <img
-                  src="/images/astrology-vedic.jpg"
-                  alt="R. Anand — Purohit & Vedic Astrologer"
-                  className="absolute inset-0 w-full h-full object-cover"
+              <div className="w-full max-w-72 md:max-w-80 rounded-2xl bg-secondary border border-gold/30 flex items-center justify-center relative overflow-hidden">
+                <Image
+                  src="/images/r-anand-astrology.jpg"
+                  alt="Celestial planetary artwork for R. Anand's astrology practice"
+                  width={736}
+                  height={1308}
+                  sizes="(min-width: 768px) 320px, (min-width: 320px) 288px, calc(100vw - 2rem)"
+                  className="w-full h-auto block object-contain object-center"
                   onError={(e) => { e.currentTarget.style.display = "none"; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
