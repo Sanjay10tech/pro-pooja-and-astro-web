@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Camera, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
-import Image from "next/image";
+import { Camera, Film, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { PageTransition } from "@/components/layout/page-transition";
+import { GalleryHeroBackground } from "@/components/gallery/gallery-hero-background";
 
 /* ───────────────────────── DATA ───────────────────────── */
 
@@ -17,29 +17,9 @@ interface GalleryImage {
   size: "featured" | "large" | "standard";
 }
 
-const GALLERY_IMAGES: GalleryImage[] = [
-  // Signature Collection — VIP images
-  { id: 1, src: "/images/gallery/signature/s1.jpeg", title: "Sacred Ceremony", category: "Signature Collection", vip: true, size: "featured" },
-  { id: 2, src: "/images/gallery/signature/s2.jpeg", title: "Vedic Ritual", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 3, src: "/images/gallery/signature/s3.jpeg", title: "Divine Blessings", category: "Signature Collection", vip: true, size: "large" },
-  { id: 4, src: "/images/gallery/signature/s4.jpeg", title: "Sacred Havan", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 5, src: "/images/gallery/signature/s5.jpeg", title: "Pooja Moments", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 6, src: "/images/gallery/signature/s6.jpeg", title: "Temple Rituals", category: "Signature Collection", vip: true, size: "large" },
-  { id: 7, src: "/images/gallery/signature/s7.jpeg", title: "Sacred Traditions", category: "Signature Collection", vip: true, size: "featured" },
-  { id: 8, src: "/images/gallery/signature/s8.jpeg", title: "Yaga Ceremony", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 9, src: "/images/gallery/signature/s9.jpeg", title: "Divine Service", category: "Signature Collection", vip: true, size: "large" },
-  { id: 10, src: "/images/gallery/signature/s10.jpeg", title: "Blessing Devotees", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 11, src: "/images/gallery/signature/s11.jpeg", title: "Sacred Offering", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 12, src: "/images/gallery/signature/s12.jpeg", title: "Holy Ceremony", category: "Signature Collection", vip: true, size: "large" },
-  { id: 13, src: "/images/gallery/signature/s13.jpeg", title: "Vedic Devotion", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 14, src: "/images/gallery/signature/s14.jpeg", title: "Spiritual Grace", category: "Signature Collection", vip: true, size: "featured" },
-  { id: 15, src: "/images/gallery/signature/s15.jpeg", title: "Sacred Devotion", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 16, src: "/images/gallery/signature/s16.jpeg", title: "Divine Ritual", category: "Signature Collection", vip: true, size: "large" },
-  { id: 17, src: "/images/gallery/signature/s17.jpeg", title: "Holy Offering", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 18, src: "/images/gallery/signature/s18.jpeg", title: "Vedic Ceremony", category: "Signature Collection", vip: true, size: "standard" },
-  { id: 19, src: "/images/gallery/signature/s19.jpeg", title: "Blessed Moments", category: "Signature Collection", vip: true, size: "large" },
-  { id: 20, src: "/images/gallery/signature/s20.jpeg", title: "Sacred Grace", category: "Signature Collection", vip: true, size: "standard" },
-];
+// Signature Collection — cleared on request; new photos will be added here.
+// Entry format: { id, src: "/images/gallery/...", title, category: "Signature Collection", vip: true, size: "featured" | "large" | "standard" }
+const GALLERY_IMAGES: GalleryImage[] = [];
 
 const sizeHeights = {
   featured: "h-[320px] sm:h-[420px] md:h-[520px] lg:h-[560px]",
@@ -54,10 +34,9 @@ interface SacredFilm {
   category: string;
 }
 
-const SACRED_FILMS: SacredFilm[] = [
-  { id: 1, src: "/videos/mo1.mp4", title: "Sacred Ceremony Film", category: "Divine Moments" },
-  { id: 2, src: "/videos/mo2.mp4", title: "Vedic Ritual Film", category: "Divine Moments" },
-];
+// Sacred Films — cleared on request; new videos will be added here.
+// Entry format: { id, src: "/videos/...", title, category }
+const SACRED_FILMS: SacredFilm[] = [];
 
 /* ───────────────────────── LIGHTBOX ───────────────────────── */
 
@@ -239,6 +218,44 @@ function FilmCard({ film, index }: { film: SacredFilm; index: number }) {
   );
 }
 
+/* ───────────────────────── EMPTY STATE ───────────────────────── */
+
+function EmptyMedia({ kind }: { kind: "photos" | "films" }) {
+  const Icon = kind === "photos" ? Camera : Film;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="relative mx-auto max-w-2xl overflow-hidden rounded-[22px] border border-dashed border-gold/30 bg-primary/60 px-6 py-14 text-center"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{ background: "radial-gradient(ellipse at center, rgba(184,149,82,0.10) 0%, transparent 65%)" }}
+      />
+      <div className="relative">
+        <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center">
+          <span
+            aria-hidden="true"
+            className="cbg-loop cbg-spin absolute inset-0 rounded-full border border-dashed border-gold/40"
+            style={{ animationDuration: "40s" }}
+          />
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/10 ring-1 ring-gold/30">
+            <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
+          </span>
+        </div>
+        <p className="font-serif text-2xl text-gold">Coming Soon</p>
+        <p className="mt-2 text-sm text-muted">
+          {kind === "photos"
+            ? "New photographs will be added here shortly."
+            : "New films will be added here shortly."}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ───────────────────────── PAGE ───────────────────────── */
 
 export default function GalleryPage() {
@@ -273,30 +290,9 @@ export default function GalleryPage() {
   return (
     <PageTransition>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
-      <section className="relative py-14 md:py-20 overflow-hidden">
-        {/* Ornate mandala altar background (bottom layer) */}
-        <Image
-          src="/images/services/sarvatobhadra-mandala-aradhana.webp"
-          alt=""
-          fill
-          preload
-          sizes="100vw"
-          className="object-cover object-center"
-          aria-hidden="true"
-        />
-        {/* Navy readability overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/88 via-background/78 to-background/92" />
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-gold/10 rounded-full blur-3xl" />
-        </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <motion.div animate={{ rotate: 360 }} transition={{ duration: 120, repeat: Infinity, ease: "linear" }} className="absolute w-[320px] h-[320px] md:w-[480px] md:h-[480px] border border-gold/[0.08] rounded-full">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-gold/40 rounded-full" />
-          </motion.div>
-          <motion.div animate={{ rotate: -360 }} transition={{ duration: 90, repeat: Infinity, ease: "linear" }} className="absolute w-[240px] h-[240px] md:w-[360px] md:h-[360px] border border-gold/[0.04] rounded-full" />
-          <div className="absolute w-[160px] h-[160px] md:w-[240px] md:h-[240px] border border-gold/[0.05] rounded-full" />
-        </div>
-        <div className="absolute inset-0 vedic-pattern opacity-[0.02]" />
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        {/* Custom animated photographic background (no images) */}
+        <GalleryHeroBackground />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
@@ -356,11 +352,17 @@ export default function GalleryPage() {
               transition={{ duration: 0.3 }}
             >
               {activeTab === "all" ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-                  {SACRED_FILMS.map((film, index) => (
-                    <FilmCard key={film.id} film={film} index={index} />
-                  ))}
-                </div>
+                SACRED_FILMS.length === 0 ? (
+                  <EmptyMedia kind="films" />
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    {SACRED_FILMS.map((film, index) => (
+                      <FilmCard key={film.id} film={film} index={index} />
+                    ))}
+                  </div>
+                )
+              ) : filteredImages.length === 0 ? (
+                <EmptyMedia kind="photos" />
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-auto gap-4 md:gap-5">
                   {filteredImages.map((image, index) => (

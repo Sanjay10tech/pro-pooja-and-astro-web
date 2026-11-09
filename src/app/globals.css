@@ -391,6 +391,28 @@
     animation: cbg-node-pulse 3.6s ease-out infinite;
   }
 
+  /* Gallery hero film strips and light leak (gbg-, paused/stopped via .cbg-loop) */
+  @keyframes gbg-strip {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-260px, 0, 0); }
+  }
+
+  @keyframes gbg-strip-rev {
+    from { transform: translate3d(-260px, 0, 0); }
+    to { transform: translate3d(0, 0, 0); }
+  }
+
+  @keyframes gbg-sweep {
+    0% { transform: translate3d(-120%, 0, 0) skewX(-12deg); opacity: 0; }
+    10% { opacity: 1; }
+    55% { opacity: 1; }
+    70%, 100% { transform: translate3d(360%, 0, 0) skewX(-12deg); opacity: 0; }
+  }
+
+  .gbg-strip { animation: gbg-strip 22s linear infinite; }
+  .gbg-strip-rev { animation: gbg-strip-rev 22s linear infinite; }
+  .gbg-sweep { animation: gbg-sweep 11s ease-in-out infinite; }
+
   /* Loops only run while the hero is on screen */
   [data-cbg-active="false"] .cbg-loop {
     animation-play-state: paused;
