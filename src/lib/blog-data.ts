@@ -32,7 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Pooja",
     author: "Pandit Raghunath Sharma",
     authorRole: "Senior Vedic Scholar",
-    date: "August 12, 2026",
+    date: "November 10, 2026",
     readTime: "8 min read",
     image: "/images/blog/rudrabhisheka-featured.webp",
     featured: true,
@@ -106,7 +106,7 @@ Ceremonies can be performed at your home or preferred location, ensuring that th
     category: "Vedic Tradition",
     author: "Pandit Vishwanath Bhat",
     authorRole: "Vedic Ritual Expert",
-    date: "August 5, 2026",
+    date: "November 10, 2026",
     readTime: "6 min read",
     image: "/images/blog/choosing-pandit.jpg",
     content: `
@@ -161,7 +161,7 @@ A good pandit explains what they're doing and why. They make you feel comfortabl
     category: "Festivals",
     author: "Pandit Raghunath Sharma",
     authorRole: "Senior Vedic Scholar",
-    date: "July 28, 2026",
+    date: "November 10, 2026",
     readTime: "7 min read",
     image: "/images/blog/shravan-month.jpg",
     content: `
@@ -221,7 +221,7 @@ The scriptures mention that worship during Shravan is multiplied 1000-fold in it
     category: "Astrology",
     author: "Jyotishacharya Suresh Kini",
     authorRole: "Vedic Astrologer",
-    date: "July 20, 2026",
+    date: "November 10, 2026",
     readTime: "10 min read",
     image: "/images/blog/navagraha-remedies.jpg",
     content: `
