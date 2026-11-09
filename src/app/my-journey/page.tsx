@@ -33,6 +33,12 @@ const timeline = [
     highlight: "Structured analytical approach",
   },
   {
+    title: "10 Years Sales & Marketing Experience",
+    description:
+      "A decade of professional experience in Sales and Marketing across diverse organizations equipped me with strong communication, client relationship management, and analytical thinking skills. This corporate background enhances my ability to understand client needs, explain complex astrological concepts clearly, and provide practical, solution-oriented guidance.",
+    highlight: "Professional communication excellence",
+  },
+  {
     title: "Formal Training — MA in Astrology",
     description:
       "Pursuing a Master of Arts in Astrology provided me with rigorous academic training in classical Jyotisha texts, chart analysis techniques, and predictive methods. This formal study deepened my understanding of Vedic astrological principles.",
@@ -47,8 +53,8 @@ const timeline = [
   {
     title: "15 Years of Astrology Practice",
     description:
-      "Over 15 years of dedicated practice in Vedic Astrology, KP System, Jyothir Vaastu, and Hebrew Pyramid Numerology has enabled me to guide individuals and families through major life decisions with accuracy and compassion.",
-    highlight: "15 years of astrological guidance",
+      "Over 15 years of dedicated practice in Vedic Astrology, KP System of Astrology, Jyothir Vaastu, and Hebrew Pyramid Numerology has enabled me to guide individuals and families through major life decisions with accuracy and compassion. My KP System specialization offers precise, time-bound predictions that complement traditional Vedic analysis.",
+    highlight: "15 years — KP System specialist",
   },
   {
     title: "10 Years Performing Poojas & Homas",
@@ -98,9 +104,9 @@ const values = [
 const experienceStats = [
   { value: "15+", label: "Years Astrology Practice", icon: Star },
   { value: "10+", label: "Years Pooja & Homa", icon: Calendar },
+  { value: "10+", label: "Years Sales/Marketing", icon: Users },
   { value: "4", label: "Academic Degrees", icon: Award },
-  { value: "5", label: "Languages", icon: Users },
-  { value: "KY", label: "Krishna Yajurveda", icon: BookOpen },
+  { value: "KP", label: "System Specialist", icon: Sparkles },
   { value: "PhD", label: "Research Ongoing", icon: Heart },
 ];
 
@@ -253,10 +259,18 @@ export default function MyJourneyPage() {
                   science — both the ritualistic and the astrological dimensions.
                 </p>
                 <p>
-                  Over 15 years of practice in Vedic Astrology, KP System Astrology, 
+                  Over 15 years of practice in Vedic Astrology, KP System of Astrology, 
                   Jyothir Vaastu, and Hebrew Pyramid Numerology, alongside 10+ years of 
                   performing sacred Pooja and Homa rituals for families across Karnataka and 
                   South India, have shaped my deep understanding of how Vedic wisdom transforms lives.
+                </p>
+                <p>
+                  My 10 years of professional Sales and Marketing experience across various 
+                  organizations has uniquely enhanced my consultation practice. This corporate 
+                  background strengthened my ability to listen deeply, communicate complex 
+                  astrological insights in accessible language, and provide practical, 
+                  actionable guidance that resonates with modern life challenges while 
+                  remaining rooted in authentic Vedic tradition.
                 </p>
                 <p>
                   My academic qualifications — B.Sc., MBA (Marketing), MA (Astrology), 
