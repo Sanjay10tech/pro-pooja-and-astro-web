@@ -22,10 +22,20 @@ import {
   Hash,
   Baby,
   Edit3,
+  Award,
+  GraduationCap,
+  Briefcase,
+  ChevronDown,
+  MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
+import { ZodiacWheelAdvanced } from "@/components/astrology/zodiac-wheel-advanced";
+import { OrbitalRingsAdvanced } from "@/components/astrology/orbital-rings-advanced";
+import { StarFieldAdvanced } from "@/components/astrology/star-field-advanced";
+import { ConstellationLines } from "@/components/astrology/constellation-lines";
+import { PyramidVisualization } from "@/components/astrology/pyramid-visualization";
 
 // Note: Metadata for SEO (should be in layout or parent component for client components)
 // Page Title: "Vedic & KP Astrology Services in Bangalore | R. Anand — 15 Years Experience"
@@ -294,85 +304,95 @@ function CelestialRings() {
 export default function AstrologyPage() {
   return (
     <PageTransition>
-      {/* ═══════════════════════ 1. HERO ═══════════════════════ */}
-      <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-background">
-        {/* Deep space gradient */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, #080F20 0%, #101C35 50%, #080F20 100%)",
-          }}
-        />
-
-        {/* Star field */}
-        <StarField />
-
-        {/* Celestial orbital rings */}
-        <CelestialRings />
-
+      {/* ═══════════════════════ 1. PREMIUM HERO ═══════════════════════ */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-primary to-secondary">
+        {/* Enhanced star field */}
+        <StarFieldAdvanced />
+        
+        {/* Celestial glow overlay */}
+        <div className="absolute inset-0 celestial-glow opacity-30" />
+        
+        {/* Large zodiac wheel as background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+          <ZodiacWheelAdvanced size="large" />
+        </div>
+        
+        {/* Orbital rings */}
+        <OrbitalRingsAdvanced />
+        
+        {/* Constellation lines */}
+        <ConstellationLines />
+        
         {/* Subtle vedic pattern overlay */}
-        <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
-
+        <div className="absolute inset-0 vedic-pattern opacity-[0.02]" />
+        
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            initial={{opacity: 0, y: 30}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.8}}
           >
-            {/* Badge */}
+            {/* Premium badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
-              className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm border border-gold/20 px-4 py-2 rounded-full mb-8"
+              initial={{opacity: 0, scale: 0.9}}
+              animate={{opacity: 1, scale: 1}}
+              transition={{delay: 0.3, duration: 0.5}}
+              className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm border border-gold/30 px-5 py-2.5 rounded-full mb-8"
             >
-              <Sparkles className="w-4 h-4 text-gold" />
-              <span className="text-sm font-medium text-gold/90">Vedic Jyotish Shastra</span>
+              <Sparkles className="w-5 h-5 text-gold animate-pulse" />
+              <span className="text-sm font-semibold text-gold-light tracking-wide">15 Years of Vedic Wisdom</span>
             </motion.div>
-
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-text leading-tight mb-6">
-              Guidance Written{" "}
-              <span className="text-gold">in the Stars</span>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gold-light mb-6 leading-tight">
+              Ancient Vedic Wisdom.<br />
+              <span className="text-gradient">Deeper Astrological Understanding.</span>
             </h1>
-
-            <p className="text-base sm:text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed mb-10">
-              Authentic Vedic Astrology, KP System, Vaastu and Numerology consultations by R. Anand — 
-              with 15 years of practice in Astrology, Vaastu & Numerology, and a traditional Vedic Astrology family background.
+            
+            <p className="text-lg sm:text-xl md:text-2xl text-muted mb-10 max-w-3xl mx-auto leading-relaxed">
+              Explore Vedic Astrology, KP System of Astrology, Horoscope Analysis and Hebrew Pyramid Numerology with R. Anand.
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button variant="gold" size="lg">
-                  Request Consultation
-                  <ArrowRight className="w-5 h-5" />
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/talk-to-us">
+                <Button variant="gold" size="lg" className="group relative overflow-hidden">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Book Astrology Consultation
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gold-light"
+                    initial={{x: "-100%"}}
+                    whileHover={{x: 0}}
+                    transition={{duration: 0.3}}
+                  />
                 </Button>
               </Link>
               <a href="#services">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="border-gold/30 text-text hover:bg-gold/10"
-                >
-                  View Services
+                <Button variant="secondary" size="lg" className="border-gold/40 hover:bg-gold/10 transition-all duration-300">
+                  Explore Astrology Services
+                  <ChevronDown className="w-5 h-5" />
                 </Button>
               </a>
             </div>
           </motion.div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            aria-hidden="true"
-          >
-            <div className="w-5 h-8 border border-gold/20 rounded-full flex justify-center pt-1.5">
-              <div className="w-1 h-2 bg-gold/60 rounded-full" />
-            </div>
-          </motion.div>
         </div>
+        
+        {/* Enhanced scroll indicator */}
+        <motion.div
+          animate={{y: [0, 12, 0]}}
+          transition={{duration: 2.5, repeat: Infinity, ease: "easeInOut"}}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          aria-hidden="true"
+        >
+          <div className="w-6 h-10 border-2 border-gold/30 rounded-full flex justify-center pt-2">
+            <motion.div
+              className="w-1.5 h-2.5 bg-gold/70 rounded-full"
+              animate={{opacity: [1, 0.3, 1]}}
+              transition={{duration: 2, repeat: Infinity}}
+            />
+          </div>
+        </motion.div>
       </section>
 
       {/* ═══════════════════════ ZODIAC TICKER ═══════════════════════ */}
@@ -467,6 +487,127 @@ export default function AstrologyPage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ PROFESSIONAL EXPERTISE ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-secondary relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/3 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            className="text-center mb-14"
+          >
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+              R. Anand&apos;s Astrological Journey
+            </span>
+            <h2 className="font-serif text-3xl md:text-5xl text-gold-light mb-4">
+              Traditional Heritage Meets Modern Expertise
+            </h2>
+          </motion.div>
+          
+          <motion.div
+            className="grid md:grid-cols-2 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{once: true}}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15 }
+              }
+            }}
+          >
+            {/* Traditional Heritage */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="glass-panel gold-border p-8 rounded-2xl group hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-gold/30 transition-colors">
+                  <Star className="w-7 h-7 text-gold" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gold mb-3">Traditional Heritage</h3>
+                  <p className="text-muted leading-relaxed">
+                    Born into a traditional Vedic Astrology family, R. Anand learned the ancient science from his grandfather, continuing generations of astrological wisdom passed down through authentic lineage.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* 15 Years Experience */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="glass-panel gold-border p-8 rounded-2xl group hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-gold/30 transition-colors">
+                  <Award className="w-7 h-7 text-gold" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gold mb-3">15 Years of Practice</h3>
+                  <p className="text-muted leading-relaxed">
+                    Dedicated practice in Vedic Astrology, KP System, Jyothir Vaastu, and Hebrew Pyramid Numerology, serving clients across South India with precision and insight.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Academic Excellence */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="glass-panel gold-border p-8 rounded-2xl group hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
+            >
+              <div className="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-gold/30 transition-colors">
+                <GraduationCap className="w-7 h-7 text-gold" />
+              </div>
+              <h3 className="text-2xl font-bold text-gold mb-4">Academic Excellence</h3>
+              <ul className="space-y-3">
+                {[
+                  "M.A. (Astrology)",
+                  "PG Diploma in Jyothir Vaastu",
+                  "PhD in Astrology (Pursuing)"
+                ].map((degree, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-gold rounded-full shrink-0" />
+                    <span className="text-muted">{degree}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            
+            {/* Professional Background */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="glass-panel gold-border p-8 rounded-2xl group hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
+            >
+              <div className="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-gold/30 transition-colors">
+                <Briefcase className="w-7 h-7 text-gold" />
+              </div>
+              <h3 className="text-2xl font-bold text-gold mb-4">Professional Insight</h3>
+              <p className="text-muted leading-relaxed">
+                10 years of Sales & Marketing experience enriches consultations with exceptional communication, analytical thinking, and deep client understanding.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -715,155 +856,220 @@ export default function AstrologyPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 5. MUHURAT ═══════════════════════ */}
-      <section className="py-20 md:py-28 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 vedic-pattern opacity-5" />
-        <StarField />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* ═══════════════════════ MARRIAGE & MUHURAT — PREMIUM ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-primary via-secondary to-primary relative overflow-hidden">
+        <div className="absolute inset-0 vedic-pattern opacity-10" />
+        <StarFieldAdvanced />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            className="text-center mb-14"
+          >
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+              Sacred Timing & Compatibility
+            </span>
+            <h2 className="font-serif text-4xl md:text-5xl text-gold-light mb-4">
+              Marriage & Auspicious Timings
+            </h2>
+            <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
+              Traditional Vedic Muhurat selection combined with Hebrew Pyramid Numerology for life&apos;s most important moments
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Horoscope Matching */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{delay: 0}}
+              className="glass-panel gold-border p-8 rounded-2xl hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10 group"
             >
-              <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
-                Auspicious Timing
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl text-text mb-6">
-                Muhurat — The Power of Right Timing
-              </h2>
-              <p className="text-muted leading-relaxed mb-6">
-                In Vedic tradition, the timing of an event determines its outcome. A Muhurat 
-                is the selection of the most auspicious moment — when planetary alignments 
-                support success, harmony and divine blessings for your endeavor.
-              </p>
-              <p className="text-muted/80 leading-relaxed mb-8">
-                Whether it&apos;s a wedding, business launch, property purchase or travel — 
-                the right Muhurat can make the difference between struggle and effortless success.
-              </p>
-
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  "Wedding Muhurat",
-                  "Griha Pravesh",
-                  "Business Launch",
-                  "Vehicle Purchase",
-                  "Travel Dates",
-                  "Upanayanam",
-                ].map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="flex items-center gap-2 bg-gold/5 border border-gold/10 px-3 py-2 rounded-lg"
-                  >
-                    <Star className="w-3 h-3 text-gold shrink-0" />
-                    <span className="text-text/80 text-sm">{item}</span>
-                  </motion.div>
-                ))}
+              <div className="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/30 transition-colors">
+                <Heart className="w-8 h-8 text-gold" />
               </div>
+              <h3 className="font-serif text-2xl font-bold text-gold text-center mb-4">
+                Horoscope Matching
+              </h3>
+              <p className="text-muted text-center leading-relaxed mb-4">
+                Comprehensive Kundali Milan using Ashtakoot system, analyzing 8 compatibility factors for marital harmony and long-term happiness.
+              </p>
+              <ul className="space-y-2 text-sm text-muted">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Ashtakoot (36 Guna) Analysis
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Manglik Dosha Assessment
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Navamsa Chart Compatibility
+                </li>
+              </ul>
             </motion.div>
-
-            {/* Visual */}
+            
+            {/* Marriage Muhurat */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex justify-center"
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{delay: 0.15}}
+              className="glass-panel gold-border p-8 rounded-2xl hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10 group"
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full border border-gold/20"
-                />
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-6 rounded-full border border-gold/10"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Calendar className="w-10 h-10 text-gold/60 mx-auto mb-2" />
-                    <p className="text-text/80 font-serif font-semibold text-sm">शुभ मुहूर्त</p>
-                    <p className="text-muted text-xs mt-1">Auspicious Moment</p>
-                  </div>
-                </div>
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-1 h-3 bg-gold/30 rounded-full"
-                    style={{
-                      top: `${50 - 48 * Math.cos((i * 30 * Math.PI) / 180)}%`,
-                      left: `${50 + 48 * Math.sin((i * 30 * Math.PI) / 180)}%`,
-                      transform: `translate(-50%, -50%) rotate(${i * 30}deg)`,
-                    }}
-                  />
-                ))}
+              <div className="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/30 transition-colors">
+                <Calendar className="w-8 h-8 text-gold" />
               </div>
+              <h3 className="font-serif text-2xl font-bold text-gold text-center mb-4">
+                Marriage Muhurat
+              </h3>
+              <p className="text-muted text-center leading-relaxed mb-4">
+                Selection of the most auspicious wedding date and time based on both charts, ensuring planetary support for lasting marital bliss.
+              </p>
+              <ul className="space-y-2 text-sm text-muted">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Vedic Panchang Analysis
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Favorable Nakshatra Selection
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Hebrew Pyramid Numerology Date
+                </li>
+              </ul>
+            </motion.div>
+            
+            {/* Auspicious Dates */}
+            <motion.div
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{delay: 0.3}}
+              className="glass-panel gold-border p-8 rounded-2xl hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10 group"
+            >
+              <div className="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gold/30 transition-colors">
+                <Clock className="w-8 h-8 text-gold" />
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-gold text-center mb-4">
+                Life Event Muhurat
+              </h3>
+              <p className="text-muted text-center leading-relaxed mb-4">
+                Auspicious timing for Gruhapravesha, business openings, vehicle purchase, and other significant milestones.
+              </p>
+              <ul className="space-y-2 text-sm text-muted">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  House Construction & Gruhapravesha
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Business Launch & Opening
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  Vehicle Purchase & Travel
+                </li>
+              </ul>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════ 6. ALL 11 ASTROLOGY SERVICES ═══════════════════════ */}
-      <section id="services" className="py-16 md:py-24 bg-background relative overflow-hidden">
+      {/* ═══════════════════════ ASTROLOGY SERVICES — ENHANCED ═══════════════════════ */}
+      <section id="services" className="py-20 md:py-28 bg-background relative overflow-hidden">
         <div className="celestial-glow absolute inset-0 pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <StarFieldAdvanced />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            className="text-center mb-14"
           >
             <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
-              Our Offerings
+              Comprehensive Offerings
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-3">
+            <h2 className="font-serif text-4xl md:text-5xl text-gold-light mb-4">
               Astrology Consultation Services
             </h2>
-            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto mb-4">
-              Comprehensive Vedic astrology services for every aspect of life
+            <p className="text-muted text-lg max-w-2xl mx-auto mb-4">
+              Expert Vedic and KP Astrology guidance for every aspect of life
             </p>
-            <div className="w-16 h-0.5 bg-gold mx-auto" />
+            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {astrologyServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: (index % 3) * 0.1 }}
-              >
-                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col hover:border-gold/40 hover:shadow-lg transition-all duration-300 group">
-                  <div className="w-11 h-11 bg-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors duration-300">
-                    <service.icon className="w-5 h-5 text-gold" />
+            {astrologyServices.map((service, index) => {
+              const isKP = service.title.includes("KP System");
+              
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{opacity: 0, y: 30}}
+                  whileInView={{opacity: 1, y: 0}}
+                  viewport={{once: true}}
+                  transition={{delay: (index % 3) * 0.1, duration: 0.6}}
+                  whileHover={{y: -8, scale: 1.02}}
+                  className="group relative"
+                >
+                  {/* KP System special badge */}
+                  {isKP && (
+                    <div className="absolute -top-3 -right-3 z-20 bg-gold text-background text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                      Specialized Expertise
+                    </div>
+                  )}
+                  
+                  <div className={`glass-panel rounded-2xl p-7 h-full flex flex-col relative overflow-hidden transition-all duration-300 ${
+                    isKP ? "border-gold/60 shadow-lg shadow-gold/20" : "border-gold/20 hover:border-gold/40"
+                  }`}>
+                    {/* Gold glow on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold/0 via-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="relative z-10">
+                      {/* Animated icon */}
+                      <motion.div
+                        whileHover={{rotate: 360, scale: 1.1}}
+                        transition={{duration: 0.6, ease: "easeInOut"}}
+                        className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 ${
+                          isKP ? "bg-gold/30" : "bg-gold/20 group-hover:bg-gold/30"
+                        } transition-colors duration-300`}
+                      >
+                        <service.icon className="w-8 h-8 text-gold" />
+                      </motion.div>
+                      
+                      <h3 className="font-serif text-xl font-bold text-gold-light mb-3 group-hover:text-gold transition-colors">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-muted text-sm leading-relaxed flex-grow mb-5">
+                        {service.description}
+                      </p>
+                      
+                      <Link
+                        href="/talk-to-us"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-gold hover:text-gold-light transition-all group-hover:translate-x-2 duration-300"
+                      >
+                        Book Consultation
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
                   </div>
-                  <h3 className="font-serif text-base font-semibold text-gold mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted text-sm leading-relaxed flex-grow mb-4">
-                    {service.description}
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="text-xs font-medium text-gold/70 hover:text-gold transition-colors"
-                  >
-                    Consult Now →
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
-
-          <p className="text-muted text-sm text-center max-w-3xl mx-auto mt-8 leading-relaxed">
-            <strong>Professional Disclaimer:</strong> Consultations provide guidance based on astrological and numerological principles. Results depend on individual karma, free will, and life circumstances. No guaranteed outcomes.
+          
+          <p className="text-muted text-sm text-center max-w-3xl mx-auto mt-10 leading-relaxed opacity-70">
+            <strong>Professional Disclaimer:</strong> Consultations provide guidance based on astrological principles. Results depend on individual karma, free will, and life circumstances. No guaranteed outcomes.
           </p>
         </div>
       </section>
@@ -921,55 +1127,95 @@ export default function AstrologyPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 8. NUMEROLOGY SECTION ═══════════════════════ */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
-              Number Wisdom
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-3">
-              Numerology Services
-            </h2>
-            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto mb-4">
-              Unlock the power of numbers with Hebrew Pyramid Numerology and Vedic-aligned guidance
-            </p>
-            <div className="w-16 h-0.5 bg-gold mx-auto" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {numerologyServices.map((service, index) => (
+      {/* ═══════════════════════ HEBREW PYRAMID NUMEROLOGY — PREMIUM ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 vedic-pattern opacity-5" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Pyramid Visual */}
+            <motion.div
+              initial={{opacity: 0, x: -50}}
+              whileInView={{opacity: 1, x: 0}}
+              viewport={{once: true}}
+              transition={{duration: 0.8}}
+              className="relative order-2 lg:order-1"
+            >
+              <PyramidVisualization />
+              
+              {/* Floating decorative numbers */}
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: (index % 3) * 0.1 }}
+                className="absolute top-10 -left-10 w-12 h-12 bg-gold/10 backdrop-blur-sm border border-gold/30 rounded-xl flex items-center justify-center"
+                animate={{y: [0, -10, 0]}}
+                transition={{duration: 4, repeat: Infinity, ease: "easeInOut"}}
               >
-                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col hover:border-gold/40 hover:shadow-lg transition-all duration-300 group">
-                  <div className="w-11 h-11 bg-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors duration-300">
-                    <service.icon className="w-5 h-5 text-gold" />
-                  </div>
-                  <h3 className="font-serif text-base font-semibold text-gold mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted text-sm leading-relaxed flex-grow mb-4">
-                    {service.description}
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="text-xs font-medium text-gold/70 hover:text-gold transition-colors"
-                  >
-                    Consult Now →
-                  </Link>
-                </div>
+                <span className="text-gold font-bold text-lg">1</span>
               </motion.div>
-            ))}
+              <motion.div
+                className="absolute bottom-20 -right-10 w-12 h-12 bg-gold/10 backdrop-blur-sm border border-gold/30 rounded-xl flex items-center justify-center"
+                animate={{y: [0, 10, 0]}}
+                transition={{duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1}}
+              >
+                <span className="text-gold font-bold text-lg">9</span>
+              </motion.div>
+            </motion.div>
+            
+            {/* Right: Content */}
+            <div className="order-1 lg:order-2">
+              <motion.div
+                initial={{opacity: 0, x: 50}}
+                whileInView={{opacity: 1, x: 0}}
+                viewport={{once: true}}
+                transition={{duration: 0.8}}
+              >
+                <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+                  Ancient Number Wisdom
+                </span>
+                <h2 className="font-serif text-4xl md:text-5xl text-gold-light mb-6">
+                  Hebrew Pyramid Numerology
+                </h2>
+                <p className="text-lg text-muted mb-8 leading-relaxed">
+                  Specialized numerological system using Hebrew letter values and pyramid calculations for life path analysis, name optimization, and compatibility assessment.
+                </p>
+                
+                <div className="space-y-4">
+                  {numerologyServices.map((service, i) => (
+                    <motion.div
+                      key={service.title}
+                      initial={{opacity: 0, x: 20}}
+                      whileInView={{opacity: 1, x: 0}}
+                      viewport={{once: true}}
+                      transition={{delay: i * 0.1}}
+                      whileHover={{x: 10, scale: 1.02}}
+                      className="glass-panel gold-border p-5 rounded-xl cursor-pointer group transition-all duration-300 hover:border-gold/50 hover:shadow-lg hover:shadow-gold/10"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center shrink-0 group-hover:bg-gold/30 transition-colors">
+                          <service.icon className="w-6 h-6 text-gold" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-semibold text-gold-light mb-1 group-hover:text-gold transition-colors">
+                            {service.title}
+                          </h4>
+                          <p className="text-sm text-muted leading-relaxed">
+                            {service.description.split('.')[0]}.
+                          </p>
+                        </div>
+                        <ArrowRight className="w-5 h-5 text-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                <Link href="/talk-to-us" className="inline-block mt-8">
+                  <Button variant="gold" size="lg" className="group">
+                    Book Numerology Consultation
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -1014,43 +1260,75 @@ export default function AstrologyPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ FINAL CTA ═══════════════════════ */}
-      <section className="py-14 md:py-20 bg-background relative overflow-hidden">
-        <StarField />
+      {/* ═══════════════════════ CONSULTATION CTA — PREMIUM ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 vedic-pattern opacity-5" />
+        <StarFieldAdvanced />
         <div className="absolute inset-0 celestial-glow pointer-events-none" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        {/* Floating zodiac wheel */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5">
+          <ZodiacWheelAdvanced size="large" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{opacity: 0, y: 30}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
           >
-            <Sparkles className="w-8 h-8 text-gold mx-auto mb-4" />
-            <h2 className="font-serif text-3xl md:text-4xl text-text mb-4">
-              The Stars Have a Message for You
+            <motion.div
+              animate={{rotate: [0, 10, -10, 0]}}
+              transition={{duration: 4, repeat: Infinity, ease: "easeInOut"}}
+              className="inline-block mb-6"
+            >
+              <Sparkles className="w-12 h-12 text-gold mx-auto" />
+            </motion.div>
+            
+            <h2 className="font-serif text-4xl md:text-5xl text-gold-light mb-6">
+              Begin Your Astrological Consultation
             </h2>
-            <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
-              Don&apos;t let uncertainty guide your decisions. Let ancient Vedic wisdom 
-              illuminate the path meant for you.
+            
+            <p className="text-xl text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+              Connect with R. Anand for guidance in Vedic Astrology, KP Astrology, Horoscope Analysis and Numerology.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button variant="gold" size="lg">
-                  Get Your Reading
-                  <ArrowRight className="w-5 h-5" />
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/talk-to-us">
+                <Button variant="gold" size="lg" className="group relative overflow-hidden">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Book Consultation
+                    <Calendar className="w-5 h-5" />
+                  </span>
                 </Button>
               </Link>
-              <Link href="/contact">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="border-gold/30 text-text hover:bg-gold/10"
-                >
-                  <Phone className="w-5 h-5" />
-                  Speak to R. Anand
+              <Link href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="lg" className="border-gold/40 hover:bg-gold/10 transition-all duration-300">
+                  <MessageCircle className="w-5 h-5" />
+                  Contact on WhatsApp
                 </Button>
               </Link>
             </div>
+            
+            {/* Trust indicators */}
+            <motion.div
+              initial={{opacity: 0}}
+              whileInView={{opacity: 1}}
+              viewport={{once: true}}
+              transition={{delay: 0.5}}
+              className="mt-12 flex flex-wrap justify-center gap-8 text-center"
+            >
+              {[
+                { label: "Years Experience", value: "15+" },
+                { label: "Clients Served", value: "1000+" },
+                { label: "KP Expertise", value: "✓" }
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl font-bold text-gold mb-1">{stat.value}</div>
+                  <div className="text-sm text-muted uppercase tracking-wide">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
