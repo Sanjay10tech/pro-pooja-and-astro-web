@@ -5,7 +5,7 @@ import { FileText, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms and Conditions for using Gokarna Sarva Poojas website and services.",
+    "Terms and Conditions for using R. Anand's website and services.",
 };
 
 const sections = [
@@ -63,7 +63,7 @@ export default function TermsAndConditionsPage() {
             Last updated: August 2026
           </p>
           <p className="text-charcoal/80 mt-4 leading-relaxed">
-            By using the Gokarna Sarva Poojas website, you agree to the
+            By using the R. Anand website, you agree to the
             following terms and conditions. Please read them carefully.
           </p>
         </div>

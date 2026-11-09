@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Stories, Wisdom & Tradition — Blog",
   description:
-    "Explore articles on Vedic knowledge, Gokarna's sacred heritage, spiritual practices, astrology insights, and pooja guides from Gokarna Sarva Poojas.",
+    "Explore articles on Vedic knowledge, spiritual practices, astrology insights, and pooja guides from R. Anand.",
   openGraph: {
-    title: "Stories, Wisdom & Tradition — Gokarna Sarva Poojas Blog",
+    title: "Stories, Wisdom & Tradition — R. Anand Blog",
     description:
-      "Explore the depth of Vedic knowledge, spiritual practices, and the sacred heritage of Gokarna through our curated articles.",
+      "Explore the depth of Vedic knowledge, spiritual practices, and astrology through our curated articles.",
     type: "website",
-    siteName: "Gokarna Sarva Poojas",
+    siteName: "R. Anand",
     locale: "en_IN",
   },
 };

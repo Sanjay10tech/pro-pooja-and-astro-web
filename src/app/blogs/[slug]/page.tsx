@@ -50,7 +50,7 @@ export default function BlogDetailPage() {
 
   const relatedPosts = getRelatedPosts(post);
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
-  const shareText = `${post.title} — R. Anand Purohit & Vedic Astrologer`;
+  const shareText = `${post.title} — R. Anand`;
   const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
 
   // Simple markdown-ish rendering

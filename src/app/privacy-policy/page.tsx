@@ -5,7 +5,7 @@ import { Shield, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Gokarna Sarva Poojas. Learn how we collect, use, and protect your personal information.",
+    "Privacy Policy for R. Anand. Learn how we collect, use, and protect your personal information.",
 };
 
 const sections = [
@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
             Last updated: August 2026
           </p>
           <p className="text-charcoal/80 mt-4 leading-relaxed">
-            At Gokarna Sarva Poojas, we value your privacy and are committed to
+            At R. Anand, we value your privacy and are committed to
             protecting your personal information. This policy outlines how we
             handle your data.
           </p>

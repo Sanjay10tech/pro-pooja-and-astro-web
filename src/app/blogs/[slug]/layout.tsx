@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Blog Article",
   description:
-    "Explore Vedic wisdom, spiritual insights, and sacred knowledge from Gokarna Sarva Poojas.",
+    "Explore Vedic wisdom, spiritual insights, and sacred knowledge from R. Anand.",
   openGraph: {
     type: "article",
-    siteName: "Gokarna Sarva Poojas",
+    siteName: "R. Anand",
     locale: "en_IN",
   },
   twitter: {

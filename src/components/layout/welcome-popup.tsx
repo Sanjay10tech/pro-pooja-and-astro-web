@@ -39,7 +39,7 @@ export function WelcomePopup() {
           className="fixed inset-0 z-[9999] flex items-center justify-center px-4"
           role="dialog"
           aria-modal="true"
-          aria-label="Welcome to R. Anand Purohit & Vedic Astrologer"
+          aria-label="Welcome to R. Anand"
         >
           {/* Backdrop */}
           <div
