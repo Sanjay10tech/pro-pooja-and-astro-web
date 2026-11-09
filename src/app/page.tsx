@@ -135,18 +135,6 @@ const poojaServices = [
       "Remedy for Sarpa Dosha, seeking blessings from serpent deities for protection and prosperity.",
     image: "/images/services/sarpa-sanskar.webp",
   },
-  {
-    title: "Mahaganapathi Homa",
-    description:
-      "Sacred fire ritual to Lord Ganesha for removing obstacles and ensuring success in new ventures.",
-    image: "/images/services/mahaganapathi-homa.webp",
-  },
-  {
-    title: "Mahamrityunjaya Homa",
-    description:
-      "Powerful fire ceremony invoking Lord Shiva for health, longevity and liberation from fear of death.",
-    image: "/images/services/mahamrityunjaya-homa.webp",
-  },
 ];
 
 const serviceCategories = [
