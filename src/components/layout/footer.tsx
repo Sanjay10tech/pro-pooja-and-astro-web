@@ -16,16 +16,6 @@ const footerServices = [
   "Nakshatra Shanti",
   "Narayana Bali",
   "Sarpa Sanskar",
-  "Ashlesha Bali Pooja",
-  "Navagraha Japa",
-  "Mahamrityunjaya Japa",
-  // Featured Homas
-  "Mahaganapathi Homa",
-  "Navagraha Homa",
-  "Mahamrityunjaya Homa",
-  "Rudra Homa",
-  "Aghora Rudra Homa",
-  "Mahasudarshana Homa",
 ];
 
 const astrologyServices = [
