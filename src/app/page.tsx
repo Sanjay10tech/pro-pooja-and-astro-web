@@ -580,18 +580,19 @@ export default function HomePage() {
               transition={{ duration: 0.7 }}
               className="flex justify-center"
             >
-              <div className="w-full max-w-72 md:max-w-80 rounded-2xl bg-secondary border border-gold/30 flex items-center justify-center relative overflow-hidden">
-                <Image
-                  src="/images/r-anand-astrology.jpg"
-                  alt="Celestial planetary artwork for R. Anand's astrology practice"
-                  width={736}
-                  height={1308}
-                  sizes="(min-width: 768px) 320px, (min-width: 320px) 288px, calc(100vw - 2rem)"
-                  className="w-full h-auto block object-contain object-center"
-                  onError={(e) => { e.currentTarget.style.display = "none"; }}
+              <div className="w-full max-w-72 md:max-w-80 rounded-2xl bg-secondary border border-gold/30 relative overflow-hidden">
+                <video
+                  src="/videos/r-anand-about.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-auto block object-cover object-center"
+                  aria-label="Celestial motion video for R. Anand's astrology practice"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 text-center pointer-events-none">
                   <p className="text-gold font-serif font-semibold text-lg">R. Anand</p>
                   <p className="text-muted text-xs">Purohit &amp; Vedic Astrologer</p>
                 </div>
