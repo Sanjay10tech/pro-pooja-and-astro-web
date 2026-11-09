@@ -1,0 +1,7 @@
+{
+  "task_id": "task-premium-redesign-r-anand",
+  "task_description": "Complete premium redesign of R. Anand Purohit & Vedic Astrologer website: replace maroon/saffron/ivory design system with dark navy/gold premium aesthetic across all pages and components. Update brand identity from Gokarna Sarva Poojas to R. Anand. Preserve all form logic, API routes, and Supabase calls verbatim. Add new poojas listing page. Update puja-data.ts with R. Anand's actual service list.",
+  "status": "pending",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003", "FEAT-004"],
+  "blocked_reason": null
+}

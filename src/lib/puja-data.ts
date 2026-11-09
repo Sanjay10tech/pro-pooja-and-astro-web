@@ -74,7 +74,7 @@ export const PUJA_SERVICES: PujaService[] = [
       {
         question: "When is the best time for Gruhapravesha?",
         answer:
-          "An auspicious muhurat is selected based on the family's horoscope. Our pandit R. Anand will help identify the most suitable date and time.",
+          "An auspicious muhurat is selected based on the family's horoscope. R. Anand will help identify the most suitable date and time.",
       },
       {
         question: "Can it be done for a rented house?",

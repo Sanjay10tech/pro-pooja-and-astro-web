@@ -28,9 +28,9 @@ export const BLOG_CATEGORIES = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "spiritual-significance-of-rudrabhisheka-in-gokarna",
-    title: "The Spiritual Significance of Rudrabhisheka in Gokarna",
+    title: "The Spiritual Significance of Rudrabhisheka",
     excerpt:
-      "Discover why performing Rudrabhisheka in the sacred land of Gokarna carries extraordinary spiritual potency — and how this ancient ritual can transform your life.",
+      "Discover the extraordinary spiritual potency of Rudrabhisheka — and how this ancient ritual can transform your life through authentic Vedic practice.",
     category: "Pooja",
     author: "Pandit Raghunath Sharma",
     authorRole: "Senior Vedic Scholar",
@@ -39,11 +39,11 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/blog/rudrabhisheka-gokarna.jpg",
     featured: true,
     content: `
-## The Ancient Connection Between Shiva and Gokarna
+## The Ancient Power of Rudrabhisheka
 
-Gokarna holds a unique position in Hindu mythology. It is here that Lord Shiva's Atmalinga resides — the only place on Earth where Shiva's own soul-linga is worshipped. This makes every Shiva ritual performed here exponentially more powerful.
+Rudrabhisheka is one of the most powerful Vedic rituals dedicated to Lord Shiva. This sacred ceremony has been performed for thousands of years by devoted practitioners seeking divine blessings, karmic cleansing, and spiritual transformation.
 
-When Rudrabhisheka is performed in the presence of the Atmalinga, devotees believe the blessings flow directly from Lord Shiva himself, unmediated by any intermediate deity or force.
+When performed with proper adherence to Vedic protocols and sincere devotion, Rudrabhisheka invokes the direct blessings of Lord Shiva, bringing profound spiritual and material benefits to the devotee.
 
 ## What Makes Rudrabhisheka Special
 
@@ -84,19 +84,19 @@ In today's fast-paced world, Rudrabhisheka offers:
 - Spiritual awakening and clarity of purpose
 - Protection from negative energies and ill-intentions
 
-## Our Approach in Gokarna
+## Our Approach to Sacred Ceremonies
 
-At Gokarna Sarva Poojas, we perform Rudrabhisheka with complete adherence to Vedic protocols. Our senior pandits have been performing this ceremony for over two decades, bringing the depth of authentic tradition to every session.
+R. Anand performs Rudrabhisheka and other traditional ceremonies with complete adherence to Vedic protocols. With years of experience in Krishna Yajurveda tradition, every ceremony is conducted with the depth of authentic tradition and spiritual dedication.
 
-We offer the ceremony both at the Mahabaleshwar Temple and at your accommodation in Gokarna, ensuring that the spiritual benefits reach you in the most comfortable setting possible.
+Ceremonies can be performed at your home or preferred location, ensuring that the spiritual benefits reach you in the most comfortable and auspicious setting possible.
     `,
     tableOfContents: [
-      { id: "the-ancient-connection-between-shiva-and-gokarna", title: "The Ancient Connection Between Shiva and Gokarna" },
+      { id: "the-ancient-power-of-rudrabhisheka", title: "The Ancient Power of Rudrabhisheka" },
       { id: "what-makes-rudrabhisheka-special", title: "What Makes Rudrabhisheka Special" },
       { id: "the-five-substances-and-their-significance", title: "The Five Substances and Their Significance" },
       { id: "when-to-perform-rudrabhisheka", title: "When to Perform Rudrabhisheka" },
       { id: "benefits-for-modern-life", title: "Benefits for Modern Life" },
-      { id: "our-approach-in-gokarna", title: "Our Approach in Gokarna" },
+      { id: "our-approach-to-sacred-ceremonies", title: "Our Approach to Sacred Ceremonies" },
     ],
     relatedSlugs: ["choosing-the-right-pandit", "power-of-shravan-month"],
   },
@@ -328,7 +328,7 @@ Naturally shaped like the Om symbol. Meditation here during sunrise is profoundl
 
 ## How We Can Help
 
-Gokarna Sarva Poojas can arrange your complete spiritual itinerary — from temple poojas to beach meditation sessions, accommodation recommendations, and personalized ceremony bookings.
+R. Anand can guide you in planning your spiritual journey — from selecting auspicious timing for ceremonies to personalized ritual bookings and consultation on sacred practices for your spiritual growth.
     `,
     tableOfContents: [
       { id: "why-gokarna-is-sacred", title: "Why Gokarna is Sacred" },
