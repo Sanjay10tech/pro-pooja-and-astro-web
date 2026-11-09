@@ -17,10 +17,8 @@ export interface BlogPost {
 export const BLOG_CATEGORIES = [
   "All",
   "Pooja",
-  "Gokarna",
   "Vedic Tradition",
   "Temple",
-  "Spirituality",
   "Festivals",
   "Astrology",
 ] as const;
@@ -213,7 +211,7 @@ The scriptures mention that worship during Shravan is multiplied 1000-fold in it
       { id: "benefits-of-shravan-worship", title: "Benefits of Shravan Worship" },
       { id: "how-to-make-the-most-of-shravan", title: "How to Make the Most of Shravan" },
     ],
-    relatedSlugs: ["spiritual-significance-of-rudrabhisheka-in-gokarna", "gokarna-spiritual-guide"],
+    relatedSlugs: ["spiritual-significance-of-rudrabhisheka-in-gokarna", "navagraha-dosha-remedies"],
   },
   {
     slug: "navagraha-dosha-remedies",
@@ -277,130 +275,6 @@ Specific items donated on specific days to pacify afflicted planets.
       { id: "vedic-remedies-that-work", title: "Vedic Remedies That Work" },
     ],
     relatedSlugs: ["choosing-the-right-pandit", "power-of-shravan-month"],
-  },
-  {
-    slug: "gokarna-spiritual-guide",
-    title: "A Spiritual Pilgrim's Guide to Gokarna — Temples, Beaches & Sacred Sites",
-    excerpt:
-      "Everything you need to know before visiting Gokarna for spiritual purposes — the best temples, sacred beaches, and how to plan your pilgrimage.",
-    category: "Gokarna",
-    author: "Pandit Raghunath Sharma",
-    authorRole: "Senior Vedic Scholar",
-    date: "July 12, 2026",
-    readTime: "9 min read",
-    image: "/images/blog/gokarna-guide.jpg",
-    content: `
-## Why Gokarna is Sacred
-
-Gokarna literally means "cow's ear" — referring to the legend that Lord Shiva emerged from the ear of a cow (Prithvi Devi in cow form) at this very location. The town is home to the Atmalinga, making it one of the most sacred Shiva sites in India.
-
-## Must-Visit Sacred Sites
-
-### 1. Mahabaleshwar Temple
-The main temple housing the Atmalinga. Morning Abhisheka at 6 AM is the most powerful time to visit.
-
-### 2. Maha Ganapati Temple
-Visit before Mahabaleshwar as per tradition. Lord Ganesha here is self-manifested (Swayambhu).
-
-### 3. Bhadrakali Temple
-The Shakti Peetha of Gokarna. Essential for devotees seeking divine mother's blessings.
-
-### 4. Kotiteertha
-Sacred temple tank where pilgrims perform ancestral rites and purification.
-
-### 5. Om Beach
-Naturally shaped like the Om symbol. Meditation here during sunrise is profoundly transformative.
-
-## Best Times to Visit
-
-- **Shivaratri** — Largest gathering, immense spiritual energy
-- **Shravan Month** — Daily special rituals
-- **Navratri** — Nine nights of divine feminine worship
-- **Any Pradosh** — Evening twilight Shiva worship
-
-## Planning Your Spiritual Visit
-
-1. Book accommodation near the temple area
-2. Plan to attend morning Abhisheka (6 AM)
-3. Schedule your personal pooja in advance
-4. Allow 2-3 days for complete temple circuit
-5. Combine beach meditation with temple visits
-
-## How We Can Help
-
-R. Anand can guide you in planning your spiritual journey — from selecting auspicious timing for ceremonies to personalized ritual bookings and consultation on sacred practices for your spiritual growth.
-    `,
-    tableOfContents: [
-      { id: "why-gokarna-is-sacred", title: "Why Gokarna is Sacred" },
-      { id: "must-visit-sacred-sites", title: "Must-Visit Sacred Sites" },
-      { id: "best-times-to-visit", title: "Best Times to Visit" },
-      { id: "planning-your-spiritual-visit", title: "Planning Your Spiritual Visit" },
-      { id: "how-we-can-help", title: "How We Can Help" },
-    ],
-    relatedSlugs: ["spiritual-significance-of-rudrabhisheka-in-gokarna", "power-of-shravan-month"],
-  },
-  {
-    slug: "vastu-tips-new-home",
-    title: "Essential Vastu Tips Before Moving Into Your New Home",
-    excerpt:
-      "Simple yet powerful Vastu principles you can apply to bring positive energy, prosperity, and harmony to your living space from day one.",
-    category: "Spirituality",
-    author: "Pandit Vishwanath Bhat",
-    authorRole: "Vedic Ritual Expert",
-    date: "July 5, 2026",
-    readTime: "5 min read",
-    image: "/images/blog/vastu-tips.jpg",
-    content: `
-## What is Vastu Shastra?
-
-Vastu Shastra is the ancient Indian science of architecture and spatial arrangement. It aligns your living space with natural energies and cosmic forces to promote health, wealth, and happiness.
-
-## Key Vastu Principles for Your New Home
-
-### Main Entrance
-- Ideally faces North, East, or Northeast
-- Should be the largest door in the house
-- Keep well-lit and clutter-free
-- Place auspicious symbols like Swastik or Om
-
-### Kitchen
-- Best in Southeast direction (Agni corner)
-- Cook facing East
-- Never place kitchen directly opposite bathroom
-- Keep stove away from water sources
-
-### Master Bedroom
-- Southwest corner is ideal
-- Head should point South or East while sleeping
-- Avoid mirrors facing the bed
-- Keep electronics minimal
-
-### Pooja Room
-- Northeast corner (Ishanya) is most auspicious
-- Keep elevated from ground level
-- Idols should face West (devotee faces East)
-- Keep always clean and fragrant
-
-## Griha Pravesh: The Essential First Step
-
-Before applying any Vastu principles, a proper Griha Pravesh ceremony is essential. This sacred ritual:
-
-- Purifies the space of previous energies
-- Invites positive cosmic forces
-- Establishes spiritual protection
-- Aligns the home with your family's energy
-
-## Book Your Griha Pravesh
-
-Our experienced pandits perform comprehensive Griha Pravesh ceremonies that include Vastu Pooja, Ganapati Pooja, Navagraha Shanti, and sacred Havan — ensuring your new home starts its journey with maximum positive energy.
-    `,
-    tableOfContents: [
-      { id: "what-is-vastu-shastra", title: "What is Vastu Shastra?" },
-      { id: "key-vastu-principles-for-your-new-home", title: "Key Vastu Principles" },
-      { id: "griha-pravesh-the-essential-first-step", title: "Griha Pravesh: The Essential First Step" },
-      { id: "book-your-griha-pravesh", title: "Book Your Griha Pravesh" },
-    ],
-    relatedSlugs: ["choosing-the-right-pandit", "gokarna-spiritual-guide"],
   },
 ];
 
