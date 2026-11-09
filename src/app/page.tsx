@@ -22,6 +22,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { PageTransition } from "@/components/layout/page-transition";
+import { AstrologyServiceCard } from "@/components/astrology-cards/astrology-service-card";
 import { WHATSAPP_LINK } from "@/lib/constants";
 
 /* ───────────────────────── DATA ───────────────────────── */
@@ -59,36 +60,42 @@ const astrologyServices = [
     title: "Vedic Astrology",
     description:
       "Traditional Vedic Astrology from family lineage — birth chart, Dasha, Yoga identification and life guidance rooted in the Vedas. 15 years of dedicated practice in Vedic Astrology, learned from grandfather.",
+    illustration: "zodiac-wheel" as const,
   },
   {
     icon: Star,
     title: "KP System",
     description:
       "Krishnamurti Paddhati — major expertise in precise house-cusp analysis for accurate predictions on career, marriage and major life events. 15 years of practice in KP System Astrology.",
+    illustration: "planetary-orbits" as const,
   },
   {
     icon: Moon,
     title: "Birth Chart Analysis",
     description:
       "Comprehensive Rashi and Navamsha chart preparation with planetary positions and detailed life-area predictions. Backed by 15 years of experience in Vedic and KP Astrology.",
+    illustration: "kundli-chart" as const,
   },
   {
     icon: Users,
     title: "Horoscope Matching",
     description:
       "Traditional Ashtakoot Gun Milan with Dosha assessment and relationship compatibility guidance. Expert analysis using 15 years of practice in Vedic Astrology.",
+    illustration: "horoscope-match" as const,
   },
   {
     icon: Compass,
     title: "Muhurat Consultation",
     description:
       "Selection of the most auspicious date and time for weddings, business launches, Griha Pravesh and travel. Traditional Vedic principles applied with 15 years of expertise.",
+    illustration: "muhurat-clock" as const,
   },
   {
     icon: Shield,
     title: "Name Change Consultation",
     description:
       "Hebrew Pyramid Numerology and astrology-backed name analysis and correction for individuals and businesses. 15 years of practice in Numerology and Vaastu consultation.",
+    illustration: "numerology-pyramid" as const,
   },
 ];
 
@@ -467,25 +474,15 @@ export default function HomePage() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {astrologyServices.map((service, index) => (
-              <motion.div
+              <AstrologyServiceCard
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: (index % 3) * 0.1 }}
-              >
-                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col hover:border-gold/40 hover:shadow-lg transition-all duration-300 group">
-                  <div className="w-11 h-11 bg-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors duration-300">
-                    <service.icon className="w-5 h-5 text-gold" />
-                  </div>
-                  <h3 className="font-serif text-lg font-semibold text-gold mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted text-sm leading-relaxed flex-grow">
-                    {service.description}
-                  </p>
-                </div>
-              </motion.div>
+                index={index}
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                illustration={service.illustration}
+                href="/astrology#services"
+              />
             ))}
           </div>
           <div className="text-center mt-10">

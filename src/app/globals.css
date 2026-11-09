@@ -245,6 +245,81 @@
       animation: none !important;
     }
   }
+
+  /* Homepage astrology service cards: ambient illustration loops (acard-) */
+  @keyframes acard-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes acard-spin-reverse {
+    to { transform: rotate(-360deg); }
+  }
+
+  @keyframes acard-float {
+    0%, 100% { transform: translateY(0); opacity: 0.35; }
+    50% { transform: translateY(-6px); opacity: 0.9; }
+  }
+
+  @keyframes acard-twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.9; }
+  }
+
+  @keyframes acard-breathe {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes acard-pulse {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    80%, 100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  @keyframes acard-flash {
+    0%, 32%, 100% { opacity: 0; }
+    14% { opacity: 1; }
+  }
+
+  @keyframes acard-dash {
+    to { stroke-dashoffset: -24; }
+  }
+
+  @keyframes acard-sway {
+    0%, 100% { transform: perspective(800px) rotateY(-12deg); }
+    50% { transform: perspective(800px) rotateY(12deg); }
+  }
+
+  .acard-spin { animation: acard-spin 120s linear infinite; }
+  .acard-spin-reverse { animation: acard-spin-reverse 120s linear infinite; }
+  .acard-float { animation: acard-float 7s ease-in-out infinite; }
+  .acard-twinkle { animation: acard-twinkle 4s ease-in-out infinite; }
+  .acard-breathe { animation: acard-breathe 6s ease-in-out infinite; }
+  .acard-pulse { animation: acard-pulse 3.6s ease-out infinite; }
+  .acard-flash { animation: acard-flash 6s ease-in-out infinite; }
+  .acard-dash { animation: acard-dash 2.4s linear infinite; }
+  .acard-sway { animation: acard-sway 16s ease-in-out infinite; }
+
+  /* Loops only run while their card is on screen */
+  [data-acard-active] .acard-loop {
+    animation-play-state: paused;
+  }
+
+  [data-acard-active="true"] .acard-loop {
+    animation-play-state: running;
+  }
+
+  /* Touch screens keep one main loop per illustration */
+  @media (hover: none), (pointer: coarse) {
+    [data-acard-active] .acard-secondary {
+      animation: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .acard-loop {
+      animation: none !important;
+    }
+  }
 }
 
 /* Scrollbar styling */
