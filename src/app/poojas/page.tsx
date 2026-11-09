@@ -50,7 +50,7 @@ export default function PoojaServicesPage() {
               </span>
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-text mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-serif font-bold text-text mb-4 leading-tight">
               Sacred Pooja &amp; Homa Services
             </h1>
             <p className="text-muted text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">

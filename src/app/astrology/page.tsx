@@ -359,7 +359,7 @@ export default function AstrologyPage() {
               <span className="text-sm font-semibold text-gold-light tracking-wide">15 Years of Vedic Wisdom</span>
             </motion.div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gold-light mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-gold-light mb-6 leading-tight">
               Ancient Vedic Wisdom.<br />
               <span className="text-gradient">Deeper Astrological Understanding.</span>
             </h1>
