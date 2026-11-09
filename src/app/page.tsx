@@ -104,41 +104,49 @@ const poojaServices = [
     title: "Gruhapravesha",
     description:
       "Sacred housewarming ceremony to purify your new home and invite divine blessings for a prosperous family life.",
+    image: "/images/services/gruhapravesha.webp",
   },
   {
     title: "Sathyanarayana Pooja & Udyapan",
     description:
       "Invoke Lord Vishnu's blessings for prosperity, health and success in all life endeavors.",
+    image: "/images/services/sathyanarayana-pooja-udyapan.webp",
   },
   {
     title: "Vaastu Pooja",
     description:
       "Harmonize the five elements in your home or office to attract positive energy and prosperity.",
+    image: "/images/services/vaastu-pooja.webp",
   },
   {
     title: "Sudarshana Aradhana",
     description:
       "Powerful prayer to Lord Sudarshana for protection, destruction of negativity and spiritual well-being.",
+    image: "/images/services/sudarshana-aradhana.webp",
   },
   {
     title: "Narayana Bali",
     description:
       "Sacred ritual for ancestral peace, freeing souls from suffering and bringing family blessings.",
+    image: "/images/services/narayana-bali.webp",
   },
   {
     title: "Sarpa Sanskar",
     description:
       "Remedy for Sarpa Dosha, seeking blessings from serpent deities for protection and prosperity.",
+    image: "/images/services/sarpa-sanskar.webp",
   },
   {
     title: "Mahaganapathi Homa",
     description:
       "Sacred fire ritual to Lord Ganesha for removing obstacles and ensuring success in new ventures.",
+    image: "/images/services/mahaganapathi-homa.webp",
   },
   {
     title: "Mahamrityunjaya Homa",
     description:
       "Powerful fire ceremony invoking Lord Shiva for health, longevity and liberation from fear of death.",
+    image: "/images/services/mahamrityunjaya-homa.webp",
   },
 ];
 
@@ -514,9 +522,15 @@ export default function HomePage() {
                 transition={{ delay: (index % 3) * 0.1 }}
               >
                 <div className="bg-primary border border-secondary hover:border-gold/20 rounded-2xl overflow-hidden group h-full flex flex-col transition-all duration-300 hover:shadow-lg">
-                  {/* Gradient image placeholder */}
-                  <div className="h-36 bg-gradient-to-br from-primary via-secondary to-gold/10 flex items-center justify-center relative overflow-hidden">
-                    <BookOpen className="w-10 h-10 text-gold/30 group-hover:text-gold/50 transition-colors duration-300" />
+                  {/* Ritual illustration */}
+                  <div className="h-36 relative overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={`Illustration of ${service.title} ritual`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
