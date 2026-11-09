@@ -30,7 +30,7 @@ const sections = [
         <p>Our services include:</p>
 
         <div className="space-y-2">
-          <h3 className="font-serif text-lg font-semibold text-maroon">
+          <h3 className="font-serif text-lg font-semibold text-gold">
             Astrology Services
           </h3>
           <ul className="list-disc space-y-2 pl-5">
@@ -46,7 +46,7 @@ const sections = [
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-serif text-lg font-semibold text-maroon">
+          <h3 className="font-serif text-lg font-semibold text-gold">
             Pooja Services
           </h3>
           <ul className="list-disc space-y-2 pl-5">
@@ -62,7 +62,7 @@ const sections = [
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-serif text-lg font-semibold text-maroon">
+          <h3 className="font-serif text-lg font-semibold text-gold">
             Homa & Havan Services
           </h3>
           <ul className="list-disc space-y-2 pl-5">
@@ -78,7 +78,7 @@ const sections = [
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-serif text-lg font-semibold text-maroon">
+          <h3 className="font-serif text-lg font-semibold text-gold">
             Other Services
           </h3>
           <ul className="list-disc space-y-2 pl-5">
@@ -272,7 +272,7 @@ const sections = [
     title: "Contact Information",
     content: (
       <div className="space-y-4">
-        <p className="font-semibold text-maroon">
+        <p className="font-semibold">
           R. Anand – Purohit & Vedic Astrologer
         </p>
         <address className="space-y-3 not-italic">
@@ -280,7 +280,7 @@ const sections = [
             <strong>Mobile:</strong>{" "}
             <a
               href="tel:+918123235638"
-              className="text-maroon underline transition-colors hover:text-saffron-dark"
+              className="text-[#7A5C24] underline transition-colors hover:text-primary focus-visible:outline-primary"
             >
               +91 8123235638
             </a>
@@ -289,7 +289,7 @@ const sections = [
             <strong>Email:</strong>{" "}
             <a
               href="mailto:anandradhakrishna@gmail.com"
-              className="break-words text-maroon underline transition-colors hover:text-saffron-dark"
+              className="break-words text-[#7A5C24] underline transition-colors hover:text-primary focus-visible:outline-primary"
             >
               anandradhakrishna@gmail.com
             </a>
@@ -312,7 +312,7 @@ export default function TermsAndConditionsPage() {
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-maroon hover:text-saffron-dark transition-colors text-sm mb-8"
+          className="inline-flex items-center gap-2 text-maroon hover:text-gold transition-colors text-sm mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
@@ -340,10 +340,10 @@ export default function TermsAndConditionsPage() {
               key={section.title}
               className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-ivory-dark"
             >
-              <h2 className="font-serif text-xl md:text-2xl font-semibold text-maroon mb-3">
+              <h2 className="font-serif text-xl md:text-2xl font-semibold text-gold mb-3">
                 {index + 1}. {section.title}
               </h2>
-              <div className="text-charcoal/80 leading-relaxed">
+              <div className="text-[#26344A] leading-relaxed">
                 {section.content}
               </div>
             </section>

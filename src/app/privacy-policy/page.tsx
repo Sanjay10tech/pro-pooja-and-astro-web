@@ -163,7 +163,7 @@ const sections = [
             Mobile:{" "}
             <a
               href="tel:+918123235638"
-              className="text-maroon font-medium hover:text-saffron-dark underline transition-colors"
+              className="text-[#7A5C24] font-medium hover:text-primary underline transition-colors focus-visible:outline-primary"
             >
               +91 8123235638
             </a>
@@ -172,7 +172,7 @@ const sections = [
             Email:{" "}
             <a
               href="mailto:anandradhakrishna@gmail.com"
-              className="text-maroon font-medium hover:text-saffron-dark underline transition-colors break-words"
+              className="text-[#7A5C24] font-medium hover:text-primary underline transition-colors focus-visible:outline-primary break-words"
             >
               anandradhakrishna@gmail.com
             </a>
@@ -195,7 +195,7 @@ export default function PrivacyPolicyPage() {
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-maroon hover:text-saffron-dark transition-colors text-sm mb-8"
+          className="inline-flex items-center gap-2 text-maroon hover:text-gold transition-colors text-sm mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
@@ -223,10 +223,10 @@ export default function PrivacyPolicyPage() {
               key={index}
               className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-ivory-dark"
             >
-              <h2 className="font-serif text-xl md:text-2xl font-semibold text-maroon mb-3">
+              <h2 className="font-serif text-xl md:text-2xl font-semibold text-gold mb-3">
                 {index + 1}. {section.title}
               </h2>
-              <div className="text-charcoal/80 leading-relaxed">
+              <div className="text-[#26344A] leading-relaxed">
                 {section.content}
               </div>
             </div>
