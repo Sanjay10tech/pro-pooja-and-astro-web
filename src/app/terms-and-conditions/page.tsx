@@ -3,36 +3,305 @@ import Link from "next/link";
 import { FileText, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
+  title: {
+    absolute: "Terms & Conditions | R. Anand",
+  },
   description:
-    "Terms and Conditions for using R. Anand's website and services.",
+    "Review the Terms & Conditions for R. Anand's astrology, Vaastu, numerology, Pooja and Homa services, including bookings, payments and consultations.",
 };
 
 const sections = [
   {
-    title: "Use of Website",
-    content:
-      "Users must use Marathi Sarva Puja only for lawful purposes and provide accurate information.",
+    title: "Introduction",
+    content: (
+      <div className="space-y-4">
+        <p>Welcome to R. Anand – Purohit & Vedic Astrologer.</p>
+        <p>
+          By accessing or using this website, you agree to these Terms &
+          Conditions. Please read them carefully before using our services.
+        </p>
+      </div>
+    ),
   },
   {
-    title: "Puja & Pandit Booking",
-    content:
-      "Bookings depend on service availability, Pujari availability, selected date, time, and location.",
+    title: "Services Offered",
+    content: (
+      <div className="space-y-6">
+        <p>Our services include:</p>
+
+        <div className="space-y-2">
+          <h3 className="font-serif text-lg font-semibold text-maroon">
+            Astrology Services
+          </h3>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Vedic Astrology.</li>
+            <li>KP System of Astrology.</li>
+            <li>Horoscope Analysis.</li>
+            <li>Birth Time Rectification.</li>
+            <li>Horoscope Matching.</li>
+            <li>Marriage Compatibility Consultation.</li>
+            <li>Auspicious Muhurat Selection.</li>
+            <li>Hebrew Pyramid Numerology.</li>
+          </ul>
+        </div>
+
+        <div className="space-y-2">
+          <h3 className="font-serif text-lg font-semibold text-maroon">
+            Pooja Services
+          </h3>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Gruhapravesha.</li>
+            <li>Sathyanarayana Pooja & Udyapan.</li>
+            <li>Vaastu and Sudarshana Aradhana.</li>
+            <li>Navagraha and Nakshatra Shanthi.</li>
+            <li>Narayana Bali.</li>
+            <li>Sarpa Sanskar and Aslesha Bali Pooja.</li>
+            <li>Navagraha and Mahamrityunjaya Japa.</li>
+            <li>Other listed traditional Poojas.</li>
+          </ul>
+        </div>
+
+        <div className="space-y-2">
+          <h3 className="font-serif text-lg font-semibold text-maroon">
+            Homa & Havan Services
+          </h3>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Mahaganapathi Homa.</li>
+            <li>Navagraha Homa.</li>
+            <li>Mahamrityunjaya Homa.</li>
+            <li>Rudra and Aghora Rudra Homa.</li>
+            <li>Mahasudarshana Homa.</li>
+            <li>Rakshoghna Homa.</li>
+            <li>Chandi Parayana & Homa.</li>
+            <li>Other listed traditional rituals.</li>
+          </ul>
+        </div>
+
+        <div className="space-y-2">
+          <h3 className="font-serif text-lg font-semibold text-maroon">
+            Other Services
+          </h3>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Vaastu Consultation.</li>
+            <li>Hebrew Pyramid Numerology.</li>
+            <li>Baby Naming and Name Consultation.</li>
+          </ul>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "Payments & Cancellation",
-    content:
-      "Payments, cancellations, rescheduling, and refunds are subject to the applicable booking conditions.",
+    title: "Booking and Enquiries",
+    content: (
+      <ul className="list-disc space-y-2 pl-5">
+        <li>Website booking requests are subject to confirmation.</li>
+        <li>
+          Submitting an enquiry does not automatically guarantee a confirmed
+          appointment.
+        </li>
+        <li>Users must provide accurate contact and booking information.</li>
+        <li>
+          The date, time, location and requirements of Pooja services should be
+          discussed and confirmed in advance.
+        </li>
+        <li>Service availability may vary.</li>
+      </ul>
+    ),
   },
   {
-    title: "Pujari Registration",
-    content:
-      "Pujaris must provide accurate information. Marathi Sarva Puja may review, approve, suspend, or remove Pujari profiles when necessary.",
+    title: "Consultation Disclaimer",
+    content: (
+      <div className="space-y-4">
+        <p>
+          Astrology, Vaastu and Numerology consultations are based on
+          traditional systems and the practitioner&apos;s knowledge and
+          interpretation.
+        </p>
+        <p>
+          Consultations are intended for informational and traditional guidance
+          purposes.
+        </p>
+        <p>
+          Astrological predictions and numerological interpretations are not
+          guarantees of future events or specific outcomes.
+        </p>
+        <p>
+          They should not replace professional medical, legal, financial or
+          psychological advice.
+        </p>
+      </div>
+    ),
   },
   {
-    title: "Service & Website Availability",
-    content:
-      "We aim to provide reliable services, but temporary interruptions or changes may occur due to technical issues, maintenance, or circumstances beyond our control.",
+    title: "Pooja and Homa Services",
+    content: (
+      <ul className="list-disc space-y-2 pl-5">
+        <li>Ritual requirements should be discussed before booking.</li>
+        <li>
+          The required Samagri, arrangements, location and timing should be
+          mutually confirmed.
+        </li>
+        <li>
+          Additional arrangements or expenses, if any, should be communicated
+          before confirmation.
+        </li>
+        <li>
+          Ritual performance is subject to availability and practical
+          arrangements.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    title: "Payments and Charges",
+    content: (
+      <div className="space-y-4">
+        <p>
+          Applicable service charges, advance payments and other costs will be
+          communicated before booking confirmation.
+        </p>
+        <p>
+          Any payment terms will be agreed upon before the service is finalized.
+        </p>
+        <p>
+          Do not assume that an enquiry automatically creates a payment
+          obligation.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Cancellation and Rescheduling",
+    content: (
+      <div className="space-y-4">
+        <p>
+          Please contact us as early as possible if you need to cancel or
+          reschedule a confirmed booking.
+        </p>
+        <p>
+          Cancellation, refund and rescheduling terms will be communicated and
+          agreed upon at the time of booking.
+        </p>
+        <p>
+          Any applicable refund will be handled according to the agreed booking
+          terms and applicable law.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "User Responsibilities",
+    content: (
+      <div className="space-y-4">
+        <p>Users agree to:</p>
+        <ul className="list-disc space-y-2 pl-5">
+          <li>Provide accurate information.</li>
+          <li>Respect agreed appointment timings.</li>
+          <li>Communicate special requirements in advance.</li>
+          <li>Use the website lawfully.</li>
+          <li>Avoid submitting false, misleading or harmful information.</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    title: "Intellectual Property",
+    content: (
+      <div className="space-y-4">
+        <p>
+          Website content, text, graphics, branding, images and other materials
+          are protected by applicable intellectual property laws.
+        </p>
+        <p>
+          They may not be copied, reproduced or commercially distributed
+          without prior permission, except where permitted by law.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Third-Party Links",
+    content: (
+      <div className="space-y-4">
+        <p>
+          Our website may contain links to third-party platforms such as
+          WhatsApp and Google Maps.
+        </p>
+        <p>
+          We are not responsible for the content, availability or policies of
+          external websites.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Limitation of Liability",
+    content: (
+      <div className="space-y-4">
+        <p>
+          We do not guarantee specific outcomes from Astrology, Vaastu,
+          Numerology or traditional ritual services.
+        </p>
+        <p>
+          Nothing in these terms excludes liability that cannot legally be
+          excluded under applicable law.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Changes to Terms",
+    content: (
+      <p>
+        We reserve the right to update these Terms & Conditions when necessary.
+        Updated terms will be published on this page.
+      </p>
+    ),
+  },
+  {
+    title: "Governing Law",
+    content: (
+      <p>
+        These Terms & Conditions are subject to the applicable laws of India.
+        Any legal disputes will be subject to the jurisdiction of competent
+        courts in Bengaluru, Karnataka, subject to applicable law.
+      </p>
+    ),
+  },
+  {
+    title: "Contact Information",
+    content: (
+      <div className="space-y-4">
+        <p className="font-semibold text-maroon">
+          R. Anand – Purohit & Vedic Astrologer
+        </p>
+        <address className="space-y-3 not-italic">
+          <p>
+            <strong>Mobile:</strong>{" "}
+            <a
+              href="tel:+918123235638"
+              className="text-maroon underline transition-colors hover:text-saffron-dark"
+            >
+              +91 8123235638
+            </a>
+          </p>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a
+              href="mailto:anandradhakrishna@gmail.com"
+              className="break-words text-maroon underline transition-colors hover:text-saffron-dark"
+            >
+              anandradhakrishna@gmail.com
+            </a>
+          </p>
+          <p>
+            <strong>Address:</strong> No.137A & 137B, 11th Cross, Vishnupriya
+            Nilaya, 1st Floor, Shirdi Saibaba Layout, Vidyamanya Nagar,
+            Andrahalli, Bangalore – 560091.
+          </p>
+        </address>
+      </div>
+    ),
   },
 ];
 
@@ -60,46 +329,25 @@ export default function TermsAndConditionsPage() {
             </h1>
           </div>
           <p className="text-charcoal-light text-sm">
-            Last updated: August 2026
-          </p>
-          <p className="text-charcoal/80 mt-4 leading-relaxed">
-            By using the R. Anand website, you agree to the
-            following terms and conditions. Please read them carefully.
+            Last Updated: November 2026
           </p>
         </div>
 
         {/* Sections */}
         <div className="space-y-8">
           {sections.map((section, index) => (
-            <div
-              key={index}
+            <section
+              key={section.title}
               className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-ivory-dark"
             >
               <h2 className="font-serif text-xl md:text-2xl font-semibold text-maroon mb-3">
                 {index + 1}. {section.title}
               </h2>
-              <p className="text-charcoal/80 leading-relaxed">
+              <div className="text-charcoal/80 leading-relaxed">
                 {section.content}
-              </p>
-            </div>
+              </div>
+            </section>
           ))}
-        </div>
-
-        {/* Contact */}
-        <div className="mt-12 bg-maroon/5 rounded-xl p-6 md:p-8 border border-maroon/10">
-          <h3 className="font-serif text-lg font-semibold text-maroon mb-2">
-            Have questions about these terms?
-          </h3>
-          <p className="text-charcoal/70 text-sm leading-relaxed">
-            If you have any questions or need clarification, please{" "}
-            <Link
-              href="/contact"
-              className="text-maroon font-medium hover:text-saffron-dark underline transition-colors"
-            >
-              contact us
-            </Link>
-            .
-          </p>
         </div>
       </div>
     </section>
