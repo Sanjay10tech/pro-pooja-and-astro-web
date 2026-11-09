@@ -35,7 +35,7 @@ export function SectionHeading({
       {tag && (
         <span
           className={cn(
-            "text-sm font-medium uppercase tracking-widest mb-3 block",
+            "text-xs font-semibold uppercase tracking-[0.2em] mb-3 block",
             "text-gold"
           )}
         >
@@ -44,7 +44,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          "text-2xl sm:text-3xl md:text-4xl font-bold mb-2",
+          "text-[28px] sm:text-[36px] md:text-[44px] font-bold mb-2",
           light ? "text-text" : "text-gold"
         )}
       >

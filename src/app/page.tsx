@@ -378,7 +378,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-text leading-tight mb-6"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[64px] text-text leading-tight mb-6"
             >
               Discover Your Path
               <br />
@@ -534,7 +534,7 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
-                    <h3 className="font-serif text-base font-semibold text-gold mb-2">
+                    <h3 className="font-serif text-[22px] sm:text-[25px] leading-snug font-semibold text-gold mb-2">
                       {service.title}
                     </h3>
                     <p className="text-muted text-sm leading-relaxed flex-grow mb-4">

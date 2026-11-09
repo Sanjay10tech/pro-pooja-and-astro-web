@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 cursor-pointer select-none",
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 cursor-pointer select-none",
   {
     variants: {
       variant: {
@@ -22,10 +22,10 @@ const buttonVariants = cva(
           "bg-transparent text-gold underline-offset-4 hover:underline p-0 shadow-none",
       },
       size: {
-        sm: "h-9 px-4 text-sm",
-        md: "h-11 px-6 text-sm",
-        lg: "h-12 px-7 text-base",
-        xl: "h-14 px-9 text-lg",
+        sm: "h-9 px-4 text-[15px]",
+        md: "h-11 px-6 text-[15px]",
+        lg: "h-12 px-7 text-[15px]",
+        xl: "h-14 px-9 text-base",
       },
     },
     defaultVariants: {

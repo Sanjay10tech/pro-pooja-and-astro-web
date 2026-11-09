@@ -185,7 +185,7 @@ export function AstrologyServiceCard({
             <span>{category}</span>
             <span aria-hidden="true" className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
           </p>
-          <h3 className="mt-3 font-serif text-lg font-semibold leading-snug text-gold xl:text-xl">
+          <h3 className="mt-3 font-serif text-[22px] font-semibold leading-snug text-gold sm:text-[25px]">
             {title}
           </h3>
           <p className="mt-2.5 text-sm leading-relaxed text-muted">{description}</p>
