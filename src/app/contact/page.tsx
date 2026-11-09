@@ -416,6 +416,77 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* ═══════════════════════ LOCATION MAP ═══════════════════════ */}
+      <section className="py-12 md:py-16 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            {/* Address */}
+            <motion.div
+              initial={{opacity: 0, x: -20}}
+              whileInView={{opacity: 1, x: 0}}
+              viewport={{once: true}}
+              className="space-y-6"
+            >
+              <div>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-3">
+                  Our Location
+                </h2>
+                <p className="text-muted mb-6">
+                  Visit us or book an in-person consultation in Bangalore.
+                </p>
+              </div>
+
+              <div className="glass-panel gold-border rounded-xl p-6">
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-text mb-2">Address</h3>
+                    <p className="text-muted text-sm leading-relaxed">
+                      No.137A & 137B, 11th Cross,<br />
+                      Vishnupriya Nilaya, 1st Floor,<br />
+                      Shirdi Saibaba Layout,<br />
+                      Vidyamanya Nagar, Andrahalli,<br />
+                      Bangalore – 560091
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/dir/?api=1&destination=Vishnupriya+Nilaya,+Shirdi+Saibaba+Layout,+Vidyamanya+Nagar,+Andrahalli,+Bangalore+560091"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-4 text-gold text-sm hover:text-gold-light transition-colors"
+                    >
+                      Get Directions
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Map */}
+            <motion.div
+              initial={{opacity: 0, x: 20}}
+              whileInView={{opacity: 1, x: 0}}
+              viewport={{once: true}}
+              transition={{delay: 0.2}}
+              className="w-full"
+            >
+              <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gold/20">
+                <iframe
+                  src="https://www.google.com/maps?q=Vishnupriya+Nilaya,+Shirdi+Saibaba+Layout,+Vidyamanya+Nagar,+Andrahalli,+Bangalore+560091&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{border: 0}}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="R. Anand Location in Bangalore"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════════════ LOCATION CALLOUT ═══════════════════════ */}
       <section className="py-12 md:py-16 bg-secondary/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -427,11 +498,10 @@ export default function ContactPage() {
           >
             <MapPin className="w-10 h-10 text-gold mx-auto mb-4" />
             <h2 className="text-xl md:text-2xl font-serif font-bold text-gold mb-3">
-              Available Across Karnataka &amp; South India
+              Serving Bangalore &amp; South India
             </h2>
             <p className="text-muted text-base max-w-xl mx-auto leading-relaxed">
-              R. Anand offers both in-person ceremonies at your location and online consultations
-              for Vedic Astrology, Vaastu, and Numerology — serving families across South India.
+              R. Anand offers both in-person ceremonies at your location and online consultations for Vedic Astrology, Vaastu, and Numerology — serving families across Bangalore, Karnataka, and South India.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
