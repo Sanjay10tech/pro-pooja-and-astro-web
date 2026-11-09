@@ -9,7 +9,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Clock,
-  Phone,
   User,
   Users,
   Calendar,
@@ -31,6 +30,7 @@ import {
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
+import { WHATSAPP_LINK } from "@/lib/constants";
 import { ZodiacWheelAdvanced } from "@/components/astrology/zodiac-wheel-advanced";
 import { OrbitalRingsAdvanced } from "@/components/astrology/orbital-rings-advanced";
 import { StarFieldAdvanced } from "@/components/astrology/star-field-advanced";
@@ -1302,7 +1302,7 @@ export default function AstrologyPage() {
                   </span>
                 </Button>
               </Link>
-              <Link href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+              <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 <Button variant="secondary" size="lg" className="border-gold/40 hover:bg-gold/10 transition-all duration-300">
                   <MessageCircle className="w-5 h-5" />
                   Contact on WhatsApp
