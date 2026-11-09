@@ -25,11 +25,16 @@ import {
 } from "@/lib/validations/booking";
 
 const poojaOptions = [
+  // Astrology Services
   "Vedic Astrology Consultation",
-  "KP Astrology",
+  "KP Astrology Consultation",
   "Birth Chart Analysis",
-  "Kundli Milan",
-  "Muhurat",
+  "Horoscope Matching",
+  "Birth Time Rectification",
+  "Hebrew Pyramid Numerology",
+  "Marriage Muhurat Selection",
+  "Auspicious Date Selection",
+  "Vaastu Consultation",
   // 16 Poojas
   "Gruhapravesha",
   "Sathyanarayana Pooja & Udyapan",

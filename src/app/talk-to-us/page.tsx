@@ -18,10 +18,16 @@ import { generateWhatsAppMessage, generateBookingId } from "@/lib/validations/bo
 /* ───────────────────────── DATA ───────────────────────── */
 
 const poojaOptions = [
+  // Astrology Services
   { value: "vedic-astrology", label: "Vedic Astrology Consultation" },
   { value: "kp-astrology", label: "KP Astrology Consultation" },
   { value: "birth-chart", label: "Birth Chart Analysis" },
-  { value: "muhurat", label: "Muhurat Consultation" },
+  { value: "horoscope-matching", label: "Horoscope Matching" },
+  { value: "birth-time-rectification", label: "Birth Time Rectification" },
+  { value: "hebrew-pyramid-numerology", label: "Hebrew Pyramid Numerology" },
+  { value: "marriage-muhurat", label: "Marriage Muhurat Selection" },
+  { value: "muhurat", label: "Auspicious Date Selection" },
+  { value: "vaastu-consultation", label: "Vaastu Consultation" },
   // 16 Poojas
   { value: "gruhapravesha", label: "Gruhapravesha" },
   { value: "sathyanarayana-pooja-udyapan", label: "Sathyanarayana Pooja & Udyapan" },

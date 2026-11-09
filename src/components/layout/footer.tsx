@@ -29,12 +29,15 @@ const footerServices = [
 ];
 
 const astrologyServices = [
-  "Vedic Astrology",
-  "KP System Astrology",
+  "Vedic Astrology Consultation",
+  "KP Astrology Consultation",
   "Birth Chart Analysis",
   "Horoscope Matching",
-  "Muhurat Consultation",
+  "Birth Time Rectification",
   "Hebrew Pyramid Numerology",
+  "Marriage Muhurat Selection",
+  "Auspicious Date Selection",
+  "Vaastu Consultation",
 ];
 
 export function Footer() {
