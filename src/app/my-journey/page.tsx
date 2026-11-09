@@ -27,34 +27,40 @@ const timeline = [
     highlight: "Roots in Vedic tradition",
   },
   {
-    title: "Academic Excellence — MA in Astrology",
+    title: "Academic Foundation — B.Sc. & MBA",
     description:
-      "After completing my B.Sc. and MBA (Marketing), I pursued a formal MA in Astrology and a PG Diploma in Jyothir Vaastu. These qualifications gave me a rigorous scientific and classical framework for understanding the ancient sciences of Jyotisha and Vaastu.",
-    highlight: "MA Astrology · PG Jyothir Vaastu",
+      "I pursued formal education in science (B.Sc.) and business management (MBA in Marketing), developing analytical and communication skills that complement my spiritual practice. This combination of modern education and traditional knowledge shapes my approach to consultations.",
+    highlight: "Structured analytical approach",
   },
   {
-    title: "Hebrew Pyramid Numerology Practice",
+    title: "Formal Training — MA in Astrology",
     description:
-      "Over 15 years of dedicated practice in Hebrew Pyramid Numerology has enabled me to provide powerful name corrections, baby naming consultations, and marriage date numerology guidance — complementing my astrological work with another dimension of Vedic numerological science.",
-    highlight: "15 years numerology practice",
+      "Pursuing a Master of Arts in Astrology provided me with rigorous academic training in classical Jyotisha texts, chart analysis techniques, and predictive methods. This formal study deepened my understanding of Vedic astrological principles.",
+    highlight: "MA in Astrology",
   },
   {
     title: "Jyothir Vaastu Specialisation",
     description:
-      "My PG Diploma in Jyothir Vaastu deepened my ability to integrate Vedic astrology with spatial science. I now offer comprehensive Vaastu consultations for homes, offices, and commercial properties — blending the planetary science of Jyotisha with directional harmonics.",
-    highlight: "Residential & commercial Vaastu",
+      "My PG Diploma in Jyothir Vaastu enabled me to integrate Vedic astrology with spatial science. I now offer comprehensive Vaastu consultations for homes, offices, and commercial properties — blending planetary science with directional harmonics.",
+    highlight: "PG Diploma in Jyothir Vaastu",
+  },
+  {
+    title: "15 Years of Astrology Practice",
+    description:
+      "Over 15 years of dedicated practice in Vedic Astrology, KP System, Jyothir Vaastu, and Hebrew Pyramid Numerology has enabled me to guide individuals and families through major life decisions with accuracy and compassion.",
+    highlight: "15 years of astrological guidance",
+  },
+  {
+    title: "10 Years Performing Poojas & Homas",
+    description:
+      "For over 10 years, I have performed sacred Pooja and Homa rituals according to the Krishna Yajurveda tradition for families across Karnataka and South India. Each ceremony is an opportunity to connect individuals with divine grace.",
+    highlight: "Traditional ritual services",
   },
   {
     title: "PhD Research in Astrology (Ongoing)",
     description:
-      "Pursuing a PhD in Astrology reflects my commitment to advancing this sacred science beyond mere practice. My research explores the intersections of classical Jyotisha texts with contemporary applications — contributing to the scholarly understanding of Vedic wisdom.",
+      "Pursuing a PhD in Astrology reflects my commitment to advancing this sacred science beyond mere practice. My research explores the intersections of classical Jyotisha texts with contemporary applications — contributing to scholarly understanding of Vedic wisdom.",
     highlight: "PhD in Astrology — Ongoing",
-  },
-  {
-    title: "Serving Families Across South India",
-    description:
-      "Over 10 years of performing Pooja and Homa rituals for thousands of families across Karnataka and South India has been a deeply fulfilling spiritual journey. Each ceremony is an opportunity to connect individuals with the divine grace of our ancient Vedic tradition.",
-    highlight: "Thousands of families blessed",
   },
 ];
 
@@ -91,11 +97,11 @@ const values = [
 
 const experienceStats = [
   { value: "15+", label: "Years Astrology Practice", icon: Star },
-  { value: "10+", label: "Years Pooja Experience", icon: Calendar },
-  { value: "3", label: "Academic Degrees", icon: Award },
+  { value: "10+", label: "Years Pooja & Homa", icon: Calendar },
+  { value: "4", label: "Academic Degrees", icon: Award },
   { value: "5", label: "Languages", icon: Users },
   { value: "KY", label: "Krishna Yajurveda", icon: BookOpen },
-  { value: "PhD", label: "Research in Astrology", icon: Heart },
+  { value: "PhD", label: "Research Ongoing", icon: Heart },
 ];
 
 const photoStory: { title: string; aspect: string; image: string }[] = [
@@ -173,7 +179,7 @@ export default function MyJourneyPage() {
             </h1>
             <p className="text-base md:text-lg text-text/75 leading-relaxed max-w-md">
               A journey rooted in devotion, Vedic wisdom, and 15 years of astrological and
-              purohit service to thousands of families across South India.
+              purohit service to families across South India.
             </p>
 
             {/* Languages */}
@@ -249,8 +255,8 @@ export default function MyJourneyPage() {
                 <p>
                   Over 15 years of practice in Vedic Astrology, KP System Astrology, 
                   Jyothir Vaastu, and Hebrew Pyramid Numerology, alongside 10+ years of 
-                  performing sacred Pooja and Homa rituals for thousands of families, have 
-                  shaped my deep understanding of how Vedic wisdom transforms lives.
+                  performing sacred Pooja and Homa rituals for families across Karnataka and 
+                  South India, have shaped my deep understanding of how Vedic wisdom transforms lives.
                 </p>
                 <p>
                   My academic qualifications — B.Sc., MBA (Marketing), MA (Astrology), 
