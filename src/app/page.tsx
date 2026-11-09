@@ -7,7 +7,6 @@ import {
   Users,
   Award,
   BookOpen,
-  CheckCircle2,
   Quote,
   MessageCircle,
   Sun,
@@ -568,80 +567,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 5. ABOUT R. ANAND TEASER ═══════════════════════ */}
+      {/* ═══════════════════════ 5. ABOUT VIDEO ═══════════════════════ */}
       <section className="py-14 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-            {/* Profile image placeholder */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="flex justify-center"
-            >
-              <div className="w-full max-w-72 md:max-w-80 rounded-2xl bg-secondary border border-gold/30 relative overflow-hidden">
-                <video
-                  src="/videos/r-anand-about.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-auto block object-cover object-center"
-                  aria-label="Celestial motion video for R. Anand's astrology practice"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 text-center pointer-events-none">
-                  <p className="text-gold font-serif font-semibold text-lg">R. Anand</p>
-                  <p className="text-muted text-xs">Purohit &amp; Vedic Astrologer</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Bio */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
-                About the Astrologer
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl text-gold mb-2">R. Anand</h2>
-              <p className="text-muted text-lg mb-6">Purohit &amp; Vedic Astrologer</p>
-
-              <p className="text-text/80 text-sm leading-relaxed mb-6">
-                R. Anand comes from a traditional Vedic Astrology family background and learned the sacred art from his grandfather. 
-                With 15 years of dedicated practice in Vedic Astrology, KP System (a major area of expertise), Jyothir Vaastu, and Hebrew Pyramid Numerology, 
-                alongside 10 years of professional experience in Sales & Marketing, R. Anand brings a unique blend of traditional wisdom and analytical insight to every consultation. 
-                He has also performed sacred Pooja, Homa and Havan rituals for families across South India for over 10 years in the Krishna Yajurveda tradition.
-              </p>
-
-              <ul className="space-y-3 mb-6">
-                {[
-                  "B.Sc. | MBA (Marketing) | MA (Astrology)",
-                  "PG Diploma in Jyothir Vaastu",
-                  "PhD in Astrology (Pursuing)",
-                  "Krishna Yajurveda Tradition",
-                  "Languages: Telugu, Tamil, Kannada, Hindi, English",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                    <span className="text-text/80 text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link href="/my-journey">
-                <Button variant="gold" size="lg">
-                  Read My Journey
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="flex justify-center"
+          >
+            <div className="w-full max-w-md md:max-w-2xl rounded-2xl bg-secondary border border-gold/30 relative overflow-hidden">
+              <video
+                src="/videos/r-anand-about.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-auto block object-cover object-center"
+                aria-label="Video of a sacred Vedic fire ritual"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
