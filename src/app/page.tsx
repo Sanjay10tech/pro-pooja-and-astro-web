@@ -57,37 +57,37 @@ const astrologyServices = [
     icon: Sun,
     title: "Vedic Astrology",
     description:
-      "Ancient Jyotish Shastra analysis — birth chart, Dasha, Yoga identification and life guidance rooted in the Vedas.",
+      "Traditional Vedic Astrology from family lineage — birth chart, Dasha, Yoga identification and life guidance rooted in the Vedas. 15 years of dedicated practice in Vedic Astrology, learned from grandfather.",
   },
   {
     icon: Star,
     title: "KP System",
     description:
-      "Krishnamurti Paddhati — precise house-cusp analysis for accurate predictions on career, marriage and major life events.",
+      "Krishnamurti Paddhati — major expertise in precise house-cusp analysis for accurate predictions on career, marriage and major life events. 15 years of practice in KP System Astrology.",
   },
   {
     icon: Moon,
     title: "Birth Chart Analysis",
     description:
-      "Comprehensive Rashi and Navamsha chart preparation with planetary positions and detailed life-area predictions.",
+      "Comprehensive Rashi and Navamsha chart preparation with planetary positions and detailed life-area predictions. Backed by 15 years of experience in Vedic and KP Astrology.",
   },
   {
     icon: Users,
     title: "Horoscope Matching",
     description:
-      "Traditional Ashtakoot Gun Milan with Dosha assessment and relationship compatibility guidance.",
+      "Traditional Ashtakoot Gun Milan with Dosha assessment and relationship compatibility guidance. Expert analysis using 15 years of practice in Vedic Astrology.",
   },
   {
     icon: Compass,
     title: "Muhurat Consultation",
     description:
-      "Selection of the most auspicious date and time for weddings, business launches, Griha Pravesh and travel.",
+      "Selection of the most auspicious date and time for weddings, business launches, Griha Pravesh and travel. Traditional Vedic principles applied with 15 years of expertise.",
   },
   {
     icon: Shield,
     title: "Name Change Consultation",
     description:
-      "Numerology and astrology-backed name analysis and correction for individuals and businesses.",
+      "Hebrew Pyramid Numerology and astrology-backed name analysis and correction for individuals and businesses. 15 years of practice in Numerology and Vaastu consultation.",
   },
 ];
 
@@ -376,7 +376,7 @@ export default function HomePage() {
               transition={{ delay: 0.55, duration: 0.7 }}
               className="text-base sm:text-lg md:text-xl text-gold font-medium mb-4"
             >
-              Authentic Vedic Astrology, KP Astrology, Vaastu &amp; Numerology Guidance.
+              15 Years of Dedicated Practice in Vedic Astrology, KP System, Vaastu &amp; Numerology.
             </motion.p>
 
             <motion.p
@@ -385,7 +385,7 @@ export default function HomePage() {
               transition={{ delay: 0.65, duration: 0.7 }}
               className="text-sm sm:text-base text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-              Sacred Pooja, Homa &amp; Havan services performed with devotion in the tradition of Krishna Yajurveda.
+              Traditional Vedic Astrology family background with KP System expertise. Sacred Pooja, Homa &amp; Havan services performed with devotion in the tradition of Krishna Yajurveda.
             </motion.p>
 
             {/* CTAs */}
@@ -597,9 +597,10 @@ export default function HomePage() {
               <p className="text-muted text-lg mb-6">Purohit &amp; Vedic Astrologer</p>
 
               <p className="text-text/80 text-sm leading-relaxed mb-6">
-                With 15 years of dedicated practice in Vedic Astrology, KP System, Jyothir Vaastu, and Hebrew Pyramid Numerology, 
-                alongside over 10 years performing sacred Pooja, Homa and Havan rituals for families across South India, R. Anand brings authentic 
-                traditional wisdom to every consultation and ceremony.
+                R. Anand comes from a traditional Vedic Astrology family background and learned the sacred art from his grandfather. 
+                With 15 years of dedicated practice in Vedic Astrology, KP System (a major area of expertise), Jyothir Vaastu, and Hebrew Pyramid Numerology, 
+                alongside 10 years of professional experience in Sales & Marketing, R. Anand brings a unique blend of traditional wisdom and analytical insight to every consultation. 
+                He has also performed sacred Pooja, Homa and Havan rituals for families across South India for over 10 years in the Krishna Yajurveda tradition.
               </p>
 
               <ul className="space-y-3 mb-6">
