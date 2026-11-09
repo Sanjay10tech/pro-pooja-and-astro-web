@@ -14,10 +14,10 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
+import { ContactHeroBackground } from "@/components/contact/contact-hero-background";
 import { BRAND, WHATSAPP_LINK } from "@/lib/constants";
 import {
   contactFormSchema,
@@ -146,19 +146,8 @@ export default function ContactPage() {
     <PageTransition>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
       <section className="relative py-14 sm:py-20 md:py-28 overflow-hidden">
-        {/* Celestial puja background (bottom layer) */}
-        <Image
-          src="/images/services/celestial-vedic-puja-ritual.webp"
-          alt=""
-          fill
-          preload
-          sizes="100vw"
-          className="object-cover object-center"
-          aria-hidden="true"
-        />
-        {/* Navy readability overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-primary/78 to-background/92" />
-        <div className="absolute inset-0 celestial-glow" />
+        {/* Custom animated celestial background (no images) */}
+        <ContactHeroBackground />
         <div className="absolute inset-0 vedic-pattern opacity-[0.03]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

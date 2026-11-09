@@ -331,6 +331,79 @@
       animation: none !important;
     }
   }
+
+  /* Contact hero animated background (cbg-) */
+  @keyframes cbg-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes cbg-spin-rev {
+    to { transform: rotate(-360deg); }
+  }
+
+  @keyframes cbg-twinkle {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.95; }
+  }
+
+  @keyframes cbg-rise {
+    0% { transform: translate3d(0, 0, 0); opacity: 0; }
+    15% { opacity: 0.9; }
+    100% { transform: translate3d(var(--cbg-drift, 0px), -170px, 0); opacity: 0; }
+  }
+
+  @keyframes cbg-drift-a {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(70px, 40px, 0) scale(1.08); }
+  }
+
+  @keyframes cbg-drift-b {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-80px, -36px, 0) scale(1.12); }
+  }
+
+  @keyframes cbg-breathe {
+    0%, 100% { opacity: 0.45; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.12); }
+  }
+
+  @keyframes cbg-signal {
+    from { stroke-dashoffset: 100; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes cbg-node-pulse {
+    0% { transform: scale(0.6); opacity: 0.8; }
+    100% { transform: scale(2.6); opacity: 0; }
+  }
+
+  .cbg-spin { animation: cbg-spin 160s linear infinite; }
+  .cbg-spin-rev { animation: cbg-spin-rev 120s linear infinite; }
+  .cbg-twinkle { animation: cbg-twinkle 4s ease-in-out infinite; }
+  .cbg-rise { animation: cbg-rise 12s ease-in infinite both; }
+  .cbg-drift-a { animation: cbg-drift-a 24s ease-in-out infinite; }
+  .cbg-drift-b { animation: cbg-drift-b 30s ease-in-out infinite; }
+  .cbg-breathe { animation: cbg-breathe 7s ease-in-out infinite; }
+  .cbg-signal { stroke-dasharray: 6 94; animation: cbg-signal 6s linear infinite; }
+  .cbg-node-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cbg-node-pulse 3.6s ease-out infinite;
+  }
+
+  /* Loops only run while the hero is on screen */
+  [data-cbg-active="false"] .cbg-loop {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cbg-loop {
+      animation: none !important;
+    }
+    .cbg-motion-only {
+      display: none !important;
+    }
+  }
 }
 
 /* Scrollbar styling */
