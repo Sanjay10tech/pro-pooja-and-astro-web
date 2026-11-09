@@ -32,69 +32,87 @@ import { PageTransition } from "@/components/layout/page-transition";
 const astrologyServices = [
   {
     icon: Sun,
-    title: "Vedic Astrology",
+    title: "Vedic Astrology Consultation",
     description:
-      "Ancient Jyotish Shastra analysis rooted in the Vedas. Comprehensive birth chart, Dasha, Yoga identification and life predictions.",
+      "Traditional birth chart analysis using classical Vedic principles, examining planetary positions, dashas, and transits to provide insights into life patterns and timing of events.",
   },
   {
     icon: Star,
-    title: "KP System of Astrology",
+    title: "KP Astrology Consultation",
     description:
-      "Krishnamurti Paddhati — precise house-cusp sub-lord analysis for highly accurate predictions on career, marriage and key life events.",
+      "Krishnamurti Paddhati system offering precise predictions through sub-lord theory and cuspal interlinks for accurate timing of career, marriage, and major life events.",
   },
   {
     icon: Moon,
     title: "Birth Chart Analysis",
     description:
-      "Complete Rashi and Navamsha chart preparation with all nine planetary positions, Dasha periods and detailed area-wise life predictions.",
-  },
-  {
-    icon: Eye,
-    title: "Horary Chart Analysis",
-    description:
-      "Prashna Kundali — chart cast for the precise moment a question is asked to provide accurate answers without a birth time.",
+      "Comprehensive natal chart reading examining all houses, planets, aspects, and yogas to understand personality, strengths, challenges, and life purpose.",
   },
   {
     icon: Compass,
     title: "Rotational Chart Analysis",
     description:
-      "Annual Varshphal analysis using Solar Return chart to provide year-ahead predictions and monthly breakdown of key themes.",
+      "Analysis of divisional charts (Varga charts) including Navamsa, Dashamsa, and others for deeper insights into specific life areas like marriage, career, and spiritual growth.",
+  },
+  {
+    icon: Eye,
+    title: "Horary Chart Analysis",
+    description:
+      "Prasna (question-based) astrology where charts are cast for the moment a question is asked to provide specific answers without requiring birth time.",
   },
   {
     icon: Clock,
     title: "Birth Time Rectification (BTR)",
     description:
-      "Determine your exact birth time through past life events when an accurate birth record is unavailable — essential for precise readings.",
+      "Scientific method to correct unknown or uncertain birth times using past life events for accurate chart calculations and predictions.",
   },
   {
     icon: Heart,
     title: "Horoscope Matching",
     description:
-      "Traditional Ashtakoot Gun Milan with full compatibility analysis, Dosha assessment and relationship guidance.",
+      "Traditional Kundli Milan for marriage compatibility using Ashtakoot system and comprehensive planetary analysis of both charts.",
   },
   {
     icon: Users,
-    title: "Marriage Compatibility",
+    title: "Marriage Compatibility Analysis",
     description:
-      "In-depth compatibility assessment covering emotional, financial, and spiritual alignment for a harmonious married life.",
+      "In-depth compatibility assessment examining emotional, mental, physical, and spiritual harmony between partners for a successful marriage.",
   },
   {
     icon: Calendar,
-    title: "Auspicious Muhurat",
+    title: "Auspicious Muhurat Selection",
     description:
-      "Selection of the most auspicious date and time for weddings, Griha Pravesh, business launches, naming ceremonies and travel.",
+      "Electional astrology to determine favorable timing for important life events, ceremonies, business launches, and travel.",
+  },
+  {
+    icon: Home,
+    title: "House Construction Muhurat",
+    description:
+      "Selection of auspicious timing for foundation laying, ground-breaking, and housewarming ceremonies for prosperity and harmony.",
+  },
+  {
+    icon: Home,
+    title: "Gruhapravesha Muhurat",
+    description:
+      "Determination of favorable date and time for entering a new home based on astrological principles for family well-being.",
+  },
+  {
+    icon: Heart,
+    title: "Marriage Muhurat",
+    description:
+      "Astrological timing for wedding ceremonies based on bride and groom's charts to ensure marital happiness and prosperity.",
   },
   {
     icon: Baby,
     title: "Child Naming Consultation",
     description:
-      "Astrologically and numerologically aligned name selection for your newborn for a life of health, success and happiness.",
+      "Name selection based on birth chart, nakshatra, and numerological considerations for a favorable life path and success.",
   },
   {
     icon: Edit3,
     title: "Name Change Consultation",
     description:
-      "Numerology and astrology-backed name analysis and correction for individuals and businesses seeking alignment and positive energy.",
+      "Analysis and recommendation for name modifications to align with astrological and numerological energies for positive transformation.",
   },
 ];
 
@@ -761,6 +779,10 @@ export default function AstrologyPage() {
               </motion.div>
             ))}
           </div>
+
+          <p className="text-muted text-sm text-center max-w-3xl mx-auto mt-8 leading-relaxed">
+            Consultations provide guidance based on astrological principles. Results depend on individual karma and free will. Astrology illuminates possibilities but does not guarantee specific outcomes.
+          </p>
         </div>
       </section>
 
