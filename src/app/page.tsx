@@ -113,14 +113,24 @@ const poojaServices = [
       "Powerful prayer to Lord Sudarshana for protection, destruction of negativity and spiritual well-being.",
   },
   {
-    title: "Navagraha Shanti",
+    title: "Narayana Bali",
     description:
-      "Propitiate the nine planets to mitigate malefic influences and strengthen benefic planetary energies.",
+      "Sacred ritual for ancestral peace, freeing souls from suffering and bringing family blessings.",
   },
   {
-    title: "Mahamrityunjaya Japa",
+    title: "Sarpa Sanskar",
     description:
-      "Sacred recitation of the powerful Mahamrityunjaya mantra for health, longevity and liberation from fear.",
+      "Remedy for Sarpa Dosha, seeking blessings from serpent deities for protection and prosperity.",
+  },
+  {
+    title: "Mahaganapathi Homa",
+    description:
+      "Sacred fire ritual to Lord Ganesha for removing obstacles and ensuring success in new ventures.",
+  },
+  {
+    title: "Mahamrityunjaya Homa",
+    description:
+      "Powerful fire ceremony invoking Lord Shiva for health, longevity and liberation from fear of death.",
   },
 ];
 

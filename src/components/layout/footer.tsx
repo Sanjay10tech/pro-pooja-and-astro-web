@@ -6,16 +6,26 @@ import { BRAND, WHATSAPP_LINK } from "@/lib/constants";
 import { Logo } from "@/components/ui/logo";
 
 const footerServices = [
+  // Featured Poojas
   "Gruhapravesha",
-  "Sathyanarayana Pooja",
+  "Sathyanarayana Pooja & Udyapan",
   "Vaastu Pooja",
   "Sudarshana Aradhana",
-  "Navagraha Shanti",
+  "Sarvatobhadra Mandala Aradhana",
+  "Adityadi Navagraha Shanti",
   "Nakshatra Shanti",
+  "Narayana Bali",
+  "Sarpa Sanskar",
+  "Ashlesha Bali Pooja",
   "Navagraha Japa",
   "Mahamrityunjaya Japa",
+  // Featured Homas
   "Mahaganapathi Homa",
+  "Navagraha Homa",
+  "Mahamrityunjaya Homa",
   "Rudra Homa",
+  "Aghora Rudra Homa",
+  "Mahasudarshana Homa",
 ];
 
 const astrologyServices = [
