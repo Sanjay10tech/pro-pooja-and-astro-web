@@ -30,7 +30,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "New Home, Housewarming, Vastu Purification, Family Blessings",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/gruhapravesha.webp",
     benefits: [
       "Purifies the new home of all negative energies",
       "Invites Goddess Lakshmi for prosperity",
@@ -104,7 +104,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Prosperity, Wish Fulfillment, Housewarming, Family Harmony, Celebrations",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/sathyanarayana-pooja-udyapan.webp",
     benefits: [
       "Brings prosperity and abundance",
       "Fulfills sincere wishes and prayers",
@@ -178,7 +178,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Home Purification, Office Harmony, Vastu Correction, New Construction",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/vaastu-pooja.webp",
     benefits: [
       "Corrects Vastu doshas effectively",
       "Restores directional energy balance",
@@ -252,7 +252,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Protection, Evil Eye Removal, Health Challenges, Spiritual Purification",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/sudarshana-aradhana.webp",
     benefits: [
       "Powerful protection from negative energies",
       "Removes evil eye and black magic effects",
@@ -326,7 +326,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "4–5 Hours",
     price: "On Request",
     suitableFor: "All-Round Prosperity, Cosmic Harmony, Family Welfare, Special Occasions",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/sarvatobhadra-mandala-aradhana.webp",
     benefits: [
       "Invokes blessings of all major deities simultaneously",
       "Establishes comprehensive cosmic harmony",
@@ -400,7 +400,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Planetary Doshas, Astrological Remedies, Life Challenges, Health Issues",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/navagraha-shanti-altar.webp",
     benefits: [
       "Pacifies malefic planetary influences",
       "Removes Sade Sati and Rahu/Ketu Dosha effects",
@@ -474,7 +474,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Nakshatra Dosha, Recurring Problems, Health Issues, Spiritual Growth",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/celestial-vedic-puja-ritual.webp",
     benefits: [
       "Pacifies malefic nakshatra influences",
       "Removes recurring health and life obstacles",
@@ -548,7 +548,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Inauspicious Birth Nakshatra, Newborn Protection, Family Welfare",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/celestial-vedic-puja-ritual.webp",
     benefits: [
       "Removes malefic effects of inauspicious birth nakshatra",
       "Protects parents, siblings, and child",
@@ -622,7 +622,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2 Hours",
     price: "On Request",
     suitableFor: "Tripadi Nakshatra Dosha, Family Protection, Birth Parihara",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/celestial-vedic-puja-ritual.webp",
     benefits: [
       "Addresses specific Tripadi nakshatra dosha",
       "Protects affected family members",
@@ -696,7 +696,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "Full Day",
     price: "On Request",
     suitableFor: "Pitru Dosha, Untimely Death of Ancestors, Ancestral Curses, Family Prosperity",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/narayana-bali.webp",
     benefits: [
       "Liberates souls of ancestors from unsatisfied state",
       "Removes severe Pitru Dosha from the family",
@@ -770,7 +770,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Sarpa Dosha, Kalasarpa Dosha, Family Welfare, Ancestral Remedy",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/sarpa-sanskar.webp",
     benefits: [
       "Liberates the naga spirit and removes Sarpa Dosha",
       "Protects family from naga-related afflictions",
@@ -844,7 +844,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Ashlesha Nakshatra Birth, Naga Dosha, Maternal Welfare, Birth Parihara",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/ashlesha-bali-pooja.webp",
     benefits: [
       "Removes Ashlesha nakshatra dosha",
       "Protects maternal family from associated effects",
@@ -918,7 +918,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Planetary Doshas, Astrological Remedies, Sade Sati, Career & Health",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/navagraha-shanti-altar.webp",
     benefits: [
       "Powerful remedy for planetary afflictions",
       "Reduces Sade Sati and Rahu-Ketu transit effects",
@@ -992,7 +992,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Health, Longevity, Recovery from Illness, Protection, Moksha",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/mahamrityunjaya-japa.webp",
     benefits: [
       "Protects from untimely death and serious illness",
       "Promotes healing and physical recovery",
@@ -1066,7 +1066,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Marriage Blessings, Marital Harmony, Prosperity, Vow Fulfillment",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/celestial-vedic-puja-ritual.webp",
     benefits: [
       "Blesses couples with marital harmony",
       "Removes obstacles to marriage for unmarried",
@@ -1140,7 +1140,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Marriage Blessings, Marital Harmony, Relationship Healing, Vow Fulfillment",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/celestial-vedic-puja-ritual.webp",
     benefits: [
       "Bestows divine blessings on married couples",
       "Removes delays and obstacles in marriage",
@@ -1216,7 +1216,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "New Ventures, Obstacle Removal, Success, Education, Business Beginnings",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/mahaganapathi-homa.webp",
     benefits: [
       "Removes all obstacles from your path",
       "Blesses new ventures and beginnings",
@@ -1290,7 +1290,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Planetary Doshas, Sade Sati, Career & Relationship Issues, Health",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/navagraha-homa.webp",
     benefits: [
       "Pacifies all nine planetary energies",
       "Removes Sade Sati and dasha-related difficulties",
@@ -1364,7 +1364,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "4–6 Hours",
     price: "On Request",
     suitableFor: "Life-Threatening Illness, Surgery Recovery, Longevity, Protection",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/mahamrityunjaya-homa.webp",
     benefits: [
       "Most powerful remedy for health and longevity",
       "Protects from untimely death",
@@ -1438,7 +1438,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Marital Harmony, Financial Prosperity, Lakshmi Dosha, Family Welfare",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/mahasudarshana-homa.webp",
     benefits: [
       "Invokes combined blessings of Lakshmi and Narayana",
       "Removes financial difficulties and debts",
@@ -1512,7 +1512,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Health, Obstacle Removal, Spiritual Purification, Protection",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/rudra-homa-ceremony.webp",
     benefits: [
       "Invokes Lord Shiva's most powerful blessings",
       "Removes health issues and physical ailments",
@@ -1586,7 +1586,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–5 Hours",
     price: "On Request",
     suitableFor: "Severe Obstacles, Black Magic, Powerful Enemies, Extreme Negative Energies",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/aghora-rudra-homa.webp",
     benefits: [
       "Destroys the most severe negative energies",
       "Removes black magic and evil influences",
@@ -1660,7 +1660,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Protection, Evil Eye, Black Magic, Health Crises, Business Protection",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/mahasudarshana-homa.webp",
     benefits: [
       "Creates powerful Sudarshana protection shield",
       "Destroys all negative energies through fire",
@@ -1734,7 +1734,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "2–3 Hours",
     price: "On Request",
     suitableFor: "Negative Spiritual Influences, Unexplained Problems, Home Protection, Purification",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/aghora-rudra-homa.webp",
     benefits: [
       "Destroys all Rakshasa (demonic) influences",
       "Removes unexplained illness and disturbances",
@@ -1808,7 +1808,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "5–6 Hours",
     price: "On Request",
     suitableFor: "Powerful Protection, Victory over Enemies, Serious Life Challenges, Shakti Upasana",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/rudra-homa-ceremony.webp",
     benefits: [
       "Invokes Goddess Durga's supreme protective power",
       "Destroys all obstacles and enemies",
@@ -1882,7 +1882,7 @@ export const PUJA_SERVICES: PujaService[] = [
     duration: "3–4 Hours",
     price: "On Request",
     suitableFor: "Special Temple Events, Deity Consecrations, Major Occasions, Supreme Blessings",
-    image: "/images/pooja-placeholder.jpg",
+    image: "/images/services/mahaganapathi-homa.webp",
     benefits: [
       "Supreme divine blessings through elaborate worship",
       "Demonstrates complete devotional concentration",

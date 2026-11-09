@@ -17,6 +17,7 @@ import {
   MessageCircle,
   ArrowLeft,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -162,12 +163,20 @@ export default function PujaDetailPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10 border border-gold/20">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10 border border-gold/20">
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center">
                     <BookOpen className="w-12 h-12 text-gold/30" />
                   </div>
                 </div>
+                <Image
+                  src={puja.image}
+                  alt={`Illustration of a ${puja.title} ritual`}
+                  fill
+                  preload
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover object-center"
+                />
               </div>
             </motion.div>
           </div>

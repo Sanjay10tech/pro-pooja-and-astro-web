@@ -12,6 +12,7 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
@@ -320,16 +321,16 @@ export default function ServicesPage() {
                         <div className="glass-panel rounded-xl border border-gold/20 overflow-hidden hover:border-gold/40 transition-all duration-300 h-full flex flex-col">
                           {/* Image */}
                           <div className="relative h-44 bg-gradient-to-br from-primary via-secondary to-gold/10 overflow-hidden">
-                            <img
-                              src={service.image}
-                              alt={service.title}
-                              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                              loading="lazy"
-                              onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                            />
                             <div className="absolute inset-0 flex items-center justify-center">
                               <BookOpen className="w-7 h-7 text-gold/20" />
                             </div>
+                            <Image
+                              src={service.image}
+                              alt={`Illustration of a ${service.title} ritual`}
+                              fill
+                              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            />
                             <div className="absolute top-2.5 left-2.5 bg-gold/20 backdrop-blur-sm border border-gold/30 text-gold text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
                               {service.category}
                             </div>

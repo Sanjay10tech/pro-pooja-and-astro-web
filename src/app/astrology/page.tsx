@@ -307,6 +307,20 @@ export default function AstrologyPage() {
     <PageTransition>
       {/* ═══════════════════════ 1. PREMIUM HERO ═══════════════════════ */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-primary to-secondary">
+        {/* Golden moon phase mandala background (bottom layer) */}
+        <Image
+          src="/images/astrology-hero-mandala.webp"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center"
+          aria-hidden="true"
+        />
+
+        {/* Navy readability overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-primary/70 to-secondary/85" />
+
         {/* Enhanced star field */}
         <StarFieldAdvanced />
         

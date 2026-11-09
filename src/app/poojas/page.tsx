@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Flame, BookOpen, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -110,15 +111,16 @@ export default function PoojaServicesPage() {
                   className="group"
                 >
                   <div className="glass-panel gold-border rounded-xl overflow-hidden hover:border-gold/40 transition-all duration-300 h-full flex flex-col">
-                    {/* Category badge + icon */}
-                    <div className="relative h-36 bg-gradient-to-br from-primary via-secondary to-gold/10 flex items-center justify-center overflow-hidden">
-                      <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center">
-                        {service.category === "Homa & Havan" ? (
-                          <Flame className="w-8 h-8 text-gold/60" />
-                        ) : (
-                          <BookOpen className="w-8 h-8 text-gold/60" />
-                        )}
-                      </div>
+                    {/* Ritual illustration + category badge */}
+                    <div className="relative h-36 overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={`Illustration of ${service.title} ritual`}
+                        fill
+                        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
                       {/* Category badge */}
                       <div className="absolute top-3 left-3 bg-gold/20 backdrop-blur-sm border border-gold/30 text-gold text-[10px] font-semibold px-2.5 py-1 rounded-full">
                         {service.category}
