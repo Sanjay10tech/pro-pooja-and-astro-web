@@ -27,6 +27,7 @@ import {
   ChevronDown,
   MessageCircle,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
@@ -444,9 +445,11 @@ export default function AstrologyPage() {
               className="relative"
             >
               <div className="max-w-sm mx-auto relative rounded-2xl overflow-hidden border border-gold/20 shadow-lg">
-                <img
+                <Image
                   src="/images/astrology-vedic.jpg"
-                  alt="Vedic Astrology"
+                  alt="Golden Vedic zodiac wheel surrounded by celestial constellations"
+                  width={740}
+                  height={1110}
                   className="w-full h-auto block max-h-[380px] object-contain"
                 />
               </div>
@@ -1320,7 +1323,7 @@ export default function AstrologyPage() {
             >
               {[
                 { label: "Years Experience", value: "15+" },
-                { label: "Clients Served", value: "1000+" },
+                { label: "in Astrology", value: "M.A." },
                 { label: "KP Expertise", value: "✓" }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
