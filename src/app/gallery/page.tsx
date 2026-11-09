@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Camera, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { PageTransition } from "@/components/layout/page-transition";
 
@@ -273,7 +274,18 @@ export default function GalleryPage() {
     <PageTransition>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
       <section className="relative py-14 md:py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-background" />
+        {/* Ornate mandala altar background (bottom layer) */}
+        <Image
+          src="/images/services/sarvatobhadra-mandala-aradhana.webp"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center"
+          aria-hidden="true"
+        />
+        {/* Navy readability overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/88 via-background/78 to-background/92" />
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-gold/10 rounded-full blur-3xl" />
         </div>
