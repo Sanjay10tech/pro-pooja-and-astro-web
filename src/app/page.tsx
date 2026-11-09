@@ -36,13 +36,13 @@ const trustStats = [
     icon: BookOpen,
     value: "10+",
     label: "Years Pooja Experience",
-    sub: "Pooja, Homa & Havan rituals",
+    sub: "Traditional Krishna Yajurveda",
   },
   {
     icon: Award,
     value: "MA",
-    label: "Astrology & Jyothir Vaastu",
-    sub: "B.Sc, MBA, PhD Pursuing",
+    label: "Astrology Qualification",
+    sub: "B.Sc, MBA, PG Jyothir Vaastu, PhD Pursuing",
   },
   {
     icon: Users,
@@ -587,8 +587,8 @@ export default function HomePage() {
               <p className="text-muted text-lg mb-6">Purohit &amp; Vedic Astrologer</p>
 
               <p className="text-text/80 text-sm leading-relaxed mb-6">
-                With 15 years of dedicated practice in Vedic Astrology, KP System, Vaastu and Hebrew Pyramid Numerology, 
-                and over 10 years performing sacred Pooja, Homa and Havan rituals, R. Anand brings authentic 
+                With 15 years of dedicated practice in Vedic Astrology, KP System, Jyothir Vaastu, and Hebrew Pyramid Numerology, 
+                alongside over 10 years performing sacred Pooja, Homa and Havan rituals for families across South India, R. Anand brings authentic 
                 traditional wisdom to every consultation and ceremony.
               </p>
 
@@ -597,7 +597,7 @@ export default function HomePage() {
                   "B.Sc. | MBA (Marketing) | MA (Astrology)",
                   "PG Diploma in Jyothir Vaastu",
                   "PhD in Astrology (Pursuing)",
-                  "Tradition: Krishna Yajurveda",
+                  "Krishna Yajurveda Tradition",
                   "Languages: Telugu, Tamil, Kannada, Hindi, English",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
