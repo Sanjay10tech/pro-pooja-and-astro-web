@@ -34,7 +34,7 @@ export const BLOG_POSTS: BlogPost[] = [
     authorRole: "Senior Vedic Scholar",
     date: "August 12, 2026",
     readTime: "8 min read",
-    image: "/images/blog/rudrabhisheka-gokarna.jpg",
+    image: "/images/blog/rudrabhisheka-featured.webp",
     featured: true,
     content: `
 ## The Ancient Power of Rudrabhisheka
