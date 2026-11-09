@@ -13,19 +13,19 @@ export default function NotFound() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center max-w-md"
       >
-        <div className="w-20 h-20 bg-maroon/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <span className="text-maroon font-serif text-4xl font-bold">404</span>
+        <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span className="text-gold font-serif text-4xl font-bold">404</span>
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold text-maroon mb-3">
+        <h1 className="text-2xl md:text-3xl font-bold text-gold mb-3">
           Page Not Found
         </h1>
-        <p className="text-charcoal-light mb-8">
+        <p className="text-muted mb-8">
           The page you&apos;re looking for doesn&apos;t exist or has been moved. 
           Let us guide you back to the right path.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link href="/">
-            <Button variant="primary" size="md">
+            <Button variant="gold" size="md">
               <Home className="w-4 h-4" />
               Back to Home
             </Button>

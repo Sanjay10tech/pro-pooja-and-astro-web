@@ -18,17 +18,17 @@ export default function Error({
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4">
       <div className="text-center max-w-md">
-        <div className="w-16 h-16 bg-saffron/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <AlertTriangle className="w-8 h-8 text-saffron-dark" />
+        <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <AlertTriangle className="w-8 h-8 text-gold" />
         </div>
-        <h2 className="text-2xl font-bold text-maroon mb-3">
+        <h2 className="text-2xl font-bold text-gold mb-3">
           Something Went Wrong
         </h2>
-        <p className="text-charcoal-light mb-6">
+        <p className="text-muted mb-6">
           We encountered an unexpected error. Please try again or contact us if 
           the issue persists.
         </p>
-        <Button variant="primary" size="md" onClick={reset}>
+        <Button variant="gold" size="md" onClick={reset}>
           <RotateCcw className="w-4 h-4" />
           Try Again
         </Button>

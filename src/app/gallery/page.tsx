@@ -108,7 +108,7 @@ function Lightbox({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-[100] bg-[#0d0a08]/95 backdrop-blur-md flex flex-col"
+      className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-md flex flex-col"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -138,7 +138,7 @@ function Lightbox({
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-5xl w-full flex items-center justify-center"
           >
-            <div className="relative w-full max-h-[70vh] rounded-2xl overflow-hidden border border-saffron/20 shadow-2xl bg-charcoal flex items-center justify-center">
+            <div className="relative w-full max-h-[70vh] rounded-2xl overflow-hidden border border-gold/20 shadow-2xl bg-secondary flex items-center justify-center">
               <img
                 src={current.src}
                 alt={current.title}
@@ -169,7 +169,7 @@ function GalleryCard({ image, index, onClick }: { image: GalleryImage; index: nu
     >
       <div
         onClick={onClick}
-        className={`relative w-full ${sizeHeights[image.size]} rounded-[20px] overflow-hidden cursor-pointer group border border-saffron/10 shadow-md hover:shadow-2xl hover:shadow-maroon/10 transition-all duration-600`}
+        className={`relative w-full ${sizeHeights[image.size]} rounded-[20px] overflow-hidden cursor-pointer group border border-gold/10 shadow-md hover:shadow-2xl hover:shadow-gold/10 transition-all duration-600`}
         style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
         role="button"
         tabIndex={0}
@@ -190,17 +190,17 @@ function GalleryCard({ image, index, onClick }: { image: GalleryImage; index: nu
         <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.12)] pointer-events-none" />
 
         {/* Hover dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Golden shimmer sweep */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-saffron/12 to-transparent -translate-x-[120%] group-hover:translate-x-[120%] transition-transform duration-[1400ms] ease-in-out pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/12 to-transparent -translate-x-[120%] group-hover:translate-x-[120%] transition-transform duration-[1400ms] ease-in-out pointer-events-none" />
 
         {/* Gold corner accent on hover */}
         <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-          <div className="w-5 h-5 border-t-2 border-l-2 border-saffron/60 rounded-tl-sm" />
+          <div className="w-5 h-5 border-t-2 border-l-2 border-gold/60 rounded-tl-sm" />
         </div>
         <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-          <div className="w-5 h-5 border-b-2 border-r-2 border-saffron/60 rounded-br-sm" />
+          <div className="w-5 h-5 border-b-2 border-r-2 border-gold/60 rounded-br-sm" />
         </div>
 
         {/* View icon */}
@@ -223,9 +223,9 @@ function FilmCard({ film, index }: { film: SacredFilm; index: number }) {
       viewport={{ once: true, margin: "-40px" }}
       transition={{ delay: index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="relative rounded-[20px] overflow-hidden border border-saffron/10 shadow-md hover:shadow-2xl hover:shadow-maroon/10 transition-all duration-500 bg-charcoal">
+      <div className="relative rounded-[20px] overflow-hidden border border-gold/10 shadow-md hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 bg-secondary">
         <video
-          className="w-full h-full object-cover bg-charcoal"
+          className="w-full h-full object-cover bg-secondary"
           controls
           playsInline
           preload="metadata"
@@ -273,43 +273,43 @@ export default function GalleryPage() {
     <PageTransition>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
       <section className="relative py-14 md:py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1410] via-charcoal to-[#1a1410]" />
+        <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-saffron/[0.04] rounded-full blur-3xl" />
+          <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-gold/10 rounded-full blur-3xl" />
         </div>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <motion.div animate={{ rotate: 360 }} transition={{ duration: 120, repeat: Infinity, ease: "linear" }} className="absolute w-[320px] h-[320px] md:w-[480px] md:h-[480px] border border-saffron/[0.08] rounded-full">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-saffron/40 rounded-full" />
+          <motion.div animate={{ rotate: 360 }} transition={{ duration: 120, repeat: Infinity, ease: "linear" }} className="absolute w-[320px] h-[320px] md:w-[480px] md:h-[480px] border border-gold/[0.08] rounded-full">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-gold/40 rounded-full" />
           </motion.div>
-          <motion.div animate={{ rotate: -360 }} transition={{ duration: 90, repeat: Infinity, ease: "linear" }} className="absolute w-[240px] h-[240px] md:w-[360px] md:h-[360px] border border-white/[0.04] rounded-full" />
-          <div className="absolute w-[160px] h-[160px] md:w-[240px] md:h-[240px] border border-saffron/[0.05] rounded-full" />
+          <motion.div animate={{ rotate: -360 }} transition={{ duration: 90, repeat: Infinity, ease: "linear" }} className="absolute w-[240px] h-[240px] md:w-[360px] md:h-[360px] border border-gold/[0.04] rounded-full" />
+          <div className="absolute w-[160px] h-[160px] md:w-[240px] md:h-[240px] border border-gold/[0.05] rounded-full" />
         </div>
         <div className="absolute inset-0 vedic-pattern opacity-[0.02]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="relative inline-flex items-center justify-center w-14 h-14 mb-5">
-              <div className="absolute inset-0 bg-saffron/10 rounded-full" />
-              <div className="absolute inset-[-3px] border border-saffron/25 rounded-full" />
-              <div className="absolute inset-[-8px] border border-saffron/[0.08] rounded-full" />
-              <Camera className="w-6 h-6 text-saffron relative z-10" />
+              <div className="absolute inset-0 bg-gold/10 rounded-full" />
+              <div className="absolute inset-[-3px] border border-gold/25 rounded-full" />
+              <div className="absolute inset-[-8px] border border-gold/[0.08] rounded-full" />
+              <Camera className="w-6 h-6 text-gold relative z-10" />
             </div>
             <div className="flex items-center justify-center gap-3 md:gap-4 mb-3">
               <div className="hidden sm:flex items-center gap-1.5">
-                <div className="w-1 h-1 bg-saffron/40 rotate-45" />
-                <div className="w-8 md:w-14 h-px bg-gradient-to-r from-transparent to-saffron/40" />
+                <div className="w-1 h-1 bg-gold/40 rotate-45" />
+                <div className="w-8 md:w-14 h-px bg-gradient-to-r from-transparent to-gold/40" />
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Sacred Moments</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight">Sacred Moments</h1>
               <div className="hidden sm:flex items-center gap-1.5">
-                <div className="w-8 md:w-14 h-px bg-gradient-to-l from-transparent to-saffron/40" />
-                <div className="w-1 h-1 bg-saffron/40 rotate-45" />
+                <div className="w-8 md:w-14 h-px bg-gradient-to-l from-transparent to-gold/40" />
+                <div className="w-1 h-1 bg-gold/40 rotate-45" />
               </div>
             </div>
-            <p className="text-white/60 text-sm md:text-base max-w-lg mx-auto mb-5">A glimpse into our pooja ceremonies, traditions and journey.</p>
+            <p className="text-muted text-sm md:text-base max-w-lg mx-auto mb-5">A glimpse into our pooja ceremonies, traditions and journey.</p>
             <div className="flex items-center justify-center gap-2">
-              <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-saffron/50" />
-              <div className="w-1.5 h-1.5 bg-saffron rotate-45" />
-              <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-saffron/50" />
+              <div className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent to-gold/50" />
+              <div className="w-1.5 h-1.5 bg-gold rotate-45" />
+              <div className="w-10 md:w-16 h-px bg-gradient-to-l from-transparent to-gold/50" />
             </div>
           </motion.div>
         </div>
@@ -322,13 +322,13 @@ export default function GalleryPage() {
           <div className="flex items-center justify-center gap-2 md:gap-3 mb-10">
             <button
               onClick={() => setActiveTab("vip")}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeTab === "vip" ? "bg-maroon text-white shadow-md" : "bg-charcoal text-white/90 hover:bg-maroon/80"}`}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeTab === "vip" ? "bg-gold text-background shadow-md" : "bg-secondary text-text/90 hover:bg-gold/20"}`}
             >
               Signature Collection
             </button>
             <button
               onClick={() => setActiveTab("all")}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeTab === "all" ? "bg-maroon text-white shadow-md" : "bg-charcoal text-white/90 hover:bg-maroon/80"}`}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeTab === "all" ? "bg-gold text-background shadow-md" : "bg-secondary text-text/90 hover:bg-gold/20"}`}
             >
               Sacred Films
             </button>
