@@ -111,12 +111,6 @@ const experienceStats = [
   { value: "PhD", label: "Research Ongoing", icon: Heart },
 ];
 
-const photoStory: { title: string; aspect: string; image: string }[] = [
-  { title: "Sacred Ceremony", aspect: "wide", image: "/images/moment-1.jpg" },
-  { title: "Vedic Rituals", aspect: "wide", image: "/images/moment-2.jpg" },
-  { title: "Divine Blessings", aspect: "wide", image: "/images/moment-3.jpg" },
-];
-
 /* ───────────────────────── PAGE ───────────────────────── */
 
 export default function MyJourneyPage() {
@@ -136,7 +130,7 @@ export default function MyJourneyPage() {
         {/* Pandit Image — Right Side (Desktop/Tablet) */}
         <div className="absolute top-0 right-0 bottom-0 w-[45%] lg:w-[40%] hidden md:block">
           <img
-            src="/images/pandit-manoj.jpg"
+            src="/images/r-anand-portrait.webp"
             alt="R. Anand — Purohit and Vedic Astrologer"
             className="w-full h-full object-cover object-top"
             style={{ objectPosition: "center 20%" }}
@@ -154,7 +148,7 @@ export default function MyJourneyPage() {
         {/* Mobile: Pandit as subtle background */}
         <div className="absolute inset-0 md:hidden">
           <img
-            src="/images/pandit-manoj.jpg"
+            src="/images/r-anand-portrait.webp"
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover object-top opacity-20"
@@ -184,15 +178,19 @@ export default function MyJourneyPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-text leading-[1.1] mb-5">
               My Journey
             </h1>
-            <p className="text-base md:text-lg text-text/75 leading-relaxed max-w-md">
-              A journey rooted in devotion, Vedic wisdom, and 15 years of astrological and
-              purohit service to families across South India.
+            <h2 className="text-xl sm:text-2xl md:text-[26px] font-serif font-semibold text-gold leading-snug mb-4">
+              Rooted in Vedic Wisdom &amp; Devoted to Service
+            </h2>
+            <p className="text-base md:text-lg text-text/75 leading-relaxed max-w-lg">
+              With 15 years of experience in Vedic Astrology, KP Astrology, Vaastu and
+              Numerology, and over 10 years of performing traditional Poojas and Homas, my
+              journey reflects a lifelong dedication to Vedic heritage and spiritual service.
             </p>
 
             {/* Languages */}
             <p className="text-sm text-gold/80 mt-4">
-              <span className="text-text/60 font-medium">Languages:</span>{" "}
-              Telugu, Tamil, Kannada, Hindi, English
+              <span className="text-text/70 font-semibold">Languages:</span>{" "}
+              Telugu, Tamil, Kannada, Hindi &amp; English.
             </p>
 
             {/* Scroll indicator */}
@@ -467,125 +465,6 @@ export default function MyJourneyPage() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════ 6. PHOTO STORY ═══════════════════════ */}
-      <section className="py-16 md:py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
-              Visual Story
-            </span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-text mb-3">
-              Moments of Devotion
-            </h2>
-            <p className="text-muted text-sm md:text-base max-w-xl mx-auto">
-              A glimpse into the daily life of spiritual service and sacred ceremonies.
-            </p>
-          </motion.div>
-
-          {/* Mobile: single column */}
-          <div className="flex flex-col gap-3 sm:hidden">
-            {photoStory.map((photo, index) => (
-              <motion.div
-                key={photo.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05, duration: 0.4 }}
-                className="group"
-              >
-                <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
-                  <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-text text-xs font-medium">{photo.title}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Tablet: 2 columns */}
-          <div className="hidden sm:grid lg:hidden grid-cols-2 gap-3 items-start">
-            <div className="flex flex-col gap-3">
-              {photoStory.filter((_, i) => i % 2 === 0).map((photo, index) => (
-                <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
-                    <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3">
-              {photoStory.filter((_, i) => i % 2 === 1).map((photo, index) => (
-                <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 + 0.05, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
-                    <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop: 3-4 columns */}
-          <div className="hidden lg:grid xl:grid-cols-4 lg:grid-cols-3 gap-4 items-start">
-            <div className="flex flex-col gap-4">
-              {photoStory.filter((_, i) => i % 4 === 0).map((photo, index) => (
-                <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
-                    <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-4">
-              {photoStory.filter((_, i) => i % 4 === 1).map((photo, index) => (
-                <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 + 0.05, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
-                    <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-4">
-              {photoStory.filter((_, i) => i % 4 === 2).map((photo, index) => (
-                <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 + 0.1, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
-                    <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-4 hidden xl:flex">
-              {photoStory.filter((_, i) => i % 4 === 3).map((photo, index) => (
-                <motion.div key={photo.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 + 0.15, duration: 0.4 }} className="group">
-                  <div className="relative rounded-lg overflow-hidden cursor-pointer border border-gold/10">
-                    <img src={photo.image} alt={photo.title} className="w-full h-auto block group-hover:scale-[1.02] group-hover:brightness-110 transition-all duration-300" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><p className="text-text text-xs font-medium">{photo.title}</p></div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
