@@ -567,30 +567,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════ 5. ABOUT VIDEO ═══════════════════════ */}
-      <section className="py-14 md:py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="flex justify-center"
-          >
-            <div className="w-full max-w-md md:max-w-2xl rounded-2xl bg-secondary border border-gold/30 relative overflow-hidden">
-              <video
-                src="/videos/r-anand-about.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="w-full h-auto block object-cover object-center"
-                aria-label="Video of a sacred Vedic fire ritual"
-              />
-            </div>
-          </motion.div>
-        </div>
+      {/* ═══════════════════════ 5. ABOUT VIDEO (FULL WIDTH) ═══════════════════════ */}
+      <section className="bg-background">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <video
+            src="/videos/r-anand-about.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="w-full h-[45vh] md:h-[70vh] object-cover object-center block"
+            aria-label="Video of a sacred Vedic fire ritual"
+          />
+        </motion.div>
       </section>
 
       {/* ═══════════════════════ 6. SERVICE CATEGORIES ═══════════════════════ */}
