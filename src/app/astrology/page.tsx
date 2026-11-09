@@ -27,6 +27,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
 
+// Note: Metadata for SEO (should be in layout or parent component for client components)
+// Page Title: "Vedic & KP Astrology Services in Bangalore | R. Anand — 15 Years Experience"
+// Page Description: "Expert Vedic Astrology and KP System consultations in Bangalore. Birth chart analysis, horoscope matching, birth time rectification, marriage muhurat, and Hebrew Pyramid Numerology. Traditional family background with 15 years of practice."
+
 /* ───────────────────────── DATA ───────────────────────── */
 
 const astrologyServices = [
@@ -34,85 +38,67 @@ const astrologyServices = [
     icon: Sun,
     title: "Vedic Astrology Consultation",
     description:
-      "Traditional birth chart analysis using classical Vedic principles, examining planetary positions, dashas, and transits to provide insights into life patterns and timing of events.",
+      "Traditional birth chart analysis using classical Vedic principles, examining planetary positions, dashas (planetary periods), and transits to provide insights into life patterns, timing of events, and karmic influences.",
   },
   {
     icon: Star,
-    title: "KP Astrology Consultation",
+    title: "KP System of Astrology Consultation",
     description:
-      "Krishnamurti Paddhati system offering precise predictions through sub-lord theory and cuspal interlinks for accurate timing of career, marriage, and major life events.",
+      "Krishnamurti Paddhati system offering precise predictions through sub-lord theory and cuspal interlinks. KP Astrology is known for its accuracy in timing events and providing specific yes/no answers to questions. R. Anand specializes in this advanced predictive technique.",
   },
   {
     icon: Moon,
-    title: "Birth Chart Analysis",
+    title: "Birth Chart Analysis (Natal Chart / Kundali)",
     description:
-      "Comprehensive natal chart reading examining all houses, planets, aspects, and yogas to understand personality, strengths, challenges, and life purpose.",
+      "Comprehensive natal chart reading examining all 12 houses, planetary placements, aspects, yogas (planetary combinations), and overall chart strength. Analysis covers personality traits, strengths, challenges, career potential, relationships, health indicators, and life purpose.",
   },
   {
     icon: Compass,
-    title: "Rotational Chart Analysis",
+    title: "Rotational Chart Analysis (Divisional Charts / Varga Charts)",
     description:
-      "Analysis of divisional charts (Varga charts) including Navamsa, Dashamsa, and others for deeper insights into specific life areas like marriage, career, and spiritual growth.",
+      "Detailed analysis of divisional charts (Navamsa, Dashamsa, Saptamsa, etc.) for deeper insights into specific life areas. Rotational charts reveal hidden strengths, challenges, and nuances not visible in the main birth chart.",
   },
   {
     icon: Eye,
-    title: "Horary Chart Analysis",
+    title: "Horary Chart Analysis (Prasna / Question-Based Astrology)",
     description:
-      "Prasna (question-based) astrology where charts are cast for the moment a question is asked to provide specific answers without requiring birth time.",
+      "Prasna astrology where a chart is cast for the exact moment a question is asked. Provides specific answers to pressing questions about career decisions, relationship queries, property matters, legal issues, and timing of events — even without birth details.",
   },
   {
     icon: Clock,
     title: "Birth Time Rectification (BTR)",
     description:
-      "Scientific method to correct unknown or uncertain birth times using past life events for accurate chart calculations and predictions.",
+      "Systematic process of analyzing and refining uncertain or unknown birth times using past life events, physical characteristics, and key milestones. Accurate birth time is essential for precise astrological predictions. R. Anand uses both Vedic and KP methods for rectification.",
   },
   {
     icon: Heart,
-    title: "Horoscope Matching",
+    title: "Horoscope Matching (Kundali Milan)",
     description:
-      "Traditional Kundli Milan for marriage compatibility using Ashtakoot system and comprehensive planetary analysis of both charts.",
+      "Traditional Vedic horoscope compatibility analysis for marriage. Uses the Ashtakoot (8-point) system examining Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, and Nadi compatibility. Also includes analysis of 7th house, Venus, Mars placement (Manglik dosha), and Navamsa chart compatibility.",
   },
   {
     icon: Users,
     title: "Marriage Compatibility Analysis",
     description:
-      "In-depth compatibility assessment examining emotional, mental, physical, and spiritual harmony between partners for a successful marriage.",
-  },
-  {
-    icon: Calendar,
-    title: "Auspicious Muhurat Selection",
-    description:
-      "Electional astrology to determine favorable timing for important life events, ceremonies, business launches, and travel.",
-  },
-  {
-    icon: Home,
-    title: "House Construction Muhurat",
-    description:
-      "Selection of auspicious timing for foundation laying, ground-breaking, and housewarming ceremonies for prosperity and harmony.",
-  },
-  {
-    icon: Home,
-    title: "Gruhapravesha Muhurat",
-    description:
-      "Determination of favorable date and time for entering a new home based on astrological principles for family well-being.",
+      "In-depth compatibility assessment beyond basic Kundali Milan. Examines emotional compatibility, mental harmony, physical attraction indicators, spiritual alignment, financial stability potential, progeny prospects, and long-term marital happiness indicators using both Vedic and KP systems.",
   },
   {
     icon: Heart,
-    title: "Marriage Muhurat",
+    title: "Marriage Muhurat Selection",
     description:
-      "Astrological timing for wedding ceremonies based on bride and groom's charts to ensure marital happiness and prosperity.",
+      "Selection of auspicious date and time for wedding ceremonies based on bride and groom's birth charts. Traditional Vedic Muhurat analysis considers favorable nakshatras and tithis, planetary positions and transits, avoidance of inauspicious yogas, and Lagna strength at marriage time. Marriage dates are also evaluated using Hebrew Pyramid Numerology principles to support lasting marital harmony.",
   },
   {
-    icon: Baby,
-    title: "Child Naming Consultation",
+    icon: Calendar,
+    title: "Auspicious Muhurat for Life Events",
     description:
-      "Name selection based on birth chart, nakshatra, and numerological considerations for a favorable life path and success.",
+      "Electional astrology (Muhurta Shastra) to determine favorable timing for house construction muhurat, gruhapravesha muhurat (housewarming ceremony), business/shop opening, vehicle purchase, surgery/medical procedures, education commencement, and travel.",
   },
   {
-    icon: Edit3,
-    title: "Name Change Consultation",
+    icon: Shield,
+    title: "Astrological Remedies & Pooja Guidance",
     description:
-      "Analysis and recommendation for name modifications to align with astrological and numerological energies for positive transformation.",
+      "As a Vedic scholar and Purohit performing traditional ceremonies according to Krishna Yajurveda, R. Anand can recommend and perform specific Vedic Pooja remedies based on horoscope analysis: Navagraha Shanti for planetary doshas, specific planet propitiation (Shani, Rahu, Ketu, etc.), Nakshatra Shanti for birth star afflictions, and Dosha Nivaran poojas (Kaal Sarpa, Pitra Dosha, etc.).",
   },
 ];
 
@@ -121,7 +107,7 @@ const vaastuServices = [
     icon: Home,
     title: "Jyothir Vaastu Consultation",
     description:
-      "Specialized Vaastu analysis combining Vedic astrology with traditional Vaastu Shastra principles for holistic space harmony.",
+      "Specialized Vaastu analysis combining Vedic astrology with traditional Vaastu Shastra principles for holistic space harmony. R. Anand holds a PG Diploma in Jyothir Vaastu and provides expert guidance integrating astrological and Vaastu considerations.",
   },
   {
     icon: Home,
@@ -152,60 +138,66 @@ const vaastuServices = [
 const numerologyServices = [
   {
     icon: Hash,
-    title: "Hebrew Pyramid Numerology",
+    title: "Hebrew Pyramid Numerology Consultation",
     description:
-      "Advanced numerology system using the Hebrew Pyramid method for deep personality analysis, life path and destiny mapping.",
+      "Specialized numerological system using Hebrew letter values and pyramid calculations for life path analysis, name analysis, destiny number, soul urge, personality number, and compatibility assessment.",
   },
   {
     icon: Baby,
-    title: "Baby Naming",
+    title: "Newborn Baby Naming",
     description:
-      "Choose a numerologically powerful and astrologically harmonious name for your newborn aligned with their birth chart.",
+      "Name selection based on birth date, time, destiny number, and favorable numerological vibrations. R. Anand's approach considers that the Hebrew Pyramid Ascendant should coincide with the Birth Ascendant for optimal name resonance.",
   },
   {
     icon: Edit3,
     title: "Name Correction",
     description:
-      "Analyze and correct existing names to align with your life path number, destiny number and overall numerological profile.",
+      "Analysis of current name vibrations and recommendations for spelling modifications to enhance positive energy, remove obstacles, and align with favorable numerological patterns.",
   },
   {
     icon: User,
     title: "Name Change Consultation",
     description:
-      "Comprehensive numerological guidance for individuals and businesses considering a legal name change for positive transformation.",
+      "Complete name transformation recommendations for adults seeking major life changes, career shifts, or remedial purposes. Thorough analysis ensures new name supports life goals and destiny.",
   },
   {
     icon: Heart,
     title: "Marriage Date Numerology",
     description:
-      "Select a wedding date vibrating harmoniously with both partners' numerological profiles for a successful and joyful marriage.",
+      "Hebrew Pyramid Numerology evaluation of wedding dates for numerological compatibility and favorable vibrations for lasting marital harmony. Careful date selection considering both astrological and numerological factors to support marital harmony.",
+  },
+  {
+    icon: Compass,
+    title: "Hebrew Pyramid Ascendant Analysis",
+    description:
+      "Evaluation of the Hebrew Pyramid Ascendant derived from the name, ensuring it harmonizes with the astrological birth ascendant for maximum life support and personal alignment.",
   },
 ];
 
 const whyChoose = [
   {
     icon: Eye,
-    title: "Authentic Jyotish Shastra",
+    title: "Traditional Family Heritage",
     description:
-      "Rooted in ancient Vedic astrology texts — not modern pop astrology or generalized sun-sign horoscopes.",
+      "R. Anand belongs to a traditional Vedic Astrology family and learned the fundamentals from his grandfather, continuing a lineage of authentic Jyotish Shastra practice.",
   },
   {
     icon: User,
-    title: "15+ Years Experience",
+    title: "15 Years Dedicated Practice",
     description:
-      "R. Anand brings over 15 years of dedicated practice in Vedic, KP, Vaastu and Hebrew Pyramid Numerology.",
+      "15 years of specialized practice in Vedic Astrology, KP System, Vaastu, and Hebrew Pyramid Numerology, with ongoing study to expand and update knowledge.",
+  },
+  {
+    icon: Star,
+    title: "KP System Expertise",
+    description:
+      "Major expertise in Krishnamurti Paddhati (KP) Astrology, known for precise predictions and accurate timing of events through advanced sub-lord theory and cuspal analysis.",
   },
   {
     icon: Shield,
-    title: "Actionable Remedies",
+    title: "Actionable Remedies & Guidance",
     description:
-      "Every consultation provides specific, practical remedies — mantras, gemstones, poojas and lifestyle guidance.",
-  },
-  {
-    icon: Heart,
-    title: "Compassionate Guidance",
-    description:
-      "Every chart is approached with care and sensitivity. No fear-based predictions — only empowering insights.",
+      "Every consultation provides specific, practical remedies — mantras, gemstones, poojas and lifestyle guidance. As a Vedic scholar and Purohit, R. Anand can perform recommended rituals.",
   },
 ];
 
@@ -347,7 +339,7 @@ export default function AstrologyPage() {
 
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed mb-10">
               Authentic Vedic Astrology, KP System, Vaastu and Numerology consultations by R. Anand — 
-              15 years of dedicated practice illuminating paths and transforming lives.
+              with 15 years of practice in Astrology, Vaastu & Numerology, and a traditional Vedic Astrology family background.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -448,26 +440,29 @@ export default function AstrologyPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
-                Ancient Wisdom, Timeless Guidance
+                R. Anand&apos;s Background
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-gold mb-6 leading-tight">
-                The Science of Vedic Astrology
+                Traditional Vedic Astrology Heritage
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  Jyotish Shastra — the &ldquo;Science of Light&rdquo; — is one of the oldest 
-                  and most sophisticated astrological systems in the world. Rooted in the Vedas, 
-                  it maps the positions of celestial bodies at the exact moment of your birth to 
-                  reveal the cosmic blueprint of your life.
+                  R. Anand belongs to a traditional Vedic Astrology family and learned the fundamentals 
+                  of Vedic Astrology from his grandfather. This authentic lineage ensures deep-rooted 
+                  knowledge of Jyotish Shastra — the &ldquo;Science of Light&rdquo; — one of the oldest 
+                  and most sophisticated astrological systems in the world.
                 </p>
                 <p>
-                  Unlike superficial sun-sign astrology, Vedic astrology considers the Moon sign 
-                  (Rashi), Ascendant (Lagna), planetary periods (Dasha), and the influence of all 
-                  nine Grahas to provide deeply personalized and accurate guidance.
+                  With 15 years of dedicated practice in Astrology, Vaastu, and Hebrew Pyramid Numerology, 
+                  R. Anand continues to expand and update his knowledge through ongoing study and practice. 
+                  He also brings 10 years of Sales and Marketing experience across different organizations, 
+                  which enhances his professional communication skills and client-handling approach during consultations.
                 </p>
                 <p>
-                  R. Anand carries forward this tradition with 15 years of dedicated study, 
-                  providing not just predictions, but actionable remedies rooted in scripture.
+                  R. Anand specializes in multiple systems: Vedic Astrology for traditional birth chart analysis, 
+                  KP System of Astrology (Krishnamurti Paddhati) for precise predictions and accurate timing, 
+                  Jyothir Vaastu (PG Diploma holder) for space harmony, and Hebrew Pyramid Numerology for 
+                  name analysis and life path guidance.
                 </p>
               </div>
             </motion.div>
@@ -565,6 +560,93 @@ export default function AstrologyPage() {
                 )}
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ 3A. BIRTH TIME RECTIFICATION (BTR) ═══════════════════════ */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <Clock className="w-10 h-10 text-gold mx-auto mb-4" />
+            <span className="text-gold font-medium text-sm uppercase tracking-widest mb-3 block">
+              Essential for Accurate Predictions
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-gold mb-6">
+              Birth Time Rectification (BTR)
+            </h2>
+            <p className="text-muted text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+              Accurate birth time is the cornerstone of precise astrological predictions. Even a few minutes 
+              of difference can significantly alter chart calculations, dashas, and predictions. R. Anand uses 
+              systematic methods from both Vedic and KP systems to analyze and refine uncertain or unknown birth times.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                title: "Analysis of Major Life Events",
+                description: "Review significant life events and their timing to correlate with planetary positions and periods.",
+                icon: Calendar,
+              },
+              {
+                title: "Cross-Verification with Dashas",
+                description: "Match past events with planetary dashas and transits to narrow down the accurate birth window.",
+                icon: CheckCircle2,
+              },
+              {
+                title: "KP Cuspal Sub-Lord Analysis",
+                description: "Use KP system's advanced sub-lord theory to refine birth time with high precision.",
+                icon: Star,
+              },
+              {
+                title: "Physical & Personality Traits",
+                description: "Correlate physical characteristics and personality patterns with ascendant and planetary placements.",
+                icon: User,
+              },
+              {
+                title: "Key Milestone Correlation",
+                description: "Analyze marriage, education, career milestones, and other major life transitions for timing validation.",
+                icon: Compass,
+              },
+              {
+                title: "Iterative Refinement",
+                description: "Progressive analysis and adjustment to achieve the most accurate birth time for reliable predictions.",
+                icon: Eye,
+              },
+            ].map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="glass-panel rounded-xl p-6 h-full hover:border-gold/40 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mb-4">
+                    <step.icon className="w-6 h-6 text-gold" />
+                  </div>
+                  <h3 className="font-serif text-base font-semibold text-gold mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="/contact">
+              <Button variant="gold" size="lg">
+                Request BTR Consultation
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -781,7 +863,7 @@ export default function AstrologyPage() {
           </div>
 
           <p className="text-muted text-sm text-center max-w-3xl mx-auto mt-8 leading-relaxed">
-            Consultations provide guidance based on astrological principles. Results depend on individual karma and free will. Astrology illuminates possibilities but does not guarantee specific outcomes.
+            <strong>Professional Disclaimer:</strong> Consultations provide guidance based on astrological and numerological principles. Results depend on individual karma, free will, and life circumstances. No guaranteed outcomes.
           </p>
         </div>
       </section>
