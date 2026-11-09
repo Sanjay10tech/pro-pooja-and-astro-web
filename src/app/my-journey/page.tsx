@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
@@ -219,13 +220,17 @@ export default function MyJourneyPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative lg:col-span-2"
+              className="relative w-full max-w-[500px] mx-auto lg:mx-0 lg:col-span-2"
             >
-              <div className="relative aspect-[3/4] max-h-[500px] rounded-2xl overflow-hidden border border-gold/20">
-                <img
+              <div className="relative rounded-2xl overflow-hidden border border-gold/20">
+                <Image
                   src="/images/pandit-story.jpg"
                   alt="R. Anand performing Vedic ceremony"
-                  className="w-full h-full object-cover object-top"
+                  width={1024}
+                  height={1024}
+                  unoptimized
+                  sizes="(min-width: 1024px) 480px, (min-width: 532px) 500px, calc(100vw - 2rem)"
+                  className="w-full h-auto block object-contain object-center"
                 />
               </div>
               {/* Decorative frame */}
