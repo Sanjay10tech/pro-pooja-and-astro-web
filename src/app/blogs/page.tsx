@@ -10,6 +10,7 @@ import {
   User,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
@@ -118,11 +119,13 @@ export default function BlogsPage() {
                 <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 group">
                   {/* Image — takes 7 columns for asymmetry */}
                   <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10">
-                    <img
+                    <Image
                       src={featured.image}
                       alt={featured.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      loading="eager"
+                      fill
+                      preload
+                      sizes="(min-width: 1024px) 58vw, 100vw"
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <BookOpen className="w-16 h-16 text-gold/15" />
@@ -213,12 +216,12 @@ export default function BlogsPage() {
                     <Link href={`/blogs/${filteredPosts[0].slug}`}>
                       <article className="group h-full bg-secondary border border-secondary hover:border-gold/20 rounded-2xl overflow-hidden transition-all duration-300">
                         <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10">
-                          <img
+                          <Image
                             src={filteredPosts[0].image}
                             alt={filteredPosts[0].title}
-                            className="absolute inset-0 w-full h-full object-cover"
-                            loading="lazy"
-                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                            fill
+                            sizes="(min-width: 1024px) 66vw, 100vw"
+                            className="object-cover"
                           />
                           <div className="absolute inset-0 flex items-center justify-center">
                             <BookOpen className="w-12 h-12 text-gold/15" />
@@ -270,12 +273,12 @@ export default function BlogsPage() {
                           <article className="group flex gap-4 bg-secondary border border-secondary hover:border-gold/20 rounded-xl p-3 transition-all duration-300">
                             {/* Thumbnail */}
                             <div className="w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10 relative">
-                              <img
+                              <Image
                                 src={post.image}
                                 alt={post.title}
-                                className="absolute inset-0 w-full h-full object-cover"
-                                loading="lazy"
-                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                fill
+                                sizes="(min-width: 768px) 112px, 96px"
+                                className="object-cover"
                               />
                               <div className="absolute inset-0 flex items-center justify-center">
                                 <BookOpen className="w-6 h-6 text-gold/15" />
@@ -318,12 +321,12 @@ export default function BlogsPage() {
                         <article className="group bg-secondary border border-secondary hover:border-gold/20 rounded-xl overflow-hidden transition-all duration-300">
                           {/* Image */}
                           <div className="relative aspect-[3/2] overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10">
-                            <img
+                            <Image
                               src={post.image}
                               alt={post.title}
-                              className="absolute inset-0 w-full h-full object-cover"
-                              loading="lazy"
-                              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                              fill
+                              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                              className="object-cover"
                             />
                             <div className="absolute inset-0 flex items-center justify-center">
                               <BookOpen className="w-8 h-8 text-gold/15" />

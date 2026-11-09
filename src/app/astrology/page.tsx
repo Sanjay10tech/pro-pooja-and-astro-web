@@ -510,8 +510,8 @@ export default function AstrologyPage() {
 
       {/* ═══════════════════════ PROFESSIONAL EXPERTISE ═══════════════════════ */}
       <section className="py-20 md:py-28 bg-secondary relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/3 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl hidden md:block" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/3 rounded-full blur-3xl hidden md:block" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -707,8 +707,9 @@ export default function AstrologyPage() {
                         key={num}
                         className="absolute text-xs font-medium text-gold/50"
                         style={{
-                          top: `${50 + radius * Math.sin(angle)}%`,
-                          left: `${50 + radius * Math.cos(angle)}%`,
+                          // Round to 3 decimals — server and client serialize identical style strings (hydration-safe)
+                          top: `${+(50 + radius * Math.sin(angle)).toFixed(3)}%`,
+                          left: `${+(50 + radius * Math.cos(angle)).toFixed(3)}%`,
                           transform: "translate(-50%, -50%)",
                         }}
                       >
@@ -878,7 +879,7 @@ export default function AstrologyPage() {
       <section className="py-20 md:py-28 bg-gradient-to-b from-primary via-secondary to-primary relative overflow-hidden">
         <div className="absolute inset-0 vedic-pattern opacity-10" />
         <StarFieldAdvanced />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-3xl hidden md:block" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -1148,7 +1149,7 @@ export default function AstrologyPage() {
       {/* ═══════════════════════ HEBREW PYRAMID NUMEROLOGY — PREMIUM ═══════════════════════ */}
       <section className="py-20 md:py-28 bg-background relative overflow-hidden">
         <div className="absolute inset-0 vedic-pattern opacity-5" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl hidden md:block" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">

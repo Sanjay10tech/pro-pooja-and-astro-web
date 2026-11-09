@@ -36,8 +36,9 @@ export function ZodiacWheelAdvanced({ size = "medium" }: { size?: "small" | "med
           { symbol: "♓", angle: 330 }
         ].map((zodiac, i) => {
           const rad = (zodiac.angle * Math.PI) / 180;
-          const x = 100 + 80 * Math.cos(rad - Math.PI / 2);
-          const y = 100 + 80 * Math.sin(rad - Math.PI / 2);
+          // Round to 3 decimals — server and client serialize identical attribute strings
+          const x = +(100 + 80 * Math.cos(rad - Math.PI / 2)).toFixed(3);
+          const y = +(100 + 80 * Math.sin(rad - Math.PI / 2)).toFixed(3);
           return (
             <text
               key={i}

@@ -18,17 +18,37 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close the mobile menu after navigation (including back/forward).
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // While the mobile menu is open: lock body scroll and allow Escape to close.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-gold/20"
-          : "bg-transparent backdrop-blur-sm"
+          ? "bg-background/95 md:backdrop-blur-md shadow-lg border-b border-gold/20"
+          : "bg-transparent md:backdrop-blur-sm"
       )}
       role="banner"
     >

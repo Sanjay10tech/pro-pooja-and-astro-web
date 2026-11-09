@@ -12,9 +12,10 @@ import {
   Link2,
   List,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { PageTransition } from "@/components/layout/page-transition";
@@ -49,7 +50,11 @@ export default function BlogDetailPage() {
   }
 
   const relatedPosts = getRelatedPosts(post);
-  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  // Set after mount so server markup and first client render match (hydration-safe).
+  const [shareUrl, setShareUrl] = useState("");
+  useEffect(() => {
+    setShareUrl(window.location.href);
+  }, []);
   const shareText = `${post.title} — R. Anand`;
   const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
 
@@ -190,11 +195,13 @@ export default function BlogDetailPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="aspect-[21/9] md:aspect-[2.5/1] rounded-2xl overflow-hidden bg-gradient-to-br from-gold/15 via-secondary to-gold/10 relative"
           >
-            <img
+            <Image
               src={post.image}
               alt={post.title}
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="eager"
+              fill
+              preload
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="object-cover"
             />
           </motion.div>
         </div>
@@ -384,12 +391,12 @@ export default function BlogDetailPage() {
                     <article className="group flex gap-4 glass-panel rounded-xl border border-gold/20 p-4 hover:shadow-md hover:shadow-gold/10 transition-all duration-300">
                       {/* Thumbnail */}
                       <div className="w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-gold/10 via-secondary to-gold/8 relative">
-                        <img
+                        <Image
                           src={related.image}
                           alt={related.title}
-                          className="absolute inset-0 w-full h-full object-cover"
-                          loading="lazy"
-                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                          fill
+                          sizes="112px"
+                          className="object-cover"
                         />
                       </div>
                       {/* Text */}

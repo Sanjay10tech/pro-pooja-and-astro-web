@@ -59,9 +59,9 @@ export function PyramidVisualization() {
         ))}
       </svg>
       
-      {/* Floating glow effect */}
+      {/* Floating glow effect — hidden on mobile (expensive repaint) */}
       <motion.div
-        className="absolute -inset-10 bg-gold/5 blur-3xl"
+        className="absolute -inset-10 bg-gold/5 blur-3xl hidden md:block"
         animate={{opacity: [0.3, 0.6, 0.3]}}
         transition={{duration: 4, repeat: Infinity, ease: "easeInOut"}}
       />
