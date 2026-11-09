@@ -329,12 +329,23 @@ export default function HomePage() {
     <PageTransition>
       {/* ═══════════════════════ 1. HERO ═══════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-        {/* Deep space gradient */}
+        {/* Mystical temple with sacred fire background (bottom layer) */}
+        <Image
+          src="/images/hero-temple-fire.webp"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center"
+          aria-hidden="true"
+        />
+
+        {/* Deep space gradient overlay for readability */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 40%, rgba(184,149,82,0.12) 0%, transparent 60%), linear-gradient(to bottom, #080F20 0%, #101C35 60%, #080F20 100%)",
+              "radial-gradient(ellipse at 50% 40%, rgba(184,149,82,0.12) 0%, transparent 60%), linear-gradient(to bottom, rgba(8,15,32,0.85) 0%, rgba(16,28,53,0.72) 60%, rgba(8,15,32,0.9) 100%)",
           }}
         />
 
