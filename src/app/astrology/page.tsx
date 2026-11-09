@@ -1327,26 +1327,6 @@ export default function AstrologyPage() {
                 </Button>
               </Link>
             </div>
-            
-            {/* Trust indicators */}
-            <motion.div
-              initial={{opacity: 0}}
-              whileInView={{opacity: 1}}
-              viewport={{once: true}}
-              transition={{delay: 0.5}}
-              className="mt-12 flex flex-wrap justify-center gap-8 text-center"
-            >
-              {[
-                { label: "Years Experience", value: "15+" },
-                { label: "in Astrology", value: "M.A." },
-                { label: "KP Expertise", value: "✓" }
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-3xl font-bold text-gold mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted uppercase tracking-wide">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
       </section>
