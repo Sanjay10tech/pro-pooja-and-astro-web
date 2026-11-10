@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated copy of src/blogs/images (see scripts/sync-blog-images.mjs)
+/public/blog-images/

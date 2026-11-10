@@ -14,6 +14,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    // Removed posts: keep old links alive.
+    return [
+      { source: "/blogs/gokarna-spiritual-guide", destination: "/blogs", permanent: true },
+      { source: "/blogs/vastu-tips-new-home", destination: "/blogs", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

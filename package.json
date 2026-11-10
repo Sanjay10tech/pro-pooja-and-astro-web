@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/sync-blog-images.mjs && next dev",
+    "build": "node scripts/sync-blog-images.mjs && next build",
+    "blogs:check": "node scripts/check-blogs.mjs",
     "start": "next start",
     "lint": "eslint"
   },
@@ -14,7 +15,9 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^13.1.0",
+    "gray-matter": "4.0.3",
     "lucide-react": "^1.31.0",
+    "marked": "18.2.0",
     "next": "16.3.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
