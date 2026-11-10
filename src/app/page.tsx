@@ -100,36 +100,42 @@ const astrologyServices = [
 
 const poojaServices = [
   {
+    slug: "gruhapravesha",
     title: "Gruhapravesha",
     description:
       "Sacred housewarming ceremony to purify your new home and invite divine blessings for a prosperous family life.",
     image: "/images/services/gruhapravesha.webp",
   },
   {
+    slug: "sathyanarayana-pooja-udyapan",
     title: "Sathyanarayana Pooja & Udyapan",
     description:
       "Invoke Lord Vishnu's blessings for prosperity, health and success in all life endeavors.",
     image: "/images/services/sathyanarayana-pooja-udyapan.webp",
   },
   {
+    slug: "vaastu-pooja",
     title: "Vaastu Pooja",
     description:
       "Harmonize the five elements in your home or office to attract positive energy and prosperity.",
     image: "/images/services/vaastu-pooja.webp",
   },
   {
+    slug: "sudarshana-aradhana",
     title: "Sudarshana Aradhana",
     description:
       "Powerful prayer to Lord Sudarshana for protection, destruction of negativity and spiritual well-being.",
     image: "/images/services/sudarshana-aradhana.webp",
   },
   {
+    slug: "narayana-bali",
     title: "Narayana Bali",
     description:
       "Sacred ritual for ancestral peace, freeing souls from suffering and bringing family blessings.",
     image: "/images/services/narayana-bali.webp",
   },
   {
+    slug: "sarpa-sanskar",
     title: "Sarpa Sanskar",
     description:
       "Remedy for Sarpa Dosha, seeking blessings from serpent deities for protection and prosperity.",
@@ -539,7 +545,7 @@ export default function HomePage() {
                       {service.description}
                     </p>
                     <div className="flex items-center gap-3 pt-3 border-t border-secondary">
-                      <Link href="/services">
+                      <Link href={`/poojas/${service.slug}`}>
                         <Button variant="secondary" size="sm" className="border-gold/30 text-text/80 hover:border-gold/60 hover:text-gold">
                           View Details
                         </Button>
