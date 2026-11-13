@@ -19,7 +19,31 @@ interface GalleryImage {
 
 // Signature Collection — cleared on request; new photos will be added here.
 // Entry format: { id, src: "/images/gallery/...", title, category: "Signature Collection", vip: true, size: "featured" | "large" | "standard" }
-const GALLERY_IMAGES: GalleryImage[] = [];
+const SIGNATURE = (id: number, file: string, title: string): GalleryImage => ({
+  id,
+  src: `/images/gallery/${file}.webp`,
+  title,
+  category: "Signature Collection",
+  vip: true,
+  size: "standard",
+});
+
+const GALLERY_IMAGES: GalleryImage[] = [
+  SIGNATURE(1, "navagraha-parihara-pooja", "Navagraha Parihara Pooja"),
+  SIGNATURE(2, "all-pooja-homa", "All Pooja Homa"),
+  SIGNATURE(3, "aslesha-bali-and-sarpa-sanskar", "Aslesha Bali & Sarpa Sanskar"),
+  SIGNATURE(4, "shop-opening-and-ganapathi-homa", "Shop Opening & Ganapathi Homa"),
+  SIGNATURE(5, "sarvatho-bhadra-mandala-pooja-for-positive-results", "Sarvatho Bhadra Mandala Pooja for Positive Results"),
+  SIGNATURE(6, "gruha-pravesha-pooja-and-homa", "Gruha Pravesha Pooja & Homa"),
+  SIGNATURE(7, "gruhapravesha-pooja-with-ashtalakshmi-kalasha", "Gruhapravesha Pooja with Ashtalakshmi Kalasha"),
+  SIGNATURE(8, "factory-pooja", "Factory Pooja"),
+  SIGNATURE(9, "lord-anjaneya-pratishtha-idol-installation", "Lord Anjaneya Pratishtha - Idol Installation"),
+  SIGNATURE(10, "sudarshana-mandala-aradhana", "Sudarshana Mandala Aradhana"),
+  SIGNATURE(11, "gruhapravesha-pooja", "Gruhapravesha Pooja"),
+];
+
+const VIP_IMAGES = GALLERY_IMAGES.filter((img) => img.vip);
+const OTHER_IMAGES = GALLERY_IMAGES.filter((img) => !img.vip);
 
 const sizeHeights = {
   featured: "h-[320px] sm:h-[420px] md:h-[520px] lg:h-[560px]",
@@ -36,7 +60,20 @@ interface SacredFilm {
 
 // Sacred Films — cleared on request; new videos will be added here.
 // Entry format: { id, src: "/videos/...", title, category }
-const SACRED_FILMS: SacredFilm[] = [];
+const SACRED_FILMS: SacredFilm[] = [
+  {
+    id: 1,
+    src: "/videos/sudarshana-chakra-pooja.mp4",
+    title: "Sudarshana Chakra Pooja",
+    category: "Sacred Films",
+  },
+  {
+    id: 2,
+    src: "/videos/gruha-pravesha-pooja-decoration.mp4",
+    title: "Gruha Pravesha Pooja Decoration",
+    category: "Sacred Films",
+  },
+];
 
 /* ───────────────────────── LIGHTBOX ───────────────────────── */
 
@@ -128,6 +165,10 @@ function Lightbox({
           </motion.div>
         </AnimatePresence>
 
+        <p className="absolute bottom-2 inset-x-14 text-center font-serif text-base sm:text-lg text-gold-light">
+          {current.title}
+        </p>
+
         <button onClick={onNext} className="absolute right-2 sm:right-3 md:right-8 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Next">
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </button>
@@ -183,6 +224,13 @@ function GalleryCard({ image, index, onClick }: { image: GalleryImage; index: nu
           <div className="w-5 h-5 border-b-2 border-r-2 border-gold/60 rounded-br-sm" />
         </div>
 
+        {/* Caption */}
+        <div className="absolute inset-x-0 bottom-0 px-4 pt-10 pb-3.5 bg-gradient-to-t from-background/90 via-background/60 to-transparent pointer-events-none">
+          <p className="font-serif text-base sm:text-lg font-semibold text-gold-light leading-snug line-clamp-2">
+            {image.title}
+          </p>
+        </div>
+
         {/* View icon */}
         <div className="absolute top-4 right-4 w-9 h-9 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-500">
           <ZoomIn className="w-4 h-4 text-white" />
@@ -203,16 +251,25 @@ function FilmCard({ film, index }: { film: SacredFilm; index: number }) {
       viewport={{ once: true, margin: "-40px" }}
       transition={{ delay: index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="relative rounded-[20px] overflow-hidden border border-gold/10 shadow-md hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 bg-secondary">
-        <video
-          className="w-full h-full object-cover bg-secondary"
-          controls
-          playsInline
-          preload="metadata"
-        >
-          <source src={film.src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div className="rounded-[20px] overflow-hidden border border-gold/10 shadow-md hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 bg-secondary">
+        {/* Fixed 16:9 stage; object-contain keeps portrait or landscape clips uncropped */}
+        <div className="relative aspect-video bg-black">
+          <video
+            className="absolute inset-0 w-full h-full object-contain"
+            controls
+            playsInline
+            preload="metadata"
+            aria-label={film.title}
+          >
+            <source src={`${film.src}#t=0.1`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="px-5 py-4 border-t border-gold/10 bg-gradient-to-b from-secondary to-primary">
+          <p className="font-serif text-lg sm:text-xl font-semibold text-gold-light leading-snug">
+            {film.title}
+          </p>
+        </div>
       </div>
     </motion.div>
   );
@@ -262,9 +319,7 @@ export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState<"vip" | "all">("vip");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const filteredImages = activeTab === "vip"
-    ? GALLERY_IMAGES.filter((img) => img.vip)
-    : GALLERY_IMAGES.filter((img) => !img.vip);
+  const filteredImages = activeTab === "vip" ? VIP_IMAGES : OTHER_IMAGES;
 
   const openLightbox = (id: number) => {
     const index = filteredImages.findIndex((img) => img.id === id);
