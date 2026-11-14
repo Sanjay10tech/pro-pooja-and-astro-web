@@ -511,3 +511,17 @@
   }
   .blog-prose th { background: var(--color-secondary); color: var(--color-gold); font-weight: 600; }
 }
+
+/* ── Responsive safety ───────────────────────────────── */
+/* Clip (not scroll) horizontal overflow from decorative/animated layers so the page never pans sideways. */
+body { overflow-x: clip; }
+
+/* WhatsApp button pulse: stays within ~14px of the button so it can never widen the page. */
+@keyframes wa-ping {
+  0%   { box-shadow: 0 0 0 0 rgb(37 211 102 / 0.3); opacity: 1; }
+  70%, 100% { box-shadow: 0 0 0 14px rgb(37 211 102 / 0); opacity: 1; }
+}
+.wa-ping { animation: wa-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .wa-ping { animation: none; opacity: 0; }
+}

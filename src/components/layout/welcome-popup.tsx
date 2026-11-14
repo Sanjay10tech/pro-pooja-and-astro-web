@@ -14,14 +14,18 @@ export function WelcomePopup() {
   }, []);
 
   useEffect(() => {
-    setIsMounted(true);
-    setIsVisible(true);
+    // Defer client-only visibility until after hydration.
+    const frame = window.requestAnimationFrame(() => {
+      setIsMounted(true);
+      setIsVisible(true);
+    });
 
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 4000);
 
     return () => {
+      window.cancelAnimationFrame(frame);
       clearTimeout(timer);
     };
   }, []);
@@ -61,7 +65,7 @@ export function WelcomePopup() {
             {/* Close button */}
             <button
               onClick={closePopup}
-              className="absolute top-3 right-3 w-8 h-8 bg-gold/20 hover:bg-gold/40 rounded-full flex items-center justify-center transition-colors z-10"
+              className="absolute top-2 right-2 w-11 h-11 sm:top-3 sm:right-3 bg-gold/20 hover:bg-gold/40 rounded-full flex items-center justify-center transition-colors z-10"
               aria-label="Close welcome popup"
             >
               <X className="w-4 h-4 text-text" />

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, Heart, MessageCircle } from "lucide-react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 import { BRAND, WHATSAPP_LINK } from "@/lib/constants";
 import { Logo } from "@/components/ui/logo";
 
@@ -89,12 +89,12 @@ export function Footer() {
             <h4 className="font-serif font-semibold text-lg text-gold mb-4">
               Pooja &amp; Homa Services
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-0 md:space-y-2.5">
               {footerServices.map((service) => (
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-text/60 hover:text-gold transition-colors text-sm"
+                    className="text-text/60 hover:text-gold transition-colors text-sm inline-flex items-center min-h-10 md:min-h-0"
                   >
                     {service}
                   </Link>
@@ -108,12 +108,12 @@ export function Footer() {
             <h4 className="font-serif font-semibold text-lg text-gold mb-4">
               Astrology Services
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-0 md:space-y-2.5">
               {astrologyServices.map((service) => (
                 <li key={service}>
                   <Link
                     href="/astrology"
-                    className="text-text/60 hover:text-gold transition-colors text-sm"
+                    className="text-text/60 hover:text-gold transition-colors text-sm inline-flex items-center min-h-10 md:min-h-0"
                   >
                     {service}
                   </Link>
@@ -127,11 +127,11 @@ export function Footer() {
             <h4 className="font-serif font-semibold text-lg text-gold mb-4">
               Get in Touch
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-0 md:space-y-3">
               <li>
                 <a
                   href={`tel:${BRAND.phone}`}
-                  className="text-text/60 hover:text-gold transition-colors text-sm"
+                  className="text-text/60 hover:text-gold transition-colors text-sm inline-flex items-center min-h-10 md:min-h-0"
                 >
                   {BRAND.phone}
                 </a>
@@ -139,7 +139,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${BRAND.email}`}
-                  className="text-text/60 hover:text-gold transition-colors text-sm"
+                  className="text-text/60 hover:text-gold transition-colors text-sm inline-flex items-center min-h-10 md:min-h-0 [overflow-wrap:anywhere]"
                 >
                   {BRAND.email}
                 </a>
@@ -167,10 +167,10 @@ export function Footer() {
             <p className="text-text/50 text-sm text-center md:text-left">
               © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-text/50 text-sm">
-              <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
-              <span>•</span>
-              <Link href="/terms-and-conditions" className="hover:text-gold transition-colors">Terms &amp; Conditions</Link>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 text-text/50 text-sm">
+              <Link href="/privacy-policy" className="hover:text-gold transition-colors inline-flex items-center min-h-10 md:min-h-0">Privacy Policy</Link>
+              <span aria-hidden="true">•</span>
+              <Link href="/terms-and-conditions" className="hover:text-gold transition-colors inline-flex items-center min-h-10 md:min-h-0">Terms &amp; Conditions</Link>
             </div>
           </div>
         </div>

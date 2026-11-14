@@ -357,15 +357,17 @@ export default function ServicesPage() {
                             </div>
 
                             <div className="flex items-center gap-2 pt-3 border-t border-gold/10">
-                              <Link href={`/poojas/${service.slug}`} className="flex-1">
-                                <button className="w-full text-xs font-medium text-gold border border-gold/30 hover:bg-gold/10 px-3 py-2 rounded-lg transition-all flex items-center justify-center gap-1">
-                                  Details <ChevronRight className="w-3 h-3" />
-                                </button>
+                              <Link
+                                href={`/poojas/${service.slug}`}
+                                className="flex-1 min-h-11 text-xs font-medium text-gold border border-gold/30 hover:bg-gold/10 px-3 py-2 rounded-lg transition-all flex items-center justify-center gap-1"
+                              >
+                                Details <ChevronRight className="w-3 h-3" />
                               </Link>
-                              <Link href="/contact" className="flex-1">
-                                <button className="w-full text-xs font-medium bg-gold text-background hover:bg-gold-light px-3 py-2 rounded-lg transition-all">
-                                  Book Now
-                                </button>
+                              <Link
+                                href="/contact"
+                                className="flex-1 min-h-11 text-xs font-medium bg-gold text-background hover:bg-gold-light px-3 py-2 rounded-lg transition-all flex items-center justify-center"
+                              >
+                                Book Now
                               </Link>
                             </div>
                           </div>

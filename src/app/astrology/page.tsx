@@ -1155,8 +1155,8 @@ export default function AstrologyPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Pyramid Visual */}
             <motion.div
-              initial={{opacity: 0, x: -50}}
-              whileInView={{opacity: 1, x: 0}}
+              initial={{opacity: 0, y: 24}}
+              whileInView={{opacity: 1, y: 0}}
               viewport={{once: true}}
               transition={{duration: 0.8}}
               className="relative order-2 lg:order-1"
@@ -1183,8 +1183,8 @@ export default function AstrologyPage() {
             {/* Right: Content */}
             <div className="order-1 lg:order-2">
               <motion.div
-                initial={{opacity: 0, x: 50}}
-                whileInView={{opacity: 1, x: 0}}
+                initial={{opacity: 0, y: 24}}
+                whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{duration: 0.8}}
               >

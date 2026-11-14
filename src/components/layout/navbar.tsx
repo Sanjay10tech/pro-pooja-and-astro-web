@@ -22,10 +22,12 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close the mobile menu after navigation (including back/forward).
+  // Back/forward navigation can happen without a menu-link click.
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    const closeOnHistoryNavigation = () => setIsOpen(false);
+    window.addEventListener("popstate", closeOnHistoryNavigation);
+    return () => window.removeEventListener("popstate", closeOnHistoryNavigation);
+  }, []);
 
   // While the mobile menu is open: lock body scroll and allow Escape to close.
   useEffect(() => {
@@ -58,7 +60,7 @@ export function Navbar() {
           <Logo size="navbar" showText={true} />
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
+          <nav className="hidden xl:flex items-center gap-0.5" aria-label="Main navigation">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -94,7 +96,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-gold hover:bg-gold/10 rounded-lg transition-colors"
+              className="xl:hidden w-11 h-11 flex items-center justify-center text-gold hover:bg-gold/10 rounded-lg transition-colors"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
@@ -113,7 +115,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-background/98 border-t border-gold/20 shadow-xl overflow-hidden"
+            className="xl:hidden max-h-[calc(100dvh-64px)] sm:max-h-[calc(100dvh-72px)] md:max-h-[calc(100dvh-80px)] overflow-y-auto bg-background/98 border-t border-gold/20 shadow-xl"
             id="mobile-navigation"
             role="navigation"
             aria-label="Mobile navigation"
