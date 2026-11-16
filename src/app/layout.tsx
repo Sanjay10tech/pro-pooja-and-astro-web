@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { WelcomePopup } from "@/components/layout/welcome-popup";
+import { BRAND, BRAND_LOGO } from "@/lib/constants";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -28,13 +29,17 @@ export const viewport: Viewport = {
   themeColor: "#101C35",
 };
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL ?? "http://localhost:3000"),
+  applicationName: BRAND.name,
   title: {
-    default: "R. Anand — Vedic Astrologer, KP Astrologer & Purohit in Bangalore",
-    template: "%s | R. Anand",
+    default: `${BRAND.name} — Vedic Astrologer, KP Astrologer & Purohit in Bangalore`,
+    template: `%s | ${BRAND.name}`,
   },
   description:
-    "Expert Vedic Astrology, KP Astrology, Jyothir Vaastu, Hebrew Pyramid Numerology consultations and traditional Pooja & Homa services in Bangalore. R. Anand brings 15 years of experience in Vedic & KP Astrology, Vaastu and Numerology, with traditional family background. Book your consultation today.",
+    "SaiAstroPooja offers expert Vedic Astrology, KP Astrology, Jyothir Vaastu, Hebrew Pyramid Numerology consultations and traditional Pooja & Homa services in Bangalore. R. Anand brings 15 years of experience in Vedic & KP Astrology, Vaastu and Numerology, with traditional family background. Book your consultation today.",
   keywords: [
     "Vedic Astrologer Bangalore",
     "KP Astrologer",
@@ -50,21 +55,22 @@ export const metadata: Metadata = {
     "Pandit for Gruhapravesha",
     "Pooja Services Bangalore",
     "Homa Services",
+    "SaiAstroPooja",
     "R. Anand astrologer",
   ],
-  authors: [{ name: "R. Anand" }],
-  creator: "R. Anand",
+  authors: [{ name: BRAND.name }],
+  creator: BRAND.name,
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "R. Anand — Purohit & Vedic Astrologer",
-    title: "R. Anand — Vedic Astrologer & Purohit in Bangalore | 15 Years Experience",
+    siteName: BRAND.name,
+    title: `${BRAND.name} — Vedic Astrologer & Purohit in Bangalore | 15 Years Experience`,
     description:
       "Expert Vedic Astrology, KP Astrology, Jyothir Vaastu, Hebrew Pyramid Numerology and traditional Pooja & Homa services in Bangalore. 15 years of practice in Vedic & KP Astrology.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "R. Anand — Vedic Astrologer & Purohit in Bangalore",
+    title: `${BRAND.name} — Vedic Astrologer & Purohit in Bangalore`,
     description:
       "Expert Vedic Astrology, KP Astrology, Jyothir Vaastu, Hebrew Pyramid Numerology and traditional Pooja & Homa services. 15 years of experience.",
   },
@@ -82,6 +88,21 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${cormorant.variable}`}>
       <body className="min-h-screen bg-background text-text antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: BRAND.name,
+              description: BRAND.description,
+              ...(SITE_URL ? { url: SITE_URL, logo: new URL(BRAND_LOGO.src, SITE_URL).toString() } : {}),
+              telephone: BRAND.phone,
+              email: BRAND.email,
+              address: { "@type": "PostalAddress", streetAddress: BRAND.address, addressCountry: "IN" },
+            }),
+          }}
+        />
         {/* Skip to main content — accessibility */}
         <a href="#main-content" className="skip-link">
           Skip to main content

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Shield, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | R. Anand",
+  title: "Privacy Policy",
   description:
-    "Privacy Policy for R. Anand – Purohit & Vedic Astrologer, explaining how personal information is collected, used, stored, shared, and protected.",
+    "Privacy Policy for SaiAstroPooja – Purohit & Vedic Astrologer, explaining how personal information is collected, used, stored, shared, and protected.",
 };
 
 const sections = [
@@ -14,7 +14,7 @@ const sections = [
     content: (
       <div className="space-y-4">
         <p>
-          Welcome to R. Anand – Purohit &amp; Vedic Astrologer. We respect your
+          Welcome to SaiAstroPooja – Purohit &amp; Vedic Astrologer. We respect your
           privacy and are committed to protecting the personal information you
           share through our website.
         </p>

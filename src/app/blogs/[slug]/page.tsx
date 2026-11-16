@@ -32,7 +32,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(siteUrl),
-    title: post.seoTitle,
+    title: { absolute: `${post.seoTitle} | SaiAstroPooja` },
     description: post.seoDescription,
     alternates: { canonical: `/blogs/${post.slug}` },
     openGraph: {
@@ -41,6 +41,7 @@ export async function generateMetadata({
       description: post.seoDescription,
       url: `/blogs/${post.slug}`,
       publishedTime: post.date,
+      siteName: "SaiAstroPooja",
       authors: [post.author],
       section: post.category,
       images,

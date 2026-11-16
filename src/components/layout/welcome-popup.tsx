@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { BRAND, BRAND_LOGO } from "@/lib/constants";
 
 export function WelcomePopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +44,7 @@ export function WelcomePopup() {
           className="fixed inset-0 z-[9999] flex items-center justify-center px-4"
           role="dialog"
           aria-modal="true"
-          aria-label="Welcome to R. Anand"
+          aria-label={`Welcome to ${BRAND.name}`}
         >
           {/* Backdrop */}
           <div
@@ -74,15 +75,17 @@ export function WelcomePopup() {
             {/* Content */}
             <div className="px-6 py-8 sm:px-8 sm:py-10 text-center">
               {/* Logo */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 relative mx-auto mb-5 rounded-full overflow-hidden shadow-lg border-2 border-gold/30">
-                <Image
-                  src="/images/logo.png"
-                  alt="R. Anand Logo"
-                  fill
-                  sizes="96px"
-                  className="object-contain"
-                  priority
-                />
+              <div className="w-24 h-24 sm:w-28 sm:h-28 relative mx-auto mb-5 rounded-2xl bg-[#FFF8EC] p-2 shadow-lg border-2 border-gold/30">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={BRAND_LOGO.src}
+                    alt={`${BRAND.name} logo`}
+                    fill
+                    sizes="112px"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </div>
 
               {/* Welcome text */}
@@ -95,7 +98,7 @@ export function WelcomePopup() {
               </div>
 
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-gold mb-2">
-                R. Anand
+                {BRAND.name}
               </h2>
 
               <p className="text-text/70 text-sm sm:text-base leading-relaxed max-w-xs mx-auto">

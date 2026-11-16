@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { BRAND, BRAND_LOGO } from "@/lib/constants";
 
 interface LogoProps {
   /** Size variant */
@@ -27,7 +28,7 @@ export function Logo({
   const isNavbar = size === "navbar";
   const isXl = size === "xl";
 
-  // Size configurations
+  // Size configurations (the logo artwork is near-square; it is never cropped)
   const containerClass = isNavbar
     ? "w-12 h-12 md:w-14 md:h-14"
     : isXl
@@ -36,20 +37,27 @@ export function Logo({
     ? "w-14 h-14 md:w-16 md:h-16"
     : size === "sm"
     ? "w-9 h-9"
-    : "w-11 h-11 md:w-13 md:h-13";
+    : "w-11 h-11 md:w-12 md:h-12";
 
   const content = (
     <div className={cn("flex items-center gap-2.5", className)}>
-      {/* Logo Image */}
-      <div className={cn("relative shrink-0 rounded-full overflow-hidden", containerClass)}>
-        <Image
-          src="/images/logo.png"
-          alt="R. Anand Logo"
-          fill
-          sizes={isXl ? "112px" : "56px"}
-          className="object-contain"
-          priority
-        />
+      {/* Official logo on a light chip so the purple/orange artwork stays legible on dark backgrounds */}
+      <div
+        className={cn(
+          "relative shrink-0 rounded-xl bg-[#FFF8EC] ring-1 ring-gold/40 shadow-md p-1",
+          containerClass
+        )}
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src={BRAND_LOGO.src}
+            alt={`${BRAND.name} logo`}
+            fill
+            sizes={isXl ? "112px" : "56px"}
+            className="object-contain"
+            priority
+          />
+        </div>
       </div>
 
       {/* Brand Text */}
@@ -58,11 +66,11 @@ export function Logo({
           <p
             className={cn(
               "font-serif font-bold leading-tight",
-              isNavbar ? "text-[15px] lg:text-[17px]" : isXl ? "text-xl md:text-2xl" : "text-lg md:text-xl",
-              "text-gold"
+              isNavbar ? "text-[17px] lg:text-[19px]" : isXl ? "text-xl md:text-2xl" : "text-lg md:text-xl",
+              light ? "text-gold" : "text-gold"
             )}
           >
-            R. Anand
+            {BRAND.name}
           </p>
           <p
             className={cn(
@@ -79,7 +87,7 @@ export function Logo({
 
   if (linked) {
     return (
-      <Link href="/" className="group" aria-label="R. Anand - Home">
+      <Link href="/" className="group" aria-label={`${BRAND.name} - Home`}>
         {content}
       </Link>
     );

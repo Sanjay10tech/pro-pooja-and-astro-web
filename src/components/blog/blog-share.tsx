@@ -19,7 +19,7 @@ export function BlogShare({ title, excerpt, variant }: Props) {
     () => ""
   );
 
-  const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(`${title} — R. Anand ${shareUrl}`)}`;
+  const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(`${title} — SaiAstroPooja ${shareUrl}`)}`;
 
   const copyOrShare = () => {
     if (navigator.share) navigator.share({ title, url: shareUrl }).catch(() => {});

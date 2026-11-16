@@ -373,7 +373,7 @@ export default function HomePage() {
             >
               <Sparkles className="w-4 h-4 text-gold" />
               <span className="text-sm font-medium text-gold/90">
-                R. Anand — Purohit &amp; Vedic Astrologer
+                SaiAstroPooja — Purohit &amp; Vedic Astrologer
               </span>
             </motion.div>
 

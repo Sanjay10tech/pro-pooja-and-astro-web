@@ -4,10 +4,10 @@ import { FileText, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Terms & Conditions | R. Anand",
+    absolute: "Terms & Conditions | SaiAstroPooja",
   },
   description:
-    "Review the Terms & Conditions for R. Anand's astrology, Vaastu, numerology, Pooja and Homa services, including bookings, payments and consultations.",
+    "Review the Terms & Conditions for SaiAstroPooja's astrology, Vaastu, numerology, Pooja and Homa services, including bookings, payments and consultations.",
 };
 
 const sections = [
@@ -15,7 +15,7 @@ const sections = [
     title: "Introduction",
     content: (
       <div className="space-y-4">
-        <p>Welcome to R. Anand – Purohit & Vedic Astrologer.</p>
+        <p>Welcome to SaiAstroPooja – Purohit & Vedic Astrologer.</p>
         <p>
           By accessing or using this website, you agree to these Terms &
           Conditions. Please read them carefully before using our services.

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Photo Gallery",
   description:
-    "Browse photos of our pooja ceremonies, sacred spaces, and spiritual events with R. Anand.",
+    "Browse photos of our pooja ceremonies, sacred spaces, and spiritual events with SaiAstroPooja.",
 };
 
 export default function GalleryLayout({

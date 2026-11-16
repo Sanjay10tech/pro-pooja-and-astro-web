@@ -46,7 +46,7 @@ export function Footer() {
                 <Logo size="xl" showText={false} linked={true} light={true} />
                 <div>
                   <p className="font-serif font-bold text-xl md:text-2xl text-gold leading-tight">
-                    R. Anand
+                    {BRAND.name}
                   </p>
                   <p className="text-text/70 text-sm mt-1">
                     Purohit &amp; Vedic Astrologer
