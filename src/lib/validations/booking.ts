@@ -56,7 +56,7 @@ export function generateWhatsAppMessage(data: {
 }
 
 export function generateBookingId(): string {
-  const prefix = "GSP";
+  const prefix = "SAP";
   const timestamp = Date.now().toString(36).toUpperCase().slice(-4);
   const random = Math.random().toString(36).substring(2, 6).toUpperCase();
   return `${prefix}-${timestamp}${random}`;
