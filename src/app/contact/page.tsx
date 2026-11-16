@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
 import { ContactHeroBackground } from "@/components/contact/contact-hero-background";
 import { BRAND, WHATSAPP_LINK } from "@/lib/constants";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
   contactFormSchema,
   type ContactFormData,
@@ -103,14 +104,14 @@ export default function ContactPage() {
   const watchedName = watch("name");
   const watchedLocation = watch("location");
 
-  const dynamicWhatsAppUrl = `https://wa.me/${BRAND.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
+  const dynamicWhatsAppUrl = buildWhatsAppUrl(
     generateWhatsAppMessage({
       pooja: watchedPooja,
       date: watchedDate,
       name: watchedName,
       location: watchedLocation,
     })
-  )}`;
+  );
 
   const onSubmit = async (data: ContactFormData) => {
     // In production: submit to API
@@ -134,7 +135,7 @@ export default function ContactPage() {
               Enquiry Sent Successfully!
             </h1>
             <p className="text-muted mb-8">
-              R. Anand&apos;s team will get back to you within 2 hours. For faster response,
+              The SaiAstroPooja team will get back to you within 2 hours. For faster response,
               chat with us on WhatsApp.
             </p>
             <div className="flex flex-col gap-3">
@@ -632,7 +633,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="R. Anand Location in Bangalore"
+                  title="SaiAstroPooja Location in Bangalore"
                 />
               </div>
             </motion.div>

@@ -8,12 +8,56 @@ import {
   ArrowRight,
   ArrowLeft,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/layout/page-transition";
 import { BRAND, WHATSAPP_LINK } from "@/lib/constants";
-import { generateWhatsAppMessage, generateBookingId } from "@/lib/validations/booking";
+import { generateBookingId } from "@/lib/validations/booking";
+import { buildBookingMessage, buildWhatsAppUrl, formatBookingDate } from "@/lib/whatsapp";
+
+const STORAGE_KEY = "saiastropooja:booking-draft";
+const PHONE_REGEX = /^[+]?[\d\s-]{10,15}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+type FormData = {
+  pooja: string;
+  date: string;
+  time: string;
+  name: string;
+  phone: string;
+  email: string;
+  location: string;
+  notes: string;
+};
+
+const EMPTY_FORM: FormData = { pooja: "", date: "", time: "", name: "", phone: "", email: "", location: "", notes: "" };
+
+/** Local (not UTC) today as YYYY-MM-DD, so "today" is correct for the customer. */
+function todayLocalISO() {
+  const now = new Date();
+  const mm = String(now.getMonth() + 1).padStart(2, "0");
+  const dd = String(now.getDate()).padStart(2, "0");
+  return `${now.getFullYear()}-${mm}-${dd}`;
+}
+
+/** Validation for one step of the booking flow. */
+function getStepErrors(step: number, data: FormData): Record<string, string> {
+  const errors: Record<string, string> = {};
+  if (step === 1 && !data.pooja) errors.pooja = "Please select a pooja";
+  if (step === 2) {
+    if (!data.date) errors.date = "Please select a date";
+    else if (data.date < todayLocalISO()) errors.date = "Please choose today or a future date";
+    if (!data.time) errors.time = "Please select a time";
+  }
+  if (step === 3) {
+    if (data.name.trim().length < 2) errors.name = "Please enter your name";
+    if (!PHONE_REGEX.test(data.phone.trim())) errors.phone = "Please enter a valid phone number";
+    if (data.email.trim() && !EMAIL_REGEX.test(data.email.trim())) errors.email = "Please enter a valid email";
+    if (data.location.trim().length < 2) errors.location = "Please enter your location";
+  }
+  return errors;
+}
 
 /* ───────────────────────── DATA ───────────────────────── */
 
@@ -79,76 +123,148 @@ const STEPS = [
 
 export default function TalkToUsPage() {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
-    pooja: "",
-    date: "",
-    time: "",
-    name: "",
-    phone: "",
-    email: "",
-    location: "",
-    notes: "",
-  });
+  const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [bookingId, setBookingId] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "failed">("idle");
+  const [whatsappBlocked, setWhatsappBlocked] = useState(false);
+  const [restored, setRestored] = useState(false);
+
+  // Guards against double clicks and against creating the same booking twice.
+  const submittingRef = useRef(false);
+  const savedIdRef = useRef("");
+
+  // Restore an in-progress booking (e.g. after returning from WhatsApp or a refresh).
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      try {
+        const raw = window.sessionStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const saved = JSON.parse(raw);
+          if (saved?.formData) setFormData({ ...EMPTY_FORM, ...saved.formData });
+          if (typeof saved?.bookingId === "string" && saved.bookingId) {
+            setBookingId(saved.bookingId);
+            if (saved.saveStatus === "saved") savedIdRef.current = saved.bookingId;
+          }
+          if (saved?.saveStatus) setSaveStatus(saved.saveStatus);
+          const savedStep = Number(saved?.step);
+          if (savedStep >= 1 && savedStep <= 5 && (savedStep < 5 || saved?.bookingId)) setStep(savedStep);
+        }
+      } catch {
+        // Ignore unreadable drafts.
+      }
+      setRestored(true);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!restored) return;
+    try {
+      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ formData, bookingId, saveStatus, step }));
+    } catch {
+      // Storage can be unavailable (private mode); the booking still works.
+    }
+  }, [restored, formData, bookingId, saveStatus, step]);
 
   const updateField = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     setErrors((prev) => ({ ...prev, [field]: "" }));
   };
 
-  const validateStep = (): boolean => {
-    const newErrors: Record<string, string> = {};
-    if (step === 1 && !formData.pooja) newErrors.pooja = "Please select a pooja";
-    if (step === 2) {
-      if (!formData.date) newErrors.date = "Please select a date";
-      if (!formData.time) newErrors.time = "Please select a time";
-    }
-    if (step === 3) {
-      if (!formData.name || formData.name.length < 2) newErrors.name = "Please enter your name";
-      if (!formData.phone || formData.phone.length < 10) newErrors.phone = "Please enter a valid phone number";
-      if (!formData.location) newErrors.location = "Please enter your location";
-    }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const nextStep = () => {
-    if (validateStep()) setStep((s) => Math.min(s + 1, 5));
+    const stepErrors = getStepErrors(step, formData);
+    setErrors(stepErrors);
+    if (Object.keys(stepErrors).length === 0) setStep((s) => Math.min(s + 1, 5));
   };
 
   const prevStep = () => setStep((s) => Math.max(s - 1, 1));
 
-  const submitBooking = async () => {
-    setIsSubmitting(true);
-    const id = generateBookingId();
-    setBookingId(id);
+  const selectedPooja = poojaOptions.find((p) => p.value === formData.pooja);
 
+  const buildMessageFor = (id: string) =>
+    buildBookingMessage({
+      bookingId: id,
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      service: selectedPooja?.label ?? "",
+      date: formData.date,
+      time: formData.time,
+      location: formData.location,
+      notes: formData.notes,
+    });
+
+  const saveBooking = async (id: string) => {
+    if (savedIdRef.current === id) return; // already stored: never create it twice
     try {
-      await fetch("/api/booking", {
+      const res = await fetch("/api/booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, bookingId: id }),
       });
-    } catch (e) {
-      // Silently handle — user still sees confirmation
+      if (res.ok) {
+        savedIdRef.current = id;
+        setSaveStatus("saved");
+      } else {
+        setSaveStatus("failed");
+      }
+    } catch {
+      setSaveStatus("failed");
     }
-
-    setIsSubmitting(false);
-    setStep(5);
   };
 
-  const selectedPooja = poojaOptions.find((p) => p.value === formData.pooja);
+  const submitBooking = () => {
+    if (submittingRef.current) return;
 
-  const confirmWhatsAppUrl = `https://wa.me/${BRAND.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
-    generateWhatsAppMessage({
-      pooja: selectedPooja?.label,
-      date: formData.date,
-      name: formData.name,
-      location: formData.location,
-    })
-  )}`;
+    // Validate the whole booking, not just the last step.
+    for (const s of [1, 2, 3]) {
+      const stepErrors = getStepErrors(s, formData);
+      if (Object.keys(stepErrors).length > 0) {
+        setErrors(stepErrors);
+        setStep(s);
+        return;
+      }
+    }
+
+    submittingRef.current = true;
+    setIsSubmitting(true);
+
+    // Keep the existing ID when there is one, otherwise create it once.
+    const id = bookingId || generateBookingId();
+    setBookingId(id);
+
+    // Open the ADMIN's WhatsApp chat immediately (inside the click, so browsers do not block it).
+    const win = window.open(buildWhatsAppUrl(buildMessageFor(id)), "_blank");
+    if (win) win.opener = null;
+    setWhatsappBlocked(!win);
+
+    setStep(5);
+    void saveBooking(id).finally(() => {
+      submittingRef.current = false;
+      setIsSubmitting(false);
+    });
+  };
+
+  const startNewBooking = () => {
+    try {
+      window.sessionStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // ignore
+    }
+    savedIdRef.current = "";
+    submittingRef.current = false;
+    setFormData(EMPTY_FORM);
+    setErrors({});
+    setBookingId("");
+    setSaveStatus("idle");
+    setWhatsappBlocked(false);
+    setIsSubmitting(false);
+    setStep(1);
+  };
+
+  const confirmWhatsAppUrl = bookingId ? buildWhatsAppUrl(buildMessageFor(bookingId)) : buildWhatsAppUrl();
 
   return (
     <PageTransition>
@@ -285,6 +401,7 @@ export default function TalkToUsPage() {
                   <div>
                     <label className="block text-sm font-medium text-text mb-1.5">Email</label>
                     <input type="email" value={formData.email} onChange={(e) => updateField("email", e.target.value)} className="w-full px-4 py-3 bg-secondary/50 border border-gold/20 rounded-lg text-text placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-gold text-sm" placeholder="your@email.com" />
+                    {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-text mb-1.5">Location *</label>
@@ -312,7 +429,7 @@ export default function TalkToUsPage() {
                     </div>
                     <div className="flex justify-between items-center pb-3 border-b border-gold/10">
                       <span className="text-sm text-muted">Date</span>
-                      <span className="text-sm font-medium text-text">{formData.date}</span>
+                      <span className="text-sm font-medium text-text">{formatBookingDate(formData.date)}</span>
                     </div>
                     <div className="flex justify-between items-center pb-3 border-b border-gold/10">
                       <span className="text-sm text-muted">Time</span>
@@ -326,10 +443,22 @@ export default function TalkToUsPage() {
                       <span className="text-sm text-muted">Phone</span>
                       <span className="text-sm font-medium text-text">{formData.phone}</span>
                     </div>
+                    {formData.email.trim() && (
+                      <div className="flex justify-between items-center gap-4 pb-3 border-b border-gold/10">
+                        <span className="text-sm text-muted">Email</span>
+                        <span className="text-sm font-medium text-text break-all text-right">{formData.email}</span>
+                      </div>
+                    )}
                     <div className="flex justify-between items-center pb-3 border-b border-gold/10">
                       <span className="text-sm text-muted">Location</span>
                       <span className="text-sm font-medium text-text">{formData.location}</span>
                     </div>
+                    {formData.notes.trim() && (
+                      <div className="flex justify-between items-start gap-4 pb-3 border-b border-gold/10">
+                        <span className="text-sm text-muted shrink-0">Notes</span>
+                        <span className="text-sm font-medium text-text text-right break-words min-w-0">{formData.notes}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="bg-gold/5 p-4 border-t border-gold/10">
                     <p className="text-xs text-muted text-center">
@@ -347,11 +476,21 @@ export default function TalkToUsPage() {
                   <CheckCircle2 className="w-10 h-10 text-gold" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold mb-2">
-                  Booking Request Received
+                  Your Booking Summary Is Ready
                 </h2>
-                <p className="text-muted mb-8">
-                  R. Anand&apos;s team will contact you within 2 hours to confirm your ceremony.
+                <p className="text-muted mb-2 max-w-lg mx-auto">
+                  {whatsappBlocked
+                    ? "Your browser blocked WhatsApp from opening. Tap the button below to open it."
+                    : "WhatsApp should now be open with your booking message."}{" "}
+                  Press <strong className="text-text">Send</strong> in WhatsApp to deliver it to the {BRAND.name} team.
+                  Your request reaches us only after you press Send.
                 </p>
+                {saveStatus === "failed" && (
+                  <p className="text-xs text-muted mb-2">
+                    We could not save this request online. Sending it on WhatsApp is enough for us to receive it.
+                  </p>
+                )}
+                <div className="mb-8" />
 
                 {/* Booking Summary */}
                 <div className="bg-secondary/80 border border-gold/20 rounded-2xl p-6 max-w-md mx-auto text-left mb-8">
@@ -366,7 +505,7 @@ export default function TalkToUsPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-xs text-muted">Date &amp; Time</span>
-                      <span className="text-xs font-medium text-text">{formData.date} · {formData.time}</span>
+                      <span className="text-xs font-medium text-text text-right">{formatBookingDate(formData.date)} · {formData.time}</span>
                     </div>
                   </div>
                 </div>
@@ -376,7 +515,7 @@ export default function TalkToUsPage() {
                   <a href={confirmWhatsAppUrl} target="_blank" rel="noopener noreferrer">
                     <Button variant="primary" size="lg" className="bg-[#25D366] hover:bg-[#1da851]">
                       <MessageCircle className="w-5 h-5" />
-                      Confirm on WhatsApp
+                      Send Booking on WhatsApp
                     </Button>
                   </a>
                   <Link href="/">
@@ -384,6 +523,11 @@ export default function TalkToUsPage() {
                       Back to Home
                     </Button>
                   </Link>
+                </div>
+                <div className="mt-4">
+                  <button onClick={startNewBooking} className="text-xs text-muted hover:text-gold underline underline-offset-4">
+                    Start a new booking
+                  </button>
                 </div>
               </motion.div>
             )}
