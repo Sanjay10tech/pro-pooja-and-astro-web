@@ -130,13 +130,13 @@ export default function MyJourneyPage() {
         {/* Pandit Image — Right Side (Desktop/Tablet) */}
         <div className="absolute top-0 right-0 bottom-0 w-[45%] lg:w-[40%] hidden md:block">
           <img
-            src="/images/r-anand-portrait.webp"
+            src="/images/r-anand-portrait-v2.webp"
             alt="R. Anand — Purohit and Vedic Astrologer"
             className="w-full h-full object-cover object-top"
             style={{ objectPosition: "center 20%" }}
           />
-          {/* Left fade */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+          {/* Left fade (kept short so the person on the left of the photo stays visible) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent via-20% to-transparent" />
           {/* Bottom fade */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           {/* Top fade */}
@@ -148,7 +148,7 @@ export default function MyJourneyPage() {
         {/* Mobile: Pandit as subtle background */}
         <div className="absolute inset-0 md:hidden">
           <img
-            src="/images/r-anand-portrait.webp"
+            src="/images/r-anand-portrait-v2.webp"
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover object-top opacity-20"
