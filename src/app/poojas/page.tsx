@@ -112,7 +112,7 @@ export default function PoojaServicesPage() {
                 >
                   <div className="glass-panel gold-border rounded-xl overflow-hidden hover:border-gold/40 transition-all duration-300 h-full flex flex-col">
                     {/* Ritual illustration + category badge */}
-                    <div className="relative h-36 overflow-hidden">
+                    <div className="relative aspect-[3/2] overflow-hidden">
                       <Image
                         src={service.image}
                         alt={`Illustration of ${service.title} ritual`}

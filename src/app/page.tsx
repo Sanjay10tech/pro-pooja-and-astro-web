@@ -527,7 +527,7 @@ export default function HomePage() {
               >
                 <div className="bg-primary border border-secondary hover:border-gold/20 rounded-2xl overflow-hidden group h-full flex flex-col transition-all duration-300 hover:shadow-lg">
                   {/* Ritual illustration */}
-                  <div className="h-36 relative overflow-hidden">
+                  <div className="aspect-[3/2] relative overflow-hidden">
                     <Image
                       src={service.image}
                       alt={`Illustration of ${service.title} ritual`}

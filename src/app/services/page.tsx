@@ -320,7 +320,7 @@ export default function ServicesPage() {
                       >
                         <div className="glass-panel rounded-xl border border-gold/20 overflow-hidden hover:border-gold/40 transition-all duration-300 h-full flex flex-col">
                           {/* Image */}
-                          <div className="relative h-44 bg-gradient-to-br from-primary via-secondary to-gold/10 overflow-hidden">
+                          <div className="relative aspect-[3/2] bg-gradient-to-br from-primary via-secondary to-gold/10 overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center">
                               <BookOpen className="w-7 h-7 text-gold/20" />
                             </div>

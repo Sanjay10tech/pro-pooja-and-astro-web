@@ -163,7 +163,7 @@ export default function PujaDetailPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10 border border-gold/20">
+              <div className="relative aspect-[3/2] rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-secondary to-gold/10 border border-gold/20">
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center">
                     <BookOpen className="w-12 h-12 text-gold/30" />
